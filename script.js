@@ -1,77 +1,51 @@
-// SEARCH FUNCTION
-
-function searchTools() {
-
-let input = document.getElementById("searchInput").value.toLowerCase();
-
-let cards = document.getElementsByClassName("card");
-
-for (let i = 0; i < cards.length; i++) {
-
-let title = cards[i].innerText.toLowerCase();
-
-if (title.includes(input)) {
-
-cards[i].style.display = "block";
-
-} else {
-
-cards[i].style.display = "none";
-
+const tools = [
+{
+name: "ChatGPT",
+category: "AI Chatbot",
+link: "https://chat.openai.com",
+description: "Advanced AI chatbot for writing, coding, and answering questions."
+},
+{
+name: "Midjourney",
+category: "AI Image Generator",
+link: "https://midjourney.com",
+description: "Create stunning AI generated images."
+},
+{
+name: "Copy.ai",
+category: "AI Writing",
+link: "https://copy.ai",
+description: "Generate marketing copy using AI."
+},
+{
+name: "Runway ML",
+category: "AI Video",
+link: "https://runwayml.com",
+description: "Create and edit videos with AI."
+},
+{
+name: "Notion AI",
+category: "Productivity",
+link: "https://notion.so",
+description: "AI powered productivity workspace."
 }
+];
 
-}
+const container = document.getElementById("tools-container");
 
-}
+tools.forEach(tool => {
 
+const card = document.createElement("div");
 
-// SCROLL TO TOP BUTTON
+card.className = "tool-card";
 
-let topButton = document.getElementById("topBtn");
+card.innerHTML = `
+<h2>${tool.name}</h2>
+<p><strong>Category:</strong> ${tool.category}</p>
+<p>${tool.description}</p>
+<a href="${tool.link}" target="_blank">Visit Tool</a>
+`;
 
-window.onscroll = function() {
-
-if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-
-topButton.style.display = "block";
-
-} else {
-
-topButton.style.display = "none";
-
-}
-
-};
-
-function topFunction() {
-
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
-
-}
-
-
-// SIMPLE CARD ANIMATION
-
-document.addEventListener("DOMContentLoaded", function() {
-
-let cards = document.querySelectorAll(".card");
-
-cards.forEach((card, index) => {
-
-card.style.opacity = "0";
-card.style.transform = "translateY(20px)";
-
-setTimeout(() => {
-
-card.style.transition = "0.5s";
-card.style.opacity = "1";
-card.style.transform = "translateY(0)";
-
-}, index * 150);
-
-});
+container.appendChild(card);
 
 });
