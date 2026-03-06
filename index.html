@@ -2,33 +2,117 @@
 <html>
 
 <head>
+
 <title>AI Tools Directory</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f9;
+margin:0;
+padding:0;
+}
+
+header{
+background:#111827;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card a{
+text-decoration:none;
+font-weight:bold;
+color:#2563eb;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#777;
+}
+
+</style>
+
 </head>
 
 <body>
 
+<header>
+
 <h1>AI Tools Directory</h1>
 
-<p>Discover the best Artificial Intelligence tools for productivity, writing, design and business.</p>
+<p>Discover the best AI tools for productivity, writing, design and business.</p>
+
+</header>
+
+<div class="container">
 
 <h2>Categories</h2>
 
-<ul>
+<div class="grid">
 
-<li><a href="ai-writing-tools.html">AI Writing Tools</a></li>
+<div class="card">
+<a href="ai-writing-tools.html">AI Writing Tools</a>
+<p>Tools for blogs, copywriting and content creation.</p>
+</div>
 
-<li>AI Image Tools</li>
+<div class="card">
+<a href="#">AI Image Tools</a>
+<p>Create images and designs using AI.</p>
+</div>
 
-<li>AI Video Tools</li>
+<div class="card">
+<a href="#">AI Video Tools</a>
+<p>Generate videos with artificial intelligence.</p>
+</div>
 
-<li>AI Marketing Tools</li>
+<div class="card">
+<a href="#">AI Marketing Tools</a>
+<p>Boost marketing using AI automation.</p>
+</div>
 
-<li>AI Productivity Tools</li>
+<div class="card">
+<a href="#">AI Productivity Tools</a>
+<p>Improve productivity with AI assistants.</p>
+</div>
 
-</ul>
+</div>
 
-<p>More tools coming soon...</p>
+</div>
+
+<footer>
+
+<p>© 2026 AI Tools Directory</p>
+
+</footer>
 
 </body>
 
