@@ -44,7 +44,21 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .tool-hero-left h1 em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .tool-desc{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:28px;}
 
-.btn-primary{display:inline-flex;align-items:center;padding:12px 24px;border-radius:12px;background:linear-gradient(135deg,#3b82f6,#06b6d4);color:#fff;text-decoration:none;font-weight:600;box-shadow:0 6px 20px rgba(59,130,246,0.3);}
+/* BUTTONS */
+.tool-actions{display:flex;gap:12px;margin-bottom:28px;}
+.btn-primary{display:inline-flex;align-items:center;padding:12px 24px;border-radius:12px;background:linear-gradient(135deg,#3b82f6,#06b6d4);color:#fff;text-decoration:none;font-weight:600;box-shadow:0 6px 20px rgba(59,130,246,0.3);transition: 0.2s;}
+.btn-primary:hover{opacity:.9;transform:translateY(-2px);}
+
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:12px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:var(--text);font-weight:500;cursor:pointer;transition:0.3s;}
+.btn-ghost:hover{border-color:rgba(59,130,246,0.4);background:rgba(59,130,246,0.07);transform:translateY(-2px);}
+
+/* STYLE SPECIFIQUE POUR LE BOUTON SAVE */
+.btn-ghost.saved {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.15);
+  color: #fff;
+}
+
 .tool-logo-card{width:180px;height:180px;border-radius:24px;background:rgba(15,23,42,0.8);border:1px solid rgba(59,130,246,0.2);display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
 .tool-logo-card img{width:100px;height:100px;object-fit:contain;}
 
@@ -113,8 +127,11 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
       <div class="tool-badge">⭐ #1 Enterprise Copywriting Tool</div>
       <h1>Meet <em>Jasper AI</em> —<br>Your AI Content Sidekick</h1>
       <p class="tool-desc">Jasper is an advanced AI content platform designed for enterprise teams. It helps create high-quality marketing copy, blog posts, and ad campaigns while maintaining a consistent brand voice.</p>
+      
       <div class="tool-actions">
         <a href="https://jasperai.au/" target="_blank" class="btn-primary">🚀 Visit Jasper AI</a>
+        <!-- BOUTON SAUVEGARDE AJOUTÉ ICI -->
+        <button id="saveBtn" class="btn-ghost">🔖 <span id="saveText">Save Tool</span></button>
       </div>
     </div>
     <div class="tool-hero-right">
@@ -172,5 +189,39 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
 </div>
 
 <footer>© 2026 AI Tools Directory — Built for the community</footer>
+
+<!-- SCRIPT DE SAUVEGARDE -->
+<script>
+  const toolId = "jasper"; // Identifiant unique pour Jasper
+  const saveBtn = document.getElementById('saveBtn');
+  const saveText = document.getElementById('saveText');
+
+  function checkStatus() {
+    let savedList = JSON.parse(localStorage.getItem('mySavedTools') || "[]");
+    if (savedList.includes(toolId)) {
+      saveBtn.classList.add('saved');
+      saveText.innerText = "Saved";
+    } else {
+      saveBtn.classList.remove('saved');
+      saveText.innerText = "Save Tool";
+    }
+  }
+
+  saveBtn.addEventListener('click', () => {
+    let savedList = JSON.parse(localStorage.getItem('mySavedTools') || "[]");
+    if (savedList.includes(toolId)) {
+      // Retirer des favoris
+      savedList = savedList.filter(id => id !== toolId);
+    } else {
+      // Ajouter aux favoris
+      savedList.push(toolId);
+    }
+    localStorage.setItem('mySavedTools', JSON.stringify(savedList));
+    checkStatus();
+  });
+
+  checkStatus();
+</script>
+
 </body>
 </html>
