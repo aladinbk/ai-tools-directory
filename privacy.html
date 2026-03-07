@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — AI Tools Directory</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#3b82f6;--cyan:#06b6d4;--dark:#020617;--border:rgba(255,255,255,0.07);--text:#e2e8f0;--muted:rgba(148,163,184,0.7);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(59,130,246,0.18) 0%,transparent 70%),#020617;pointer-events:none;}
 
+/* NAVIGATION (Identique à index.html) */
+nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;background:rgba(2,6,23,0.82);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;font-family:'Syne',sans-serif;box-shadow:0 0 18px rgba(59,130,246,0.45);}
+.nav-logo-text{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.3px;}
+.nav-logo-text span{color:#3b82f6;}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links>li{position:relative;}
+.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:5px;padding:8px 14px;border:none;background:transparent;color:var(--muted);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;text-decoration:none;border-radius:8px;cursor:pointer;transition:all .2s;}
+.nav-links li:hover a, .nav-links li:hover button{color:#fff;background:rgba(255,255,255,0.06);}
+
+/* Dropdowns */
+.mega-drop, .simple-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);opacity:0;pointer-events:none;transition:0.25s;background:rgba(10,18,40,0.97);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 30px 60px rgba(0,0,0,0.7);}
+.nav-links>li:hover .mega-drop, .nav-links>li:hover .simple-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
+.mega-drop-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+.mega-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text);transition:0.2s;}
+
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-size:13px;font-weight:600;cursor:pointer;}
+
+/* PRIVACY CONTENT */
+.legal-wrapper{position:relative;z-index:1;max-width:800px;margin:80px auto;padding:0 20px;}
+.legal-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:99px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);font-size:12px;font-weight:500;color:#93c5fd;margin-bottom:28px;animation:fadeDown .8s ease both;}
+
+h1{font-family:'Syne',sans-serif;font-size:clamp(38px,6vw,54px);font-weight:800;margin-bottom:40px;text-align:center;animation:fadeDown .8s .1s ease both;}
+h1 em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+
+.legal-card{background:rgba(15,23,42,0.6);border:1px solid var(--border);border-radius:24px;padding:40px;backdrop-filter:blur(12px);animation:fadeUp .8s .2s ease both;box-shadow:0 20px 50px rgba(0,0,0,0.3);}
+
+.legal-section{margin-bottom:32px;}
+.legal-section:last-child{margin-bottom:0;}
+.legal-section h2{font-size:18px;color:#fff;margin-bottom:12px;font-weight:600;}
+.legal-section p{font-size:16px;line-height:1.7;color:var(--muted);}
+
+.ads-link{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(59,130,246,0.3);transition:all 0.2s;}
+.ads-link:hover{color:#fff;border-color:#fff;}
+
+footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;margin-top:60px;}
+
+/* ANIMATIONS */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:768px){nav{padding:0 20px;}.nav-links{display:none;}.legal-card{padding:30px 20px;}}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">A</div>
+    <span class="nav-logo-text">AI<span>Tools</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li>
+      <button>Categories <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mega-drop">
+        <div class="mega-drop-grid">
+          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon">✍️</div><div class="mega-item-text"><strong>Writing</strong><span>Copywriting, blogs</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon">🎨</div><div class="mega-item-text"><strong>Images</strong><span>Art & design</span></div></a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <button>Top Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="simple-drop">
+        <a href="chatgpt.html">🤖 ChatGPT</a>
+        <a href="midjourney.html">🎨 Midjourney</a>
+        <a href="copyai.html">✍️ Copy AI</a>
+      </div>
+    </li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-btn-primary">+ Submit Tool</button>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="legal-wrapper">
+  <div class="legal-badge">Legal Information</div>
+  <h1>Privacy <em>Policy</em></h1>
+  
+  <div class="legal-card">
+    <div class="legal-section">
+      <p>This website uses cookies and third-party advertising services such as Google AdSense to display ads.</p>
+    </div>
+
+    <div class="legal-section">
+      <p>Google may use cookies to personalize advertisements based on users' visits to this and other websites.</p>
+    </div>
+
+    <div class="legal-section">
+      <p>Users may opt out of personalized advertising by visiting the 
+        <a href="https://www.google.com/settings/ads" target="_blank" class="ads-link">Google Ads Settings</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<footer><p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p></footer>
+
+</body>
+</html>
