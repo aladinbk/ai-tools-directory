@@ -643,9 +643,19 @@ const searchBtn = document.getElementById('searchBtn');
 function openSug()  { sugBox.classList.add('open'); }
 function closeSug() { sugBox.classList.remove('open'); }
 
+/* ─── track whether user is clicking inside suggestions ─── */
+let clickingInSug = false;
+
+sugBox.addEventListener('mousedown', () => { clickingInSug = true; });
+sugBox.addEventListener('mouseup',   () => { clickingInSug = false; });
+
 /* ─── focused styling on bar ─── */
-input.addEventListener('focus',  () => searchBar.classList.add('focused'));
-input.addEventListener('blur',   () => searchBar.classList.remove('focused'));
+input.addEventListener('focus', () => searchBar.classList.add('focused'));
+input.addEventListener('blur',  () => {
+  searchBar.classList.remove('focused');
+  /* Only close if the user is NOT clicking a suggestion */
+  if (!clickingInSug) closeSug();
+});
 
 /* ─── close when clicking outside ─── */
 document.addEventListener('click', e => {
