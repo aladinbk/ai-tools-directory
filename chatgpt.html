@@ -1,51 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ChatGPT AI Tool</title>
+<title>ChatGPT Review</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-font-family:Poppins;
+*{
 margin:0;
-background:#0f172a;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#020617);
 color:white;
 }
 
-header{
-padding:20px;
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 80px;
 background:#020617;
 }
 
-a{
-color:#38bdf8;
-text-decoration:none;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:40px;
-}
-
-img{
-width:120px;
-}
-
-button{
-padding:10px 20px;
-background:#22c55e;
-border:none;
-border-radius:5px;
+nav a{
 color:white;
-margin-top:20px;
+text-decoration:none;
+margin-left:25px;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:100px 80px;
+}
+
+.hero img{
+width:140px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:0.7;
+margin-bottom:25px;
+}
+
+.btn{
+padding:12px 22px;
+background:#3b82f6;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
+margin-right:10px;
+}
+
+.section{
+padding:80px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:#334155;
+}
+
+ul{
+margin-top:15px;
+line-height:1.9;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:#020617;
+margin-top:60px;
 }
 
 </style>
@@ -54,45 +105,92 @@ margin-top:20px;
 
 <body>
 
-<header>
+<nav>
 
-<a href="index.html">⬅ Back to Home</a>
+<h2>AI Tools Directory</h2>
 
-</header>
+<div>
+
+<a href="index.html">Home</a>
+<a href="#">Writing</a>
+
+</div>
+
+</nav>
 
 
-<div class="container">
+<section class="hero">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg">
+<div>
 
 <h1>ChatGPT</h1>
 
-<p>
+<p>The world's most powerful AI assistant for writing, coding and productivity.</p>
 
-ChatGPT is an advanced artificial intelligence chatbot created by OpenAI.  
-It helps users generate text, write code, answer questions and automate tasks.
+<button class="btn">Try ChatGPT</button>
 
-</p>
+<button class="btn">Explore Features</button>
+
+</div>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg">
+
+</section>
+
+
+<section class="section">
 
 <h2>Main Features</h2>
 
+<div class="grid">
+
+<div class="card">
+<h4>AI Writing Assistant</h4>
+<p>Create blog posts, marketing copy and scripts.</p>
+</div>
+
+<div class="card">
+<h4>Code Generation</h4>
+<p>Generate and debug code instantly.</p>
+</div>
+
+<div class="card">
+<h4>Research & Learning</h4>
+<p>Explain complex topics easily.</p>
+</div>
+
+<div class="card">
+<h4>Idea Generation</h4>
+<p>Brainstorm startup and business ideas.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Popular Use Cases</h2>
+
 <ul>
 
-<li>AI writing assistant</li>
-<li>Programming help</li>
-<li>Content generation</li>
-<li>Learning and research</li>
+<li>Writing blog articles and SEO content</li>
+<li>Creating marketing campaigns</li>
+<li>Programming and debugging</li>
+<li>Studying and research</li>
+<li>Customer support automation</li>
 
 </ul>
 
+</section>
 
-<button onclick="window.open('https://chat.openai.com')">
 
-Visit Tool
+<footer>
 
-</button>
+<p>© 2026 AI Tools Directory</p>
 
-</div>
+</footer>
 
 </body>
 </html>
