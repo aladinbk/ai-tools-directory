@@ -1,146 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
-<title>Best AI Writing Tools</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best AI Writing Tools - AI Tools Directory</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
+/* VARIABLES & BASE (Identique à index.html) */
+:root{--blue:#3b82f6;--cyan:#06b6d4;--dark:#020617;--border:rgba(255,255,255,0.07);--text:#e2e8f0;--muted:rgba(148,163,184,0.7);--star:#fbbf24;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(59,130,246,0.18) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 90% 80%,rgba(6,182,212,0.10) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 10% 90%,rgba(99,102,241,0.08) 0%,transparent 60%),#020617;pointer-events:none;}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+/* NAV (Identique à index.html) */
+nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;background:rgba(2,6,23,0.82);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;font-family:'Syne',sans-serif;box-shadow:0 0 18px rgba(59,130,246,0.45);}
+.nav-logo-text{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.3px;}
+.nav-logo-text span{color:#3b82f6;}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links>li>a{display:flex;align-items:center;gap:5px;padding:8px 14px;border:none;background:transparent;color:var(--muted);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;text-decoration:none;border-radius:8px;transition:color .2s,background .2s;}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,0.06);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 15px rgba(59,130,246,0.35);}
+.nav-btn-primary:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(59,130,246,0.5);}
 
-body{
-background:linear-gradient(135deg,#0f172a,#020617);
-color:white;
-}
+/* HERO CATEGORY */
+.hero-cat{position:relative;z-index:1;text-align:center;padding:80px 20px 40px;}
+.cat-badge{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);font-size:24px;margin-bottom:20px;box-shadow:0 10px 30px rgba(59,130,246,0.2);}
+.hero-cat h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,54px);font-weight:800;letter-spacing:-1px;margin-bottom:14px;}
+.hero-cat p{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.6;}
 
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px 80px;
-background:#020617;
-}
+/* TOOLS GRID - SPECIFIC FOR WRITING */
+.tools-section{position:relative;z-index:1;padding:20px 60px 80px; max-width: 1400px; margin: 0 auto;}
+.grid-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;padding-bottom:15px;border-bottom:1px solid var(--border);}
+.grid-count{font-size:14px;font-weight:600;color:#fff;}
+.grid-count span{color:var(--blue);}
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
 
-.hero{
-text-align:center;
-padding:100px;
-}
+/* TOOL CARD DESIGN */
+.card{position:relative;display:flex;flex-direction:column;background:rgba(15,23,42,0.6);border:1px solid var(--border);border-radius:16px;padding:24px;text-decoration:none;color:var(--text);transition:transform .3s,border-color .3s,box-shadow .3s;backdrop-filter:blur(12px);height:100%;}
+.card:hover{transform:translateY(-6px);border-color:rgba(59,130,246,0.4);box-shadow:0 20px 40px rgba(0,0,0,0.5),0 0 0 1px rgba(59,130,246,0.15);background:rgba(20,30,50,0.8);}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.card-logo{width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);overflow:hidden;font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:#fff;}
+.card-logo img{width:100%;height:100%;object-fit:cover;}
+.card-score{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:99px;font-size:12px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,0.05);}
+.card-score svg{width:12px;height:12px;fill:var(--star);color:var(--star);}
+.card h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;}
+.card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px;flex-grow:1;}
+.card-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
+.card-tag{padding:4px 10px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:#93c5fd;border-radius:6px;font-size:11px;font-weight:500;}
+.card-link-icon{color:var(--muted);transition:color .2s, transform .2s;}
+.card:hover .card-link-icon{color:var(--blue);transform:translate(2px, -2px);}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-padding:80px;
-}
+footer{position:relative;z-index:1;text-align:center;padding:36px 40px;background:rgba(2,6,23,0.9);border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
 
-.card{
-background:#1e293b;
-padding:30px;
-border-radius:14px;
-text-align:center;
-transition:0.3s;
-}
-
-.card img{
-width:60px;
-margin-bottom:10px;
-}
-
-.card:hover{
-transform:translateY(-10px);
-background:#334155;
-}
-
-footer{
-text-align:center;
-padding:40px;
-background:#020617;
-}
-
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.tools-section{padding:20px 20px 60px;}}
 </style>
 </head>
-
-
 <body>
 
 <nav>
-
-<h2>AI Tools Directory</h2>
-
-<div>
-
-<a href="index.html">Home</a>
-
-</div>
-
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">A</div>
+    <span class="nav-logo-text">AI<span>Tools</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="ai-writing-tools.html" class="active">Categories</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-btn-primary">+ Submit Tool</button>
+  </div>
 </nav>
 
-
-<section class="hero">
-
-<h1>Best AI Writing Tools</h1>
-
-<p>Discover powerful AI tools for content creation.</p>
-
+<section class="hero-cat">
+  <div class="cat-badge">✍️</div>
+  <h1>Writing & Editing AI Tools</h1>
+  <p>Generate high-quality copy, write SEO-optimized blog posts, correct grammar, and overcome writer's block with our curated list of the 48 best AI writing assistants.</p>
 </section>
 
-
-<section class="grid">
-
-<div class="card">
-
-<img src="https://seeklogo.com/images/J/jasper-ai-logo-8A3F0F4A7F-seeklogo.com.png">
-
-<h3>Jasper AI</h3>
-
-<p>Professional AI copywriting tool.</p>
-
-</div>
-
-
-<div class="card">
-
-<img src="https://seeklogo.com/images/R/rytr-logo-92E1EAF3A6-seeklogo.com.png">
-
-<h3>Rytr</h3>
-
-<p>Affordable AI writing assistant.</p>
-
-</div>
-
-
-<div class="card">
-
-<img src="https://seeklogo.com/images/W/writesonic-logo-DFE6C3E6A7-seeklogo.com.png">
-
-<h3>Writesonic</h3>
-
-<p>Create SEO optimized articles.</p>
-
-</div>
-
-
+<section class="tools-section">
+  <div class="grid-header">
+    <div class="grid-count">Showing <span>48</span> writing tools</div>
+  </div>
+  
+  <div class="tools-grid" id="toolsGrid">
+    </div>
 </section>
 
+<footer><p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p></footer>
 
-<footer>
+<script>
+// Base de données professionnelle de 48 outils
+const writingTools = [
+  { name: "Jasper", desc: "Enterprise-grade AI copywriting tool for marketing teams and content creators.", tag: "Copywriting", score: "4.9", img: "https://seeklogo.com/images/J/jasper-ai-logo-8A3F0F4A7F-seeklogo.com.png" },
+  { name: "ChatGPT", desc: "The ultimate conversational AI for brainstorming, drafting, and coding.", tag: "General", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
+  { name: "Copy AI", desc: "Generate marketing copy, emails, and social media posts in seconds.", tag: "Marketing", score: "4.8", img: "" },
+  { name: "Notion AI", desc: "Integrated workspace AI to summarize, write, and ideate directly in your notes.", tag: "Productivity", score: "4.8", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" },
+  { name: "Writesonic", desc: "Create SEO-optimized articles and long-form blogs to rank on Google.", tag: "SEO", score: "4.7", img: "https://seeklogo.com/images/W/writesonic-logo-DFE6C3E6A7-seeklogo.com.png" },
+  { name: "Rytr", desc: "Fast, affordable AI writing assistant for emails, blogs, and ad copies.", tag: "Copywriting", score: "4.6", img: "https://seeklogo.com/images/R/rytr-logo-92E1EAF3A6-seeklogo.com.png" },
+  { name: "GrammarlyGO", desc: "AI communication assistance to write, rewrite, and brainstorm everywhere.", tag: "Editing", score: "4.8", img: "" },
+  { name: "Claude", desc: "Anthropic's AI, excellent for natural writing, summarizing large texts, and coding.", tag: "General", score: "4.9", img: "" },
+  { name: "Wordtune", desc: "Your personal writing companion to rephrase and rewrite sentences perfectly.", tag: "Editing", score: "4.7", img: "" },
+  { name: "Sudowrite", desc: "The AI tool built specifically for fiction writers and novelists.", tag: "Fiction", score: "4.8", img: "" },
+  { name: "QuillBot", desc: "Advanced paraphrasing tool to rewrite text and improve your fluency.", tag: "Editing", score: "4.7", img: "" },
+  { name: "Frase", desc: "Research, write, and optimize high-quality SEO content in minutes.", tag: "SEO", score: "4.6", img: "" },
+  { name: "Surfer SEO", desc: "Cloud-based tool optimizing written content for search engines.", tag: "SEO", score: "4.8", img: "" },
+  { name: "Anyword", desc: "Data-driven copywriting AI that predicts performance scores.", tag: "Marketing", score: "4.5", img: "" },
+  { name: "Copysmith", desc: "AI copy generator tailored for eCommerce teams and agencies.", tag: "eCommerce", score: "4.4", img: "" },
+  { name: "Peppertype", desc: "Virtual content assistant helping you generate better content faster.", tag: "Copywriting", score: "4.6", img: "" },
+  { name: "Scalenut", desc: "AI-powered SEO and content research platform for scale.", tag: "SEO", score: "4.7", img: "" },
+  { name: "Neuroflash", desc: "Europe's leading AI text generator for marketing and branding.", tag: "Marketing", score: "4.5", img: "" },
+  { name: "Simplified", desc: "All-in-one app to write, design, and publish content easily.", tag: "All-in-one", score: "4.6", img: "" },
+  { name: "TextCortex", desc: "Customizable AI companion tailored to your unique writing style.", tag: "General", score: "4.4", img: "" },
+  { name: "LongShot AI", desc: "AI writing assistant focused on factual, SEO-friendly long-form content.", tag: "SEO", score: "4.5", img: "" },
+  { name: "Writecream", desc: "Innovative tool for cold emails, voiceovers, and icebreakers.", tag: "Email", score: "4.4", img: "" },
+  { name: "ClosersCopy", desc: "Copywriting tool powered by proprietary AI frameworks.", tag: "Sales", score: "4.3", img: "" },
+  { name: "INK", desc: "All-in-one AI content suite optimizing for safety and SEO.", tag: "SEO", score: "4.6", img: "" },
+  { name: "Article Forge", desc: "Generate complete, high-quality articles automatically.", tag: "Blogging", score: "4.2", img: "" },
+  { name: "ContentBot", desc: "Advanced AI writer for founders and digital marketers.", tag: "Marketing", score: "4.4", img: "" },
+  { name: "Hypotenuse AI", desc: "Provide a few keywords and instantly turn them into full-length articles.", tag: "Blogging", score: "4.5", img: "" },
+  { name: "Lex", desc: "A modern word processor with AI natively built-in for unblocking ideas.", tag: "Processor", score: "4.7", img: "" },
+  { name: "Moonbeam", desc: "Long-form writing assistant designed specifically to help you write essays.", tag: "Academic", score: "4.3", img: "" },
+  { name: "NovelAI", desc: "AI-assisted authorship, storytelling, and virtual companionship.", tag: "Fiction", score: "4.6", img: "" },
+  { name: "ParagraphAI", desc: "World-class AI writing app and keyboard extension.", tag: "Keyboard", score: "4.2", img: "" },
+  { name: "ProWritingAid", desc: "Premium grammar checker and style editor for serious writers.", tag: "Editing", score: "4.8", img: "" },
+  { name: "SEO.ai", desc: "Generate high-quality SEO content formats incredibly fast.", tag: "SEO", score: "4.4", img: "" },
+  { name: "SmartWriter", desc: "Generate highly personalized cold emails that get replies.", tag: "Email", score: "4.5", img: "" },
+  { name: "Spin Rewriter", desc: "Rewrite a single article into dozens of 100% unique human-quality articles.", tag: "Rewriting", score: "4.1", img: "" },
+  { name: "Typli", desc: "Intuitive AI writer and SEO checker built into one platform.", tag: "Blogging", score: "4.2", img: "" },
+  { name: "WordAI", desc: "Uses machine learning to completely restructure and rewrite content.", tag: "Rewriting", score: "4.3", img: "" },
+  { name: "Writer.com", desc: "Enterprise AI platform built for teams to stay on-brand.", tag: "Enterprise", score: "4.7", img: "" },
+  { name: "Zyro", desc: "Website builder featuring AI content generation tools.", tag: "Web", score: "4.1", img: "" },
+  { name: "Bramework", desc: "AI writer built specifically to help bloggers write faster.", tag: "Blogging", score: "4.4", img: "" },
+  { name: "GoCharlie", desc: "The AI engine for marketing teams creating campaigns.", tag: "Marketing", score: "4.3", img: "" },
+  { name: "Hoppy Copy", desc: "Write high-converting email campaigns and newsletters.", tag: "Email", score: "4.6", img: "" },
+  { name: "Bertha AI", desc: "AI copywriting assistant designed explicitly for WordPress.", tag: "WordPress", score: "4.5", img: "" },
+  { name: "Chinchilla", desc: "DeepMind's language model optimized for unparalleled compute efficiency.", tag: "General", score: "4.8", img: "" },
+  { name: "Gemini", desc: "Google's multimodal AI, exceptionally powerful for reasoning and writing.", tag: "General", score: "4.9", img: "" },
+  { name: "Outranking", desc: "Data-driven SEO strategy and content creation software.", tag: "SEO", score: "4.5", img: "" },
+  { name: "AI Writer", desc: "Generate accurate, unique articles from just a headline.", tag: "Blogging", score: "4.2", img: "" },
+  { name: "Creator.ai", desc: "Helps you create engaging content for social media and blogs.", tag: "Social Media", score: "4.3", img: "" }
+];
 
-<p>© 2026 AI Tools Directory</p>
+const grid = document.getElementById('toolsGrid');
 
-</footer>
+// Fonction pour injecter les cartes
+function renderTools() {
+  const html = writingTools.map(tool => {
+    // Si l'outil a une image, on l'affiche, sinon on génère un logo design avec la 1ère lettre
+    const logoHtml = tool.img 
+      ? `<img src="${tool.img}" alt="${tool.name} logo">` 
+      : `<div style="background:linear-gradient(135deg, var(--blue), var(--cyan));width:100%;height:100%;display:flex;align-items:center;justify-content:center;">${tool.name.charAt(0)}</div>`;
 
+    return `
+      <a href="#" class="card">
+        <div class="card-top">
+          <div class="card-logo">${logoHtml}</div>
+          <div class="card-score">
+            ${tool.score}
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </div>
+        <h3>${tool.name}</h3>
+        <p>${tool.desc}</p>
+        <div class="card-bottom">
+          <span class="card-tag">${tool.tag}</span>
+          <svg class="card-link-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </div>
+      </a>
+    `;
+  }).join('');
+  
+  grid.innerHTML = html;
+}
+
+// Exécution au chargement
+renderTools();
+</script>
 </body>
 </html>
