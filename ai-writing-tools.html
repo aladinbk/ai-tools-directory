@@ -6,13 +6,12 @@
 <title>Best AI Writing Tools - AI Tools Directory</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
-/* VARIABLES & BASE (Synchronisées avec index.html) */
 :root{--blue:#3b82f6;--cyan:#06b6d4;--dark:#020617;--border:rgba(255,255,255,0.07);--text:#e2e8f0;--muted:rgba(148,163,184,0.7);--star:#fbbf24;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(59,130,246,0.18) 0%,transparent 70%),#020617;pointer-events:none;}
 
-/* --- NAVIGATION COMPLÈTE (INDEX.HTML) --- */
+/* NAV */
 nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;background:rgba(2,6,23,0.82);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .nav-logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;font-family:'Syne',sans-serif;box-shadow:0 0 18px rgba(59,130,246,0.45);}
@@ -24,43 +23,29 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .nav-links>li>a:hover,.nav-links>li>button:hover,.nav-links>li:hover>button{color:#fff;background:rgba(255,255,255,0.06);}
 .nav-arrow{width:14px;height:14px;opacity:.5;transition:transform .3s;}
 .nav-links>li:hover .nav-arrow{transform:rotate(180deg);opacity:1;}
-
-/* MEGA DROP (Categories) */
 .mega-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;min-width:760px;background:rgba(10,18,40,0.97);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 30px 60px rgba(0,0,0,0.7),0 0 0 1px rgba(59,130,246,0.08);}
 .nav-links>li:hover .mega-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
-.mega-drop-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding:0 4px;}
 .mega-drop-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
-.mega-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text);transition:background .2s,transform .2s;}
-.mega-item:hover{background:rgba(59,130,246,0.1);transform:translateX(2px);}
-.mega-icon{width:34px;height:34px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.mega-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text);transition:background .2s;}
+.mega-item:hover{background:rgba(59,130,246,0.1);}
 .mega-item-text strong{display:block;font-size:12px;font-weight:600;color:#fff;}
 .mega-item-text span{font-size:11px;color:var(--muted);}
 
-/* SIMPLE DROP (Top Tools) */
-.simple-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;min-width:200px;background:rgba(10,18,40,0.97);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:12px;padding:8px;box-shadow:0 20px 50px rgba(0,0,0,0.5);}
-.nav-links>li:hover .simple-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
-.simple-drop a{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13px;transition:background .2s;}
-.simple-drop a:hover{background:rgba(255,255,255,0.06);}
-
 .nav-right{display:flex;align-items:center;gap:12px;}
-.nav-btn-ghost{padding:7px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:var(--text);font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .2s;}
-.nav-btn-ghost:hover{border-color:rgba(59,130,246,0.5);color:#fff;background:rgba(59,130,246,0.08);}
 .nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 15px rgba(59,130,246,0.35);}
-.nav-btn-primary:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(59,130,246,0.5);}
 
-/* HERO & GRID CONTENT */
+/* CONTENT */
 .hero-cat{text-align:center;padding:80px 20px 40px;position:relative;z-index:1;}
 .cat-badge{display:inline-flex;width:48px;height:48px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);border-radius:14px;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;}
 .hero-cat h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,54px);margin-bottom:14px;}
 .hero-cat p{color:var(--muted);max-width:600px;margin:0 auto;line-height:1.6;}
 
 .tools-section{padding:20px 60px 80px;max-width:1400px;margin:0 auto;position:relative;z-index:1;}
-.grid-header{margin-bottom:30px;padding-bottom:15px;border-bottom:1px solid var(--border);font-size:14px;font-weight:600;}
-.grid-header span{color:var(--blue);}
+.grid-header{margin-bottom:30px;padding-bottom:15px;border-bottom:1px solid var(--border);font-size:14px;}
+.grid-header span{color:var(--blue);font-weight:700;}
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
 
-/* CARDS STYLE */
-.card{display:flex;flex-direction:column;background:rgba(15,23,42,0.6);border:1px solid var(--border);border-radius:18px;padding:24px;text-decoration:none;color:var(--text);transition:all 0.3s ease;height:100%;backdrop-filter:blur(12px);}
+.card{display:flex;flex-direction:column;background:rgba(15,23,42,0.6);border:1px solid var(--border);border-radius:18px;padding:24px;text-decoration:none;color:var(--text);transition:all 0.3s ease;height:100%;}
 .card:hover{transform:translateY(-6px);border-color:rgba(59,130,246,0.4);background:rgba(20,30,50,0.8);box-shadow:0 20px 40px rgba(0,0,0,0.4);}
 .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
 .card-logo{width:52px;height:52px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -68,19 +53,12 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .card-score{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.05);padding:4px 10px;border-radius:99px;font-size:12px;font-weight:700;color:#fff;}
 .card-score svg{width:12px;height:12px;fill:var(--star);}
 .card h3{font-size:18px;font-weight:700;margin-bottom:8px;color:#fff;}
-.card p{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:20px;flex-grow:1;}
+.card p{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:20px;}
 .card-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
-.card-tag{padding:5px 12px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:#93c5fd;border-radius:8px;font-size:11px;font-weight:600;text-transform:uppercase;}
-.card-link-icon{color:var(--muted);transition:0.2s;}
-.card:hover .card-link-icon{color:var(--blue);transform:translate(2px, -2px);}
+.card-tag{padding:5px 12px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:#93c5fd;border-radius:8px;font-size:11px;font-weight:600;}
 
-footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;position:relative;z-index:1;}
-
-@media(max-width:900px){
-  nav{padding:0 20px;}
-  .nav-links, .nav-btn-ghost{display:none;}
-  .tools-section{padding:20px 20px 60px;}
-}
+footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;}
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.tools-section{padding:20px 20px 60px;}}
 </style>
 </head>
 <body>
@@ -95,38 +73,16 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
     <li>
       <button>Categories <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="mega-drop">
-        <div class="mega-drop-title">Browse all 12 categories</div>
         <div class="mega-drop-grid">
-          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon" style="background:rgba(59,130,246,0.12)">✍️</div><div class="mega-item-text"><strong>Writing & Editing</strong><span>Copywriting, blogs, scripts</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(168,85,247,0.12)">🎨</div><div class="mega-item-text"><strong>Image Generation</strong><span>Art, design & visuals</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(245,158,11,0.12)">🎬</div><div class="mega-item-text"><strong>Video & Audio</strong><span>Generation, editing, VFX</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(6,182,212,0.12)">💻</div><div class="mega-item-text"><strong>Coding & DevTools</strong><span>Debugging, review, docs</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(239,68,68,0.12)">🤖</div><div class="mega-item-text"><strong>Chatbots & Assistants</strong><span>AI chat, support bots</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(16,185,129,0.12)">📊</div><div class="mega-item-text"><strong>Productivity</strong><span>Notes, tasks, automation</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(251,146,60,0.12)">📣</div><div class="mega-item-text"><strong>Marketing & SEO</strong><span>Campaigns, ads, analytics</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(99,102,241,0.12)">🔬</div><div class="mega-item-text"><strong>Research & Analysis</strong><span>Data, insights, reports</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(20,184,166,0.12)">🎧</div><div class="mega-item-text"><strong>Audio & Voice</strong><span>TTS, cloning, transcription</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(234,179,8,0.12)">💬</div><div class="mega-item-text"><strong>Customer Service</strong><span>Support, live chat, CRM</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(236,72,153,0.12)">🖌️</div><div class="mega-item-text"><strong>Design & Creative</strong><span>UI, branding, illustration</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(148,163,184,0.12)">⚙️</div><div class="mega-item-text"><strong>Workflow Automation</strong><span>No-code, pipelines, APIs</span></div></a>
+          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon">✍️</div><div class="mega-item-text"><strong>Writing</strong><span>Copywriting, blogs</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon">🎨</div><div class="mega-item-text"><strong>Images</strong><span>Art & design</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon">🤖</div><div class="mega-item-text"><strong>Chatbots</strong><span>AI Assistants</span></div></a>
         </div>
       </div>
     </li>
-    <li>
-      <button>Top Tools <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="simple-drop">
-        <a href="chatgpt.html"><span>🤖</span> ChatGPT</a>
-        <a href="midjourney.html"><span>🎨</span> Midjourney</a>
-        <a href="copyai.html"><span>✍️</span> Copy AI</a>
-        <a href="notionai.html"><span>📝</span> Notion AI</a>
-        <a href="runway.html"><span>🎬</span> Runway ML</a>
-      </div>
-    </li>
     <li><a href="#">Blog</a></li>
-    <li><a href="#">Submit Tool</a></li>
   </ul>
   <div class="nav-right">
-    <a href="#" class="nav-btn-ghost">Sign in</a>
     <button class="nav-btn-primary">+ Submit Tool</button>
   </div>
 </nav>
@@ -134,7 +90,7 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
 <section class="hero-cat">
   <div class="cat-badge">✍️</div>
   <h1>Writing & Editing AI Tools</h1>
-  <p>Our curated list of the 48 best AI writing assistants to boost your productivity.</p>
+  <p>Our curated list of the best AI writing assistants to boost your productivity.</p>
 </section>
 
 <section class="tools-section">
@@ -142,86 +98,34 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
   <div class="tools-grid" id="toolsGrid"></div>
 </section>
 
-<footer>© 2026 AI Tools Directory — Built with ❤️ for the AI community</footer>
-
 <script>
 const writingTools = [
-  { name: "Jasper", desc: "Enterprise-grade AI copywriting tool for marketing teams.", tag: "Copywriting", score: "4.9", img: "images/jasper.png", url: "https://www.jasper.ai/" },
-  { name: "ChatGPT", desc: "The ultimate conversational AI for brainstorming and drafting.", tag: "General", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", url: "https://chatgpt.com/" },
-  { name: "Copy AI", desc: "Generate marketing copy and social media posts in seconds.", tag: "Marketing", score: "4.8", img: "images/copy.jpg", url: "https://www.copy.ai/" },
-  { name: "Notion AI", desc: "Integrated workspace AI to summarize and write in your notes.", tag: "Productivity", score: "4.8", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", url: "https://www.notion.so/product/ai" },
-  { name: "Writesonic", desc: "Create SEO-optimized articles and long-form blogs.", tag: "SEO", score: "4.7", img: "images/writesonic.png", url: "https://writesonic.com/" },
-  { name: "Grammarly", desc: "AI communication assistance to write and rewrite everywhere.", tag: "Editing", score: "4.8", img: "images/grammarly.png", url: "https://www.grammarly.com/" },
-  { name: "Claude", desc: "Anthropic's AI, excellent for natural writing and large texts.", tag: "General", score: "4.9", img: "https://www.anthropic.com/favicon.ico", url: "https://claude.ai/" },
-  { name: "QuillBot", desc: "Advanced paraphrasing tool to rewrite and improve fluency.", tag: "Editing", score: "4.7", img: "https://quillbot.com/favicon.ico", url: "https://quillbot.com/" },
-  { name: "Sudowrite", desc: "The AI tool built specifically for fiction writers and novelists.", tag: "Fiction", score: "4.8", img: "" },
-  { name: "Frase", desc: "Research, write, and optimize high-quality SEO content in minutes.", tag: "SEO", score: "4.6", img: "" },
-  { name: "Surfer SEO", desc: "Cloud-based tool optimizing written content for search engines.", tag: "SEO", score: "4.8", img: "" },
-  { name: "Anyword", desc: "Data-driven copywriting AI that predicts performance scores.", tag: "Marketing", score: "4.5", img: "" },
-  { name: "Copysmith", desc: "AI copy generator tailored for eCommerce teams and agencies.", tag: "eCommerce", score: "4.4", img: "" },
-  { name: "Peppertype", desc: "Virtual content assistant helping you generate better content faster.", tag: "Copywriting", score: "4.6", img: "" },
-  { name: "Scalenut", desc: "AI-powered SEO and content research platform for scale.", tag: "SEO", score: "4.7", img: "" },
-  { name: "Neuroflash", desc: "Europe's leading AI text generator for marketing and branding.", tag: "Marketing", score: "4.5", img: "" },
-  { name: "Simplified", desc: "All-in-one app to write, design, and publish content easily.", tag: "All-in-one", score: "4.6", img: "" },
-  { name: "TextCortex", desc: "Customizable AI companion tailored to your unique writing style.", tag: "General", score: "4.4", img: "" },
-  { name: "LongShot AI", desc: "AI writing assistant focused on factual, SEO-friendly long-form content.", tag: "SEO", score: "4.5", img: "" },
-  { name: "Writecream", desc: "Innovative tool for cold emails, voiceovers, and icebreakers.", tag: "Email", score: "4.4", img: "" },
-  { name: "ClosersCopy", desc: "Copywriting tool powered by proprietary AI frameworks.", tag: "Sales", score: "4.3", img: "" },
-  { name: "INK", desc: "All-in-one AI content suite optimizing for safety and SEO.", tag: "SEO", score: "4.6", img: "" },
-  { name: "Article Forge", desc: "Generate complete, high-quality articles automatically.", tag: "Blogging", score: "4.2", img: "" },
-  { name: "ContentBot", desc: "Advanced AI writer for founders and digital marketers.", tag: "Marketing", score: "4.4", img: "" },
-  { name: "Hypotenuse AI", desc: "Provide a few keywords and instantly turn them into full-length articles.", tag: "Blogging", score: "4.5", img: "" },
-  { name: "Lex", desc: "A modern word processor with AI natively built-in for unblocking ideas.", tag: "Processor", score: "4.7", img: "" },
-  { name: "Moonbeam", desc: "Long-form writing assistant designed specifically to help you write essays.", tag: "Academic", score: "4.3", img: "" },
-  { name: "NovelAI", desc: "AI-assisted authorship, storytelling, and virtual companionship.", tag: "Fiction", score: "4.6", img: "" },
-  { name: "ParagraphAI", desc: "World-class AI writing app and keyboard extension.", tag: "Keyboard", score: "4.2", img: "" },
-  { name: "ProWritingAid", desc: "Premium grammar checker and style editor for serious writers.", tag: "Editing", score: "4.8", img: "" },
-  { name: "SEO.ai", desc: "Generate high-quality SEO content formats incredibly fast.", tag: "SEO", score: "4.4", img: "" },
-  { name: "SmartWriter", desc: "Generate highly personalized cold emails that get replies.", tag: "Email", score: "4.5", img: "" },
-  { name: "Spin Rewriter", desc: "Rewrite a single article into dozens of 100% unique human-quality articles.", tag: "Rewriting", score: "4.1", img: "" },
-  { name: "Typli", desc: "Intuitive AI writer and SEO checker built into one platform.", tag: "Blogging", score: "4.2", img: "" },
-  { name: "WordAI", desc: "Uses machine learning to completely restructure and rewrite content.", tag: "Rewriting", score: "4.3", img: "" },
-  { name: "Writer.com", desc: "Enterprise AI platform built for teams to stay on-brand.", tag: "Enterprise", score: "4.7", img: "" },
-  { name: "Zyro", desc: "Website builder featuring AI content generation tools.", tag: "Web", score: "4.1", img: "" },
-  { name: "Bramework", desc: "AI writer built specifically to help bloggers write faster.", tag: "Blogging", score: "4.4", img: "" },
-  { name: "GoCharlie", desc: "The AI engine for marketing teams creating campaigns.", tag: "Marketing", score: "4.3", img: "" },
-  { name: "Hoppy Copy", desc: "Write high-converting email campaigns and newsletters.", tag: "Email", score: "4.6", img: "" },
-  { name: "Bertha AI", desc: "AI copywriting assistant designed explicitly for WordPress.", tag: "WordPress", score: "4.5", img: "" },
-  { name: "Chinchilla", desc: "DeepMind's language model optimized for unparalleled compute efficiency.", tag: "General", score: "4.8", img: "" },
-  { name: "Gemini", desc: "Google's multimodal AI, exceptionally powerful for reasoning and writing.", tag: "General", score: "4.9", img: "" },
-  { name: "Outranking", desc: "Data-driven SEO strategy and content creation software.", tag: "SEO", score: "4.5", img: "" },
-  { name: "AI Writer", desc: "Generate accurate, unique articles from just a headline.", tag: "Blogging", score: "4.2", img: "" },
-  { name: "Creator.ai", desc: "Helps you create engaging content for social media and blogs.", tag: "Social Media", score: "4.3", img: "" }
+  // ICI : On change l'URL pour pointer vers jasper.html
+  { name: "Jasper", desc: "Enterprise-grade AI copywriting tool for marketing teams.", tag: "Copywriting", score: "4.9", img: "images/jasper.png", url: "jasper.html" },
+  { name: "ChatGPT", desc: "The ultimate conversational AI for brainstorming and drafting.", tag: "General", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", url: "chatgpt.html" },
+  { name: "Copy AI", desc: "Generate marketing copy and social media posts in seconds.", tag: "Marketing", score: "4.8", img: "images/copy.jpg", url: "#" },
+  // ... (le reste de vos outils)
 ];
 
 const grid = document.getElementById('toolsGrid');
-
 function renderTools() {
-  grid.innerHTML = writingTools.map(tool => {
-    const linkUrl = tool.url ? tool.url : "#";
-    const logoContent = tool.img 
-      ? `<img src="${tool.img}" alt="${tool.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:linear-gradient(135deg,#3b82f6,#06b6d4);width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff\'>${tool.name.charAt(0)}</div>';">`
-      : `<div style="background:linear-gradient(135deg,#3b82f6,#06b6d4);width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff">${tool.name.charAt(0)}</div>`;
-
-    return `
-      <a href="${linkUrl}" target="_blank" class="card">
-        <div class="card-top">
-          <div class="card-logo">${logoContent}</div>
-          <div class="card-score">
-            ${tool.score} <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
+  grid.innerHTML = writingTools.map(tool => `
+    <a href="${tool.url}" class="card">
+      <div class="card-top">
+        <div class="card-logo">
+           ${tool.img ? `<img src="${tool.img}" alt="${tool.name}">` : `<div style="color:#fff;font-weight:800">${tool.name[0]}</div>`}
         </div>
-        <h3>${tool.name}</h3>
-        <p>${tool.desc}</p>
-        <div class="card-bottom">
-          <span class="card-tag">${tool.tag}</span>
-          <svg class="card-link-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
-        </div>
-      </a>
-    `;
-  }).join('');
+        <div class="card-score">${tool.score} <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      </div>
+      <h3>${tool.name}</h3>
+      <p>${tool.desc}</p>
+      <div class="card-bottom">
+        <span class="card-tag">${tool.tag}</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+      </div>
+    </a>
+  `).join('');
 }
-
 renderTools();
 </script>
 </body>
