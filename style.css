@@ -322,3 +322,13 @@ background:#060c1b;
 opacity:0.6;
 
 }
+/* TOOL CARD LINK FIX */
+
+.tools-grid a{
+text-decoration:none;
+color:white;
+}
+
+.tool-card{
+display:block;
+}
