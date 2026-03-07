@@ -261,30 +261,60 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 40px;backgroun
 <footer><p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p></footer>
 
 <script>
-const TOOLS=[
-  {icon:'🤖',name:'ChatGPT',desc:'AI chatbot for writing & coding',tag:'Chatbot',url:'chatgpt.html',cat:'chatbot'},
-  {icon:'🎨',name:'Midjourney',desc:'AI image generation from prompts',tag:'Image',url:'midjourney.html',cat:'image'},
-  {icon:'✍️',name:'Copy AI',desc:'AI copywriting & marketing tool',tag:'Writing',url:'copyai.html',cat:'writing'},
-  {icon:'✍️',name:'Writesonic',desc:'Create SEO-optimized articles and long-form blogs.',tag:'Writing',url:'#',cat:'writing'},
-  {icon:'✍️',name:'Grammarly',desc:'AI communication assistance to write and rewrite everywhere.',tag:'Editing',url:'#',cat:'writing'},
-  {icon:'✍️',name:'Claude',desc:'Anthropic AI, excellent for natural writing and large texts.',tag:'General',url:'#',cat:'writing'},
-  {icon:'✍️',name:'QuillBot',desc:'Advanced paraphrasing tool to rewrite and improve fluency.',tag:'Editing',url:'#',cat:'writing'},
-  {icon:'✍️',name:'Wordtune',desc:'Your personal writing companion to rephrase and rewrite sentences perfectly.',tag:'Editing',url:'#',cat:'writing'},
-  {icon:'✍️',name:'Sudowrite',desc:'The AI tool built specifically for fiction writers and novelists.',tag:'Fiction',url:'#',cat:'writing'},
-  {icon:'✍️',name:'Frase',desc:'Research, write, and optimize high-quality SEO content in minutes.',tag:'SEO',url:'#',cat:'writing'},
-  {icon:'✍️',name:'Surfer SEO',desc:'Cloud-based tool optimizing written content for search engines.',tag:'SEO',url:'#',cat:'writing'},
-  {icon:'✍️',name:'Anyword',desc:'Data-driven copywriting AI that predicts performance scores.',tag:'Marketing',url:'#',cat:'writing'},
-  {icon:'✍️',name:'Copysmith',desc:'AI copy generator tailored for eCommerce teams and agencies.',tag:'E-commerce',url:'#',cat:'writing'},
-  {icon:'📝',name:'Notion AI',desc:'AI productivity & note-taking',tag:'Productivity',url:'notionai.html',cat:'productivity'},
-  {icon:'🎬',name:'Runway ML',desc:'AI video generation & editing',tag:'Video',url:'runway.html',cat:'video'},
-  {icon:'💻',name:'GitHub Copilot',desc:'AI pair programmer for developers',tag:'Coding',url:'#',cat:'coding'},
-  {icon:'🔊',name:'ElevenLabs',desc:'AI voice & text-to-speech tool',tag:'Audio',url:'#',cat:'video'},
-  {icon:'🖼️',name:'DALL·E 3',desc:'OpenAI image generation model',tag:'Image',url:'#',cat:'image'},
-  {icon:'⚡',name:'Jasper AI',desc:'Long-form AI content writing',tag:'Writing',url:'ai-writing-tools.html',cat:'writing'},
-  {icon:'⚡',name:'Writesonic',desc:'Long-form AI content writing',tag:'Writing',url:'ai-writing-tools.html',cat:'writing'},
-  {icon:'🔍',name:'Perplexity AI',desc:'AI-powered research & search',tag:'Research',url:'#',cat:'chatbot'},
-  {icon:'🎵',name:'Suno AI',desc:'Generate music from text prompts',tag:'Audio',url:'#',cat:'video'},
-  {icon:'📧',name:'Mailchimp AI',desc:'AI-powered email marketing',tag:'Marketing',url:'#',cat:'writing'},
+const TOOLS = [
+  // --- CHATBOTS & ASSISTANTS ---
+  {icon:'🤖',name:'ChatGPT',desc:'OpenAI flagship conversational AI for writing, coding and logic.',tag:'Assistant',url:'chatgpt.html',cat:'chatbot'},
+  {icon:'🧠',name:'Claude',desc:'Anthropic’s model known for natural writing and sophisticated reasoning.',tag:'Assistant',url:'#',cat:'chatbot'},
+  {icon:'🌐',name:'Gemini',desc:'Google’s multimodal AI integrated with Google Workspace apps.',tag:'Assistant',url:'#',cat:'chatbot'},
+  {icon:'🔍',name:'Perplexity AI',desc:'AI-powered search engine that provides real-time cited answers.',tag:'Research',url:'#',cat:'chatbot'},
+
+  // --- IMAGE GENERATION ---
+  {icon:'🎨',name:'Midjourney',desc:'High-end artistic image generation via Discord and Web.',tag:'Art',url:'midjourney.html',cat:'image'},
+  {icon:'🖼️',name:'DALL·E 3',desc:'OpenAI’s image model known for excellent prompt adherence.',tag:'Design',url:'#',cat:'image'},
+
+  // --- WRITING & CONTENT (Catégorie principale : writing) ---
+  {icon:'✍️',name:'Copy AI',desc:'Specialized AI for high-converting marketing and ad copy.',tag:'Copywriting',url:'copyai.html',cat:'writing'},
+  {icon:'⚡',name:'Jasper AI',desc:'Enterprise-grade content platform for marketing and brand voice.',tag:'Marketing',url:'jasper.html',cat:'writing'},
+  {icon:'📝',name:'Writesonic',desc:'AI writer for SEO-optimized blogs and long-form articles.',tag:'Blogging',url:'#',cat:'writing'},
+  {icon:'✨',name:'Grammarly',desc:'Advanced grammar checker and tone adjustment assistant.',tag:'Editing',url:'#',cat:'writing'},
+  {icon:'🔄',name:'QuillBot',desc:'Professional paraphrasing and summarization tool.',tag:'Editing',url:'#',cat:'writing'},
+  {icon:'📚',name:'Sudowrite',desc:'The ultimate creative writing assistant for novelists and storytellers.',tag:'Fiction',url:'#',cat:'writing'},
+  {icon:'📈',name:'Surfer SEO',desc:'Data-driven tool to optimize content for search engine rankings.',tag:'SEO',url:'#',cat:'writing'},
+  {icon:'🎯',name:'Frase',desc:'AI content tool for SEO research and brief generation.',tag:'SEO',url:'#',cat:'writing'},
+  {icon:'📊',name:'Anyword',desc:'Performance-focused AI that predicts copy effectiveness.',tag:'Marketing',url:'#',cat:'writing'},
+  {icon:'🛒',name:'Copysmith',desc:'Content generation focused on eCommerce and product descriptions.',tag:'E-commerce',url:'#',cat:'writing'},
+  {icon:'💡',name:'Peppertype',desc:'AI virtual assistant for quick social media and blog ideas.',tag:'Social Media',url:'#',cat:'writing'},
+  {icon:'🚀',name:'Scalenut',desc:'All-in-one SEO and content marketing platform.',tag:'SEO',url:'#',cat:'writing'},
+  {icon:'🇩🇪',name:'Neuroflash',desc:'European AI focused on high-quality German and English copy.',tag:'Marketing',url:'#',cat:'writing'},
+  {icon:'📱',name:'Simplified',desc:'Unified tool for AI writing, design, and social media scheduling.',tag:'Design',url:'#',cat:'writing'},
+  {icon:'🧠',name:'TextCortex',desc:'Customizable AI co-pilot that learns your unique writing style.',tag:'Assistant',url:'#',cat:'writing'},
+  {icon:'🔥',name:'Writecream',desc:'AI for personalized cold outreach, emails and LinkedIn messages.',tag:'Email',url:'#',cat:'writing'},
+  {icon:'📩',name:'SmartWriter',desc:'Automates highly personalized cold emails to boost replies.',tag:'Email',url:'#',cat:'writing'},
+  {icon:'📬',name:'Hoppy Copy',desc:'Email marketing AI for newsletters and high-converting sequences.',tag:'Email',url:'#',cat:'writing'},
+  {icon:'🏗️',name:'Article Forge',desc:'Automated high-quality article generator using deep learning.',tag:'Blogging',url:'#',cat:'writing'},
+  {icon:'🧱',name:'ContentBot',desc:'Flexible AI assistant for bloggers and automation workflows.',tag:'Blogging',url:'#',cat:'writing'},
+  {icon:'📐',name:'Hypotenuse AI',desc:'Transform keywords into full-length blog posts and ad copy.',tag:'Blogging',url:'#',cat:'writing'},
+  {icon:'📓',name:'Lex',desc:'A clean, minimal word processor with powerful built-in AI.',tag:'Blogging',url:'#',cat:'writing'},
+  {icon:'🎓',name:'Moonbeam',desc:'AI writing assistant specialized for essays and academic content.',tag:'Academic',url:'#',cat:'writing'},
+  {icon:'🎭',name:'NovelAI',desc:'AI authorship tool for fiction writing and virtual storytelling.',tag:'Fiction',url:'#',cat:'writing'},
+  {icon:'⌨️',name:'ParagraphAI',desc:'AI writing app and browser extension for instant replies.',tag:'Keyboard',url:'#',cat:'writing'},
+  {icon:'🔎',name:'SEO.ai',desc:'AI tool that generates high-ranking SEO content formats.',tag:'SEO',url:'#',cat:'writing'},
+  {icon:'💎',name:'Writer.com',desc:'Secure enterprise AI platform for consistent brand language.',tag:'Enterprise',url:'#',cat:'writing'},
+  {icon:'🌐',name:'Zyro',desc:'Website builder with integrated AI for auto-generating site copy.',tag:'Web',url:'#',cat:'writing'},
+  {icon:'🖥️',name:'Bramework',desc:'AI blog assistant to help writers finish posts in minutes.',tag:'Blogging',url:'#',cat:'writing'},
+  {icon:'🐶',name:'GoCharlie',desc:'Creative AI engine for full-scale marketing campaigns.',tag:'Marketing',url:'#',cat:'writing'},
+  {icon:'🏷️',name:'Creator.ai',desc:'AI for creative content across social media and blogs.',tag:'Social Media',url:'#',cat:'writing'},
+
+  // --- PRODUCTIVITY ---
+  {icon:'📝',name:'Notion AI',desc:'AI co-pilot integrated directly into Notion workspace.',tag:'Productivity',url:'notionai.html',cat:'productivity'},
+
+  // --- VIDEO & AUDIO ---
+  {icon:'🎬',name:'Runway ML',desc:'Professional AI video generation and visual effects.',tag:'Video',url:'runway.html',cat:'video'},
+  {icon:'🔊',name:'ElevenLabs',desc:'The most realistic AI voice cloning and text-to-speech.',tag:'Audio',url:'#',cat:'video'},
+  {icon:'🎵',name:'Suno AI',desc:'Generate complete high-quality songs from text prompts.',tag:'Audio',url:'#',cat:'video'},
+
+  // --- CODING ---
+  {icon:'💻',name:'GitHub Copilot',desc:'The world’s most adopted AI pair programmer.',tag:'Coding',url:'#',cat:'coding'},
 ];
 const input=document.getElementById('searchInput');
 const sugBox=document.getElementById('suggestions');
