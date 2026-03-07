@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>AI Tools Directory</title>
+<title>Best AI Tools Directory</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -30,21 +31,11 @@ padding:20px 80px;
 background:#020617;
 }
 
-nav h1{
-font-size:20px;
-}
-
 nav a{
 color:white;
 text-decoration:none;
 margin-left:25px;
 font-size:14px;
-opacity:0.8;
-transition:0.3s;
-}
-
-nav a:hover{
-opacity:1;
 }
 
 /* HERO */
@@ -54,41 +45,23 @@ text-align:center;
 padding:120px 20px;
 }
 
-.hero h2{
+.hero h1{
 font-size:48px;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
 .hero p{
 opacity:0.7;
-margin-bottom:30px;
+margin-bottom:20px;
 }
 
-.search-box{
-display:flex;
-justify-content:center;
-gap:10px;
-}
-
-.search-box input{
-padding:12px;
-width:280px;
+.hero button{
+padding:12px 25px;
 border:none;
 border-radius:6px;
-}
-
-.search-box button{
-padding:12px 20px;
-border:none;
-background:#3b82f6;
-color:white;
-border-radius:6px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.search-box button:hover{
 background:#2563eb;
+color:white;
+cursor:pointer;
 }
 
 /* TOOLS */
@@ -97,15 +70,11 @@ background:#2563eb;
 padding:80px;
 }
 
-.section h3{
-margin-bottom:40px;
-font-size:28px;
-}
-
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
+margin-top:40px;
 }
 
 .card{
@@ -113,7 +82,7 @@ background:#1e293b;
 padding:30px;
 border-radius:14px;
 text-align:center;
-transition:0.35s;
+transition:0.3s;
 cursor:pointer;
 }
 
@@ -122,60 +91,33 @@ width:60px;
 margin-bottom:15px;
 }
 
-.card h4{
-margin-bottom:10px;
-}
-
-.card p{
-font-size:14px;
-opacity:0.7;
-}
-
-/* HOVER EFFECT */
-
 .card:hover{
-transform:translateY(-10px) scale(1.03);
+transform:translateY(-10px);
 background:#334155;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
-
-/* CATEGORIES */
-
-.category{
-background:#1e293b;
-padding:18px;
-border-radius:10px;
-text-align:center;
-transition:0.3s;
-cursor:pointer;
-}
-
-.category:hover{
-background:#3b82f6;
-transform:translateY(-5px);
-}
-
-/* FOOTER */
 
 footer{
 text-align:center;
 padding:40px;
 background:#020617;
-margin-top:80px;
 }
 
 </style>
 </head>
 
+
 <body>
 
 <nav>
 
-<h1>AI Tools Directory</h1>
+<h2>AI Tools</h2>
 
 <div>
+
 <a href="index.html">Home</a>
-<a href="#">Writing</a>
+<a href="ai-writing-tools.html">Writing</a>
+
 </div>
 
 </nav>
@@ -183,24 +125,20 @@ margin-top:80px;
 
 <section class="hero">
 
-<h2>Discover the Best AI Tools</h2>
+<h1>Discover the Best AI Tools</h1>
 
-<p>The ultimate directory to discover powerful AI tools</p>
+<p>The ultimate directory to find powerful AI tools.</p>
 
-<div class="search-box">
-
-<input type="text" placeholder="Search AI tools">
-
-<button>Search</button>
-
-</div>
+<button onclick="location.href='ai-writing-tools.html'">
+Explore AI Tools
+</button>
 
 </section>
 
 
 <section class="section">
 
-<h3>Featured AI Tools</h3>
+<h2>Featured AI Tools</h2>
 
 <div class="grid">
 
@@ -209,74 +147,39 @@ margin-top:80px;
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg">
 
-<h4>ChatGPT</h4>
+<h3>ChatGPT</h3>
 
-<p>Advanced AI assistant for writing and coding.</p>
+<p>AI assistant for writing, coding and productivity.</p>
 
 </div>
 </a>
+
 
 <div class="card">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png">
 
-<h4>Midjourney</h4>
+<h3>Midjourney</h3>
 
 <p>Create stunning AI generated images.</p>
 
 </div>
 
+
 <div class="card">
 
 <img src="https://seeklogo.com/images/C/copy-ai-logo-8F6A0A3E9E-seeklogo.com.png">
 
-<h4>Copy AI</h4>
+<h3>Copy AI</h3>
 
 <p>Generate marketing copy using AI.</p>
 
 </div>
 
-<div class="card">
-
-<img src="https://seeklogo.com/images/R/runway-logo-8E3C5B77B2-seeklogo.com.png">
-
-<h4>Runway ML</h4>
-
-<p>AI video generation and editing.</p>
-
-</div>
-
-<div class="card">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png">
-
-<h4>Notion AI</h4>
-
-<p>AI powered productivity workspace.</p>
-
-</div>
-
 </div>
 
 </section>
 
-
-<section class="section">
-
-<h3>Explore AI Categories</h3>
-
-<div class="grid">
-
-<div class="category">AI Writing Tools</div>
-<div class="category">AI Image Generators</div>
-<div class="category">AI Video Tools</div>
-<div class="category">AI Marketing Tools</div>
-<div class="category">AI Coding Tools</div>
-<div class="category">AI Productivity Tools</div>
-
-</div>
-
-</section>
 
 <footer>
 
