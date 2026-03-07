@@ -171,3 +171,61 @@ margin-bottom:10px;
 color:#2c82e0;
 
 }
+/* TOOL HERO */
+
+.tool-hero{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:60px 40px;
+background:white;
+gap:40px;
+flex-wrap:wrap;
+
+}
+
+.tool-hero-content{
+
+max-width:500px;
+
+}
+
+.tool-hero-content h1{
+
+font-size:40px;
+margin-bottom:15px;
+
+}
+
+.tool-hero-content p{
+
+color:#555;
+font-size:18px;
+
+}
+
+.tool-hero-image img{
+
+width:220px;
+
+}
+
+/* TOOL PAGE */
+
+.tool-container{
+
+max-width:900px;
+margin:auto;
+padding:50px 40px;
+line-height:1.6;
+
+}
+
+.tool-container h2{
+
+margin-top:35px;
+margin-bottom:10px;
+font-size:26px;
+
+}
