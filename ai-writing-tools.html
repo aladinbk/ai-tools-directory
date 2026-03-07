@@ -2,64 +2,145 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Best AI Writing Tools</title>
 
-<meta name="description" content="Discover the best AI writing tools for blogs, marketing and copywriting.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#020617);
+color:white;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 80px;
+background:#020617;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+}
+
+.hero{
+text-align:center;
+padding:100px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+padding:80px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:14px;
+text-align:center;
+transition:0.3s;
+}
+
+.card img{
+width:60px;
+margin-bottom:10px;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#334155;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:#020617;
+}
+
+</style>
 </head>
+
 
 <body>
 
-<div class="navbar">
+<nav>
 
-<div class="logo">AI Tools Directory</div>
+<h2>AI Tools Directory</h2>
 
-<div class="menu">
+<div>
+
 <a href="index.html">Home</a>
-<a href="ai-writing-tools.html">Writing</a>
-</div>
 
 </div>
 
+</nav>
 
-<div class="container">
+
+<section class="hero">
 
 <h1>Best AI Writing Tools</h1>
 
-<p>Discover powerful AI tools to create blogs, marketing copy and content.</p>
+<p>Discover powerful AI tools for content creation.</p>
 
-<div class="grid">
+</section>
 
-<div class="card">
-<a href="chatgpt.html">ChatGPT</a>
-<p>AI assistant for writing and coding.</p>
-</div>
+
+<section class="grid">
 
 <div class="card">
-<a href="jasper.html">Jasper AI</a>
-<p>Marketing copy and blog generation.</p>
+
+<img src="https://seeklogo.com/images/J/jasper-ai-logo-8A3F0F4A7F-seeklogo.com.png">
+
+<h3>Jasper AI</h3>
+
+<p>Professional AI copywriting tool.</p>
+
 </div>
+
 
 <div class="card">
-<a href="copyai.html">Copy AI</a>
-<p>AI tool for marketing content.</p>
-</div>
+
+<img src="https://seeklogo.com/images/R/rytr-logo-92E1EAF3A6-seeklogo.com.png">
+
+<h3>Rytr</h3>
+
+<p>Affordable AI writing assistant.</p>
 
 </div>
 
+
+<div class="card">
+
+<img src="https://seeklogo.com/images/W/writesonic-logo-DFE6C3E6A7-seeklogo.com.png">
+
+<h3>Writesonic</h3>
+
+<p>Create SEO optimized articles.</p>
+
 </div>
 
 
-<div class="footer">
+</section>
+
+
+<footer>
+
 <p>© 2026 AI Tools Directory</p>
-</div>
+
+</footer>
 
 </body>
-
 </html>
