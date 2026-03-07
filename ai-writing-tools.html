@@ -116,7 +116,7 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
 <section class="hero-cat">
   <div class="cat-badge">✍️</div>
   <h1>Writing & Editing AI Tools</h1>
-  <p>Discover the 48 best AI writing assistants to supercharge your content creation.</p>
+  <p>Discover the 47 best AI writing assistants to supercharge your content creation.</p>
 </section>
 
 <section class="tools-section">
@@ -131,8 +131,51 @@ const writingTools = [
   { name: "Jasper", desc: "The ultimate AI platform for enterprise content and marketing teams.", tag: "Copywriting", score: "4.9", img: "images/jasper.png", url: "jasper.html" },
   { name: "ChatGPT", desc: "The world's most popular conversational AI for any writing task.", tag: "General", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", url: "chatgpt.html" },
   { name: "Copy AI", desc: "Generate high-converting marketing copy and social posts instantly.", tag: "Marketing", score: "4.8", img: "images/copy.jpg", url: "#" },
-  { name: "Notion AI", desc: "Write, summarize, and brainstorm directly within your Notion workspace.", tag: "Productivity", score: "4.8", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", url: "#" }
-];
+  { name: "Notion AI", desc: "Write, summarize, and brainstorm directly within your Notion workspace.", tag: "Productivity", score: "4.8", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", url: "#" },
+  { name: "Writesonic", desc: "Create SEO-optimized articles and long-form blogs.", tag: "SEO", score: "4.7", img: "images/writesonic.png", url: "https://writesonic.com/" },
+  { name: "Grammarly", desc: "AI communication assistance to write and rewrite everywhere.", tag: "Editing", score: "4.8", img: "images/grammarly.png", url: "https://www.grammarly.com/" },
+  { name: "Claude", desc: "Anthropic's AI, excellent for natural writing and large texts.", tag: "General", score: "4.9", img: "https://www.anthropic.com/favicon.ico", url: "https://claude.ai/" },
+  { name: "QuillBot", desc: "Advanced paraphrasing tool to rewrite and improve fluency.", tag: "Editing", score: "4.7", img: "https://quillbot.com/favicon.ico", url: "https://quillbot.com/" },
+  { name: "Wordtune", desc: "Your personal writing companion to rephrase and rewrite sentences perfectly.", tag: "Editing", score: "4.7", img: "" },
+  { name: "Sudowrite", desc: "The AI tool built specifically for fiction writers and novelists.", tag: "Fiction", score: "4.8", img: "" },
+  { name: "Frase", desc: "Research, write, and optimize high-quality SEO content in minutes.", tag: "SEO", score: "4.6", img: "" },
+  { name: "Surfer SEO", desc: "Cloud-based tool optimizing written content for search engines.", tag: "SEO", score: "4.8", img: "" },
+  { name: "Anyword", desc: "Data-driven copywriting AI that predicts performance scores.", tag: "Marketing", score: "4.5", img: "" },
+  { name: "Copysmith", desc: "AI copy generator tailored for eCommerce teams and agencies.", tag: "eCommerce", score: "4.4", img: "" },
+  { name: "Peppertype", desc: "Virtual content assistant helping you generate better content faster.", tag: "Copywriting", score: "4.6", img: "" },
+  { name: "Scalenut", desc: "AI-powered SEO and content research platform for scale.", tag: "SEO", score: "4.7", img: "" },
+  { name: "Neuroflash", desc: "Europe's leading AI text generator for marketing and branding.", tag: "Marketing", score: "4.5", img: "" },
+  { name: "Simplified", desc: "All-in-one app to write, design, and publish content easily.", tag: "All-in-one", score: "4.6", img: "" },
+  { name: "TextCortex", desc: "Customizable AI companion tailored to your unique writing style.", tag: "General", score: "4.4", img: "" },
+  { name: "LongShot AI", desc: "AI writing assistant focused on factual, SEO-friendly long-form content.", tag: "SEO", score: "4.5", img: "" },
+  { name: "Writecream", desc: "Innovative tool for cold emails, voiceovers, and icebreakers.", tag: "Email", score: "4.4", img: "" },
+  { name: "ClosersCopy", desc: "Copywriting tool powered by proprietary AI frameworks.", tag: "Sales", score: "4.3", img: "" },
+  { name: "INK", desc: "All-in-one AI content suite optimizing for safety and SEO.", tag: "SEO", score: "4.6", img: "" },
+  { name: "Article Forge", desc: "Generate complete, high-quality articles automatically.", tag: "Blogging", score: "4.2", img: "" },
+  { name: "ContentBot", desc: "Advanced AI writer for founders and digital marketers.", tag: "Marketing", score: "4.4", img: "" },
+  { name: "Hypotenuse AI", desc: "Provide a few keywords and instantly turn them into full-length articles.", tag: "Blogging", score: "4.5", img: "" },
+  { name: "Lex", desc: "A modern word processor with AI natively built-in for unblocking ideas.", tag: "Processor", score: "4.7", img: "" },
+  { name: "Moonbeam", desc: "Long-form writing assistant designed specifically to help you write essays.", tag: "Academic", score: "4.3", img: "" },
+  { name: "NovelAI", desc: "AI-assisted authorship, storytelling, and virtual companionship.", tag: "Fiction", score: "4.6", img: "" },
+  { name: "ParagraphAI", desc: "World-class AI writing app and keyboard extension.", tag: "Keyboard", score: "4.2", img: "" },
+  { name: "ProWritingAid", desc: "Premium grammar checker and style editor for serious writers.", tag: "Editing", score: "4.8", img: "" },
+  { name: "SEO.ai", desc: "Generate high-quality SEO content formats incredibly fast.", tag: "SEO", score: "4.4", img: "" },
+  { name: "SmartWriter", desc: "Generate highly personalized cold emails that get replies.", tag: "Email", score: "4.5", img: "" },
+  { name: "Spin Rewriter", desc: "Rewrite a single article into dozens of 100% unique human-quality articles.", tag: "Rewriting", score: "4.1", img: "" },
+  { name: "Typli", desc: "Intuitive AI writer and SEO checker built into one platform.", tag: "Blogging", score: "4.2", img: "" },
+  { name: "WordAI", desc: "Uses machine learning to completely restructure and rewrite content.", tag: "Rewriting", score: "4.3", img: "" },
+  { name: "Writer.com", desc: "Enterprise AI platform built for teams to stay on-brand.", tag: "Enterprise", score: "4.7", img: "" },
+  { name: "Zyro", desc: "Website builder featuring AI content generation tools.", tag: "Web", score: "4.1", img: "" },
+  { name: "Bramework", desc: "AI writer built specifically to help bloggers write faster.", tag: "Blogging", score: "4.4", img: "" },
+  { name: "GoCharlie", desc: "The AI engine for marketing teams creating campaigns.", tag: "Marketing", score: "4.3", img: "" },
+  { name: "Hoppy Copy", desc: "Write high-converting email campaigns and newsletters.", tag: "Email", score: "4.6", img: "" },
+  { name: "Bertha AI", desc: "AI copywriting assistant designed explicitly for WordPress.", tag: "WordPress", score: "4.5", img: "" },
+  { name: "Chinchilla", desc: "DeepMind's language model optimized for unparalleled compute efficiency.", tag: "General", score: "4.8", img: "" },
+  { name: "Gemini", desc: "Google's multimodal AI, exceptionally powerful for reasoning and writing.", tag: "General", score: "4.9", img: "" },
+  { name: "Outranking", desc: "Data-driven SEO strategy and content creation software.", tag: "SEO", score: "4.5", img: "" },
+  { name: "AI Writer", desc: "Generate accurate, unique articles from just a headline.", tag: "Blogging", score: "4.2", img: "" },
+  { name: "Creator.ai", desc: "Helps you create engaging content for social media and blogs.", tag: "Social Media", score: "4.3", img: "" }
+  ];
 
 const grid = document.getElementById('toolsGrid');
 grid.innerHTML = writingTools.map(tool => `
