@@ -51,8 +51,8 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#06b6d4,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-sub{font-size:17px;color:var(--muted);max-width:500px;margin:0 auto 42px;line-height:1.7;animation:fadeDown .8s .2s ease both;}
 
-/* SEARCH */
-.search-wrapper{position:relative;max-width:660px;margin:0 auto;animation:fadeDown .8s .3s ease both;isolation:isolate;}
+/* SEARCH (CORRIGÉ : z-index ajouté et isolation retirée) */
+.search-wrapper{position:relative;max-width:660px;margin:0 auto;animation:fadeDown .8s .3s ease both; z-index:50;} 
 .search-bar{display:flex;align-items:center;background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.22);border-radius:16px;padding:6px 6px 6px 20px;gap:10px;backdrop-filter:blur(20px);transition:border-color .3s,box-shadow .3s;box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.04);position:relative;z-index:2;}
 .search-bar.focused{border-color:rgba(59,130,246,0.6);box-shadow:0 0 0 4px rgba(59,130,246,0.12),0 8px 32px rgba(0,0,0,0.4);}
 .search-icon{flex-shrink:0;color:#3b82f6;opacity:.6;transition:opacity .2s;}
@@ -64,7 +64,8 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .search-filter option{background:#0a1228;color:#e2e8f0;}
 .search-submit{flex-shrink:0;padding:0 22px;height:44px;border-radius:12px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 15px rgba(59,130,246,0.4);display:flex;align-items:center;gap:8px;}
 .search-submit:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(59,130,246,0.55);}
-.search-suggestions{position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:500;background:rgba(6,12,30,0.98);backdrop-filter:blur(28px) saturate(160%);border:1px solid rgba(59,130,246,0.18);border-radius:16px;padding:10px;box-shadow:0 28px 60px rgba(0,0,0,0.75),0 0 0 1px rgba(59,130,246,0.06);opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .2s ease,transform .2s ease;}
+/* FOND OPAQUE POUR LES SUGGESTIONS */
+.search-suggestions{position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:500;background:#060c1e;border:1px solid rgba(59,130,246,0.3);border-radius:16px;padding:10px;box-shadow:0 28px 60px rgba(0,0,0,0.9),0 0 0 1px rgba(59,130,246,0.1);opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .2s ease,transform .2s ease;}
 .search-suggestions.open{opacity:1;pointer-events:all;transform:translateY(0);}
 .sugg-section-title{font-size:10px;text-transform:uppercase;letter-spacing:1.6px;color:var(--muted);padding:6px 12px 4px;font-weight:600;}
 .sugg-item{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;cursor:pointer;transition:background .15s;font-size:13px;color:var(--text);text-decoration:none;}
@@ -77,7 +78,7 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .sugg-no-result{text-align:center;padding:18px;color:var(--muted);font-size:13px;}
 
 /* STATS */
-.hero-stats{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:40px;animation:fadeDown .8s .4s ease both;}
+.hero-stats{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:40px;animation:fadeDown .8s .4s ease both; flex-wrap: wrap;}
 .stat{text-align:center;}
 .stat-n{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;}
 .stat-l{font-size:11px;color:var(--muted);margin-top:2px;}
@@ -121,8 +122,23 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 40px;backgroun
 @keyframes fadeDown{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,.5);}50%{box-shadow:0 0 0 5px rgba(59,130,246,0);}}
 
+/* RESPONSIVE AJUSTÉ */
 @media(max-width:900px){nav{padding:0 20px;}.nav-links,.nav-right .nav-btn-ghost{display:none;}.cats-section{padding:50px 20px;}.section{padding:0 20px 60px;}.hero{padding:80px 20px 60px;}.cats-grid{grid-template-columns:1fr 1fr;}.section-header{flex-direction:column;align-items:flex-start;gap:12px;}}
-@media(max-width:500px){.cats-grid{grid-template-columns:1fr;}.tools-grid{grid-template-columns:1fr 1fr;}}
+
+/* CORRECTION MOBILE (Moins de 600px) */
+@media(max-width:600px){
+  .search-bar { padding: 4px 4px 4px 14px; }
+  .search-filter, .search-divider { display: none; } /* On cache le filtre pour gagner de la place */
+  .search-submit { font-size: 0; padding: 0 16px; } /* On cache le texte "Search" */
+  .search-submit svg { margin: 0; width: 18px; height: 18px; }
+  .hero-stats { gap: 16px; margin-top: 30px; }
+  .stat-div { display: none; } /* Cache la barre verticale si les stats passent à la ligne */
+}
+
+@media(max-width:500px){
+  .cats-grid { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr; } /* Corrigé ici : 1fr au lieu de 1fr 1fr pour ne pas déborder */
+}
 </style>
 </head>
 <body>
@@ -194,7 +210,7 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 40px;backgroun
       </select>
       <button class="search-submit" id="searchBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        Search
+        <span>Search</span>
       </button>
     </div>
     <div class="search-suggestions" id="suggestions"></div>
