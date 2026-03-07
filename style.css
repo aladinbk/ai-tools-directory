@@ -174,58 +174,140 @@ color:#2c82e0;
 /* TOOL HERO */
 
 .tool-hero{
-
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:60px 40px;
+align-items:center;
+padding:80px 40px;
 background:white;
-gap:40px;
-flex-wrap:wrap;
-
 }
 
-.tool-hero-content{
-
+.tool-hero-text{
 max-width:500px;
-
 }
 
-.tool-hero-content h1{
-
-font-size:40px;
+.badge{
+display:inline-block;
+background:#eaf3ff;
+color:#2c82e0;
+padding:6px 12px;
+border-radius:20px;
+font-size:14px;
 margin-bottom:15px;
-
 }
 
-.tool-hero-content p{
+.tool-hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
 
-color:#555;
+.tool-tagline{
 font-size:18px;
-
+color:#555;
+margin-bottom:25px;
 }
 
 .tool-hero-image img{
-
 width:220px;
-
 }
 
-/* TOOL PAGE */
+/* BUTTONS */
 
-.tool-container{
+.primary-btn{
+background:#2c82e0;
+color:white;
+padding:12px 22px;
+border-radius:6px;
+text-decoration:none;
+margin-right:10px;
+}
 
+.secondary-btn{
+border:2px solid #2c82e0;
+padding:10px 20px;
+border-radius:6px;
+text-decoration:none;
+color:#2c82e0;
+}
+
+/* STATS */
+
+.tool-stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+text-align:center;
+padding:50px;
+background:#f5f7fb;
+}
+
+.stat h2{
+font-size:32px;
+color:#2c82e0;
+}
+
+/* SECTIONS */
+
+.tool-section{
+padding:70px 40px;
 max-width:900px;
 margin:auto;
-padding:50px 40px;
-line-height:1.6;
-
 }
 
-.tool-container h2{
+.tool-section h2{
+margin-bottom:20px;
+}
 
-margin-top:35px;
-margin-bottom:10px;
-font-size:26px;
+/* FEATURES */
 
+.features-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.feature-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* USE CASES */
+
+.use-cases{
+margin-left:20px;
+line-height:2;
+}
+
+/* PROS CONS */
+
+.pros-cons{
+display:flex;
+gap:40px;
+}
+
+.pros{
+background:#eaf9f0;
+padding:25px;
+border-radius:10px;
+flex:1;
+}
+
+.cons{
+background:#fff1f1;
+padding:25px;
+border-radius:10px;
+flex:1;
+}
+
+/* CTA */
+
+.tool-cta{
+text-align:center;
+padding:80px;
+background:#111;
+color:white;
+}
+
+.tool-cta p{
+margin:15px 0 25px 0;
 }
