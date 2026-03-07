@@ -8,13 +8,12 @@
 
 <style>
 :root {
-  --blue:    #3b82f6;
-  --cyan:    #06b6d4;
-  --dark:    #020617;
-  --surface: rgba(15,23,42,0.85);
-  --border:  rgba(255,255,255,0.07);
-  --text:    #e2e8f0;
-  --muted:   rgba(148,163,184,0.7);
+  --blue:   #3b82f6;
+  --cyan:   #06b6d4;
+  --dark:   #020617;
+  --border: rgba(255,255,255,0.07);
+  --text:   #e2e8f0;
+  --muted:  rgba(148,163,184,0.7);
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -37,12 +36,14 @@ body::before {
   pointer-events:none;
 }
 
-/* ── NAVBAR ── */
+/* ════════════════════════════
+   NAVBAR
+════════════════════════════ */
 nav {
   position: sticky; top: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 60px; height: 68px;
-  background: rgba(2,6,23,0.75);
+  background: rgba(2,6,23,0.80);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border-bottom: 1px solid var(--border);
@@ -83,21 +84,15 @@ nav {
   opacity:0; pointer-events:none;
   transition: opacity .25s, transform .25s;
   min-width:520px;
-  background: rgba(10,18,40,0.96);
+  background: rgba(10,18,40,0.97);
   backdrop-filter: blur(24px);
-  border:1px solid var(--border);
-  border-radius:16px; padding:20px;
+  border:1px solid var(--border); border-radius:16px; padding:20px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(59,130,246,0.08);
 }
 .nav-links > li:hover .mega-drop { opacity:1; pointer-events:all; transform: translateX(-50%) translateY(0); }
 .mega-drop-title { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color: var(--muted); margin-bottom:12px; padding: 0 4px; }
 .mega-drop-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
-.mega-item {
-  display:flex; align-items:center; gap:12px;
-  padding:10px 12px; border-radius:10px;
-  text-decoration:none; color:var(--text);
-  transition: background .2s, transform .2s;
-}
+.mega-item { display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:10px; text-decoration:none; color:var(--text); transition: background .2s, transform .2s; }
 .mega-item:hover { background:rgba(59,130,246,0.12); transform:translateX(2px); }
 .mega-icon { width:36px; height:36px; border-radius:9px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:17px; }
 .mega-item-text strong { display:block; font-size:13px; font-weight:600; color:#fff; }
@@ -108,22 +103,15 @@ nav {
   transform: translateX(-50%) translateY(-6px);
   opacity:0; pointer-events:none;
   transition: opacity .25s, transform .25s;
-  min-width:180px;
-  background: rgba(10,18,40,0.96);
-  backdrop-filter: blur(24px);
-  border:1px solid var(--border);
-  border-radius:12px; padding:8px;
+  min-width:200px;
+  background: rgba(10,18,40,0.97); backdrop-filter: blur(24px);
+  border:1px solid var(--border); border-radius:12px; padding:8px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 .nav-links > li:hover .simple-drop { opacity:1; pointer-events:all; transform: translateX(-50%) translateY(0); }
-.simple-drop a {
-  display:flex; align-items:center; gap:9px;
-  padding:9px 12px; border-radius:8px;
-  text-decoration:none; color:var(--text); font-size:13px;
-  transition: background .2s;
-}
+.simple-drop a { display:flex; align-items:center; gap:9px; padding:9px 12px; border-radius:8px; text-decoration:none; color:var(--text); font-size:13px; transition: background .2s; }
 .simple-drop a:hover { background:rgba(255,255,255,0.06); }
-.simple-drop a span { font-size:15px; }
+.simple-drop a .si { font-size:15px; }
 
 .nav-right { display:flex; align-items:center; gap:12px; }
 .nav-btn-ghost {
@@ -138,16 +126,16 @@ nav {
 .nav-btn-primary {
   padding:7px 18px; border-radius:8px;
   background: linear-gradient(135deg,#3b82f6,#06b6d4);
-  border:none; color:#fff;
-  font-family:'Outfit',sans-serif; font-size:13px; font-weight:600;
-  cursor:pointer;
-  transition: opacity .2s, transform .2s, box-shadow .2s;
+  border:none; color:#fff; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600;
+  cursor:pointer; transition: opacity .2s, transform .2s, box-shadow .2s;
   box-shadow: 0 4px 15px rgba(59,130,246,0.35);
 }
 .nav-btn-primary:hover { opacity:.9; transform:translateY(-1px); box-shadow:0 6px 20px rgba(59,130,246,0.5); }
 
-/* ── HERO ── */
-.hero { position:relative; z-index:1; text-align:center; padding: 110px 20px 90px; }
+/* ════════════════════════════
+   HERO
+════════════════════════════ */
+.hero { position:relative; z-index:1; text-align:center; padding: 100px 20px 80px; }
 
 .hero-badge {
   display:inline-flex; align-items:center; gap:7px;
@@ -169,23 +157,28 @@ nav {
   background: linear-gradient(90deg,#3b82f6,#06b6d4,#818cf8);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
-.hero-sub { font-size:17px; color:var(--muted); max-width:500px; margin:0 auto 42px; line-height:1.7; animation: fadeDown .8s .2s ease both; }
+.hero-sub {
+  font-size:17px; color:var(--muted); max-width:500px; margin:0 auto 42px;
+  line-height:1.7; animation: fadeDown .8s .2s ease both;
+}
 
-/* ── SEARCH BAR ── */
-.search-wrapper { position:relative; max-width:640px; margin:0 auto; animation: fadeDown .8s .3s ease both; }
+/* ════════════════════════════
+   SEARCH BAR
+════════════════════════════ */
+.search-wrapper { position:relative; max-width:660px; margin:0 auto; animation: fadeDown .8s .3s ease both; }
 
 .search-bar {
   display:flex; align-items:center;
-  background: rgba(15,23,42,0.8);
-  border:1px solid rgba(59,130,246,0.2);
-  border-radius:16px; padding:6px 6px 6px 20px; gap:12px;
+  background: rgba(15,23,42,0.85);
+  border:1px solid rgba(59,130,246,0.22);
+  border-radius:16px; padding:6px 6px 6px 20px; gap:10px;
   backdrop-filter:blur(20px);
   transition: border-color .3s, box-shadow .3s;
   box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 .search-bar:focus-within {
-  border-color:rgba(59,130,246,0.55);
-  box-shadow: 0 0 0 4px rgba(59,130,246,0.1), 0 8px 32px rgba(0,0,0,0.4);
+  border-color:rgba(59,130,246,0.6);
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.12), 0 8px 32px rgba(0,0,0,0.4);
 }
 .search-icon { flex-shrink:0; color:#3b82f6; opacity:.7; transition: opacity .2s; }
 .search-bar:focus-within .search-icon { opacity:1; }
@@ -193,47 +186,61 @@ nav {
   flex:1; border:none; background:transparent;
   color:#fff; font-family:'Outfit',sans-serif; font-size:15px; outline:none; padding:10px 0;
 }
-.search-input::placeholder { color:rgba(148,163,184,0.45); }
+.search-input::placeholder { color:rgba(148,163,184,0.4); }
+
+.search-divider { width:1px; height:24px; background:rgba(255,255,255,0.08); flex-shrink:0; }
+
 .search-filter {
-  padding:0 14px; height:40px; background:transparent;
-  border:none; border-left:1px solid rgba(255,255,255,0.07);
-  color:rgba(148,163,184,0.7); font-family:'Outfit',sans-serif; font-size:13px;
+  padding:0 12px; height:40px; background:transparent;
+  border:none;
+  color:rgba(148,163,184,0.65); font-family:'Outfit',sans-serif; font-size:13px;
   cursor:pointer; outline:none; appearance:none; -webkit-appearance:none;
+  flex-shrink:0;
 }
-.search-filter option { background:#0a1228; }
+.search-filter option { background:#0a1228; color:#e2e8f0; }
+
 .search-submit {
   flex-shrink:0; padding:0 22px; height:44px; border-radius:12px;
   background: linear-gradient(135deg,#3b82f6,#06b6d4);
-  border:none; color:#fff;
-  font-family:'Outfit',sans-serif; font-size:14px; font-weight:600;
+  border:none; color:#fff; font-family:'Outfit',sans-serif; font-size:14px; font-weight:600;
   cursor:pointer; transition: opacity .2s, transform .2s, box-shadow .2s;
   box-shadow: 0 4px 15px rgba(59,130,246,0.4);
   display:flex; align-items:center; gap:8px;
 }
 .search-submit:hover { opacity:.9; transform:translateY(-1px); box-shadow:0 6px 20px rgba(59,130,246,0.55); }
 
+/* Suggestions dropdown */
 .search-suggestions {
   position:absolute; top:calc(100% + 10px); left:0; right:0;
-  background: rgba(8,15,35,0.97); backdrop-filter:blur(24px);
+  background: rgba(8,15,35,0.98); backdrop-filter:blur(24px);
   border:1px solid var(--border); border-radius:14px; padding:8px;
-  box-shadow: 0 24px 50px rgba(0,0,0,0.6);
-  display:none; z-index:200;
+  box-shadow: 0 24px 50px rgba(0,0,0,0.7);
+  display:none; z-index:500;
 }
-.search-suggestions.active { display:block; animation: fadeDown .2s ease; }
-.sugg-section-title { font-size:10px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); padding:8px 12px 6px; }
+.search-suggestions.active { display:block; animation: fadeDown .18s ease; }
+.sugg-section-title {
+  font-size:10px; text-transform:uppercase; letter-spacing:1.5px;
+  color:var(--muted); padding:8px 12px 5px;
+}
 .sugg-item {
   display:flex; align-items:center; gap:10px;
   padding:9px 12px; border-radius:9px;
   cursor:pointer; transition:background .15s; font-size:13px; color:var(--text);
+  text-decoration:none;
 }
 .sugg-item:hover { background:rgba(59,130,246,0.1); }
-.sugg-item-icon { font-size:16px; width:28px; text-align:center; }
+.sugg-item-icon { font-size:16px; width:28px; text-align:center; flex-shrink:0; }
+.sugg-item-info { flex:1; min-width:0; }
+.sugg-item-info strong { display:block; font-size:13px; font-weight:600; color:#fff; }
+.sugg-item-info span { font-size:11px; color:var(--muted); }
 .sugg-tag {
-  margin-left:auto; padding:2px 8px; border-radius:99px;
+  margin-left:auto; padding:2px 9px; border-radius:99px; flex-shrink:0;
   background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.2);
-  font-size:10px; color:#60a5fa;
+  font-size:10px; color:#60a5fa; font-weight:500;
 }
+.sugg-divider { height:1px; background:var(--border); margin:6px 0; }
 
+/* Hero stats */
 .hero-stats {
   display:flex; align-items:center; justify-content:center;
   gap:32px; margin-top:40px; animation: fadeDown .8s .4s ease both;
@@ -243,69 +250,174 @@ nav {
 .stat-l { font-size:11px; color:var(--muted); margin-top:2px; }
 .stat-div { width:1px; height:32px; background:var(--border); }
 
-/* ── SECTION / GRID / CARDS ── */
-.section { position:relative; z-index:1; padding:80px 60px; }
-.section-header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:40px; }
+/* ════════════════════════════
+   CATEGORIES SECTION  (Futurepedia style)
+════════════════════════════ */
+.cats-section {
+  position:relative; z-index:1;
+  padding: 70px 60px;
+}
 .section-label { font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#3b82f6; margin-bottom:8px; font-weight:600; }
-.section-title { font-family:'Syne',sans-serif; font-size:28px; font-weight:800; letter-spacing:-0.5px; }
-.section-link { font-size:13px; color:#3b82f6; text-decoration:none; display:flex; align-items:center; gap:5px; font-weight:500; opacity:.8; transition:opacity .2s; }
+.section-title { font-family:'Syne',sans-serif; font-size:28px; font-weight:800; letter-spacing:-0.5px; margin-bottom:40px; }
+
+.cats-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap:14px;
+}
+
+.cat-card {
+  display:flex; align-items:center; gap:14px;
+  padding:16px 18px; border-radius:14px;
+  background: rgba(15,23,42,0.55);
+  border:1px solid var(--border);
+  text-decoration:none; color:var(--text);
+  backdrop-filter:blur(12px);
+  transition: background .25s, border-color .25s, transform .25s, box-shadow .25s;
+  opacity:0; transform:translateY(18px);
+  animation: fadeUp .6s forwards;
+}
+.cat-card:nth-child(1) {animation-delay:.04s;}
+.cat-card:nth-child(2) {animation-delay:.08s;}
+.cat-card:nth-child(3) {animation-delay:.12s;}
+.cat-card:nth-child(4) {animation-delay:.16s;}
+.cat-card:nth-child(5) {animation-delay:.20s;}
+.cat-card:nth-child(6) {animation-delay:.24s;}
+.cat-card:nth-child(7) {animation-delay:.28s;}
+.cat-card:nth-child(8) {animation-delay:.32s;}
+.cat-card:nth-child(9) {animation-delay:.36s;}
+.cat-card:nth-child(10){animation-delay:.40s;}
+.cat-card:nth-child(11){animation-delay:.44s;}
+.cat-card:nth-child(12){animation-delay:.48s;}
+
+.cat-card:hover {
+  background: rgba(59,130,246,0.09);
+  border-color: rgba(59,130,246,0.3);
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.cat-icon-wrap {
+  width:40px; height:40px; border-radius:11px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; flex-shrink:0;
+  border:1px solid rgba(255,255,255,0.07);
+}
+
+.cat-info strong { display:block; font-size:13px; font-weight:600; color:#fff; margin-bottom:2px; }
+.cat-info span   { font-size:11px; color:var(--muted); }
+
+/* count badge */
+.cat-count {
+  margin-left:auto; flex-shrink:0;
+  font-size:11px; font-weight:600; color:var(--muted);
+  background:rgba(255,255,255,0.05); border:1px solid var(--border);
+  padding:2px 8px; border-radius:99px;
+}
+
+/* ════════════════════════════
+   FEATURED TOOLS
+════════════════════════════ */
+.section { position:relative; z-index:1; padding:0 60px 80px; }
+
+.section-header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:36px; }
+.section-link {
+  font-size:13px; color:#3b82f6; text-decoration:none;
+  display:flex; align-items:center; gap:5px; font-weight:500; opacity:.8;
+  transition:opacity .2s;
+}
 .section-link:hover { opacity:1; }
 
-.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(210px,1fr)); gap:20px; }
+.tools-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(210px,1fr));
+  gap:20px;
+}
 
-.card {
+.tool-card {
   position:relative; overflow:hidden;
   background: rgba(15,23,42,0.6);
   border:1px solid var(--border); border-radius:18px;
   padding:28px 22px; text-decoration:none; color:var(--text);
   display:flex; flex-direction:column; align-items:center;
-  text-align:center; gap:13px; height:210px; justify-content:center;
+  text-align:center; gap:12px; height:210px; justify-content:center;
   transition: transform .3s, border-color .3s, box-shadow .3s;
   backdrop-filter:blur(12px);
   opacity:0; transform:translateY(24px); animation:fadeUp .7s forwards;
 }
-.card:nth-child(1){animation-delay:.05s;}
-.card:nth-child(2){animation-delay:.15s;}
-.card:nth-child(3){animation-delay:.25s;}
-.card:nth-child(4){animation-delay:.35s;}
-.card:nth-child(5){animation-delay:.45s;}
+.tool-card:nth-child(1){animation-delay:.05s;}
+.tool-card:nth-child(2){animation-delay:.15s;}
+.tool-card:nth-child(3){animation-delay:.25s;}
+.tool-card:nth-child(4){animation-delay:.35s;}
+.tool-card:nth-child(5){animation-delay:.45s;}
 
-.card::before {
+.tool-card::before {
   content:''; position:absolute; inset:0;
-  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,0.06) 50%,transparent 70%);
+  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,0.05) 50%,transparent 70%);
   background-size:200% 100%; background-position:200% 0; transition:.6s;
 }
-.card:hover::before { background-position:-200% 0; }
-.card:hover { transform:translateY(-8px); border-color:rgba(59,130,246,0.35); box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(59,130,246,0.12), 0 -1px 0 rgba(59,130,246,0.15) inset; }
-.card::after { content:''; position:absolute; top:0; left:20%; right:20%; height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,0.8),transparent); opacity:0; transition:opacity .3s; }
-.card:hover::after { opacity:1; }
-.card-logo-wrap { width:58px; height:58px; border-radius:14px; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); overflow:hidden; flex-shrink:0; transition: transform .35s; }
-.card:hover .card-logo-wrap { transform:scale(1.1) rotate(3deg); }
-.card-logo-wrap img { width:36px; height:36px; object-fit:contain; }
-.card h3 { font-size:15px; font-weight:700; color:#fff; }
-.card p  { font-size:12px; color:var(--muted); line-height:1.55; }
+.tool-card:hover::before { background-position:-200% 0; }
+.tool-card:hover {
+  transform:translateY(-8px);
+  border-color:rgba(59,130,246,0.35);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(59,130,246,0.12);
+}
+.tool-card::after {
+  content:''; position:absolute; top:0; left:20%; right:20%; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(59,130,246,0.8),transparent);
+  opacity:0; transition:opacity .3s;
+}
+.tool-card:hover::after { opacity:1; }
 
-/* ── FOOTER ── */
-footer { position:relative; z-index:1; text-align:center; padding:36px 40px; background:rgba(2,6,23,0.9); border-top:1px solid var(--border); font-size:13px; color:var(--muted); }
+.tool-logo-wrap {
+  width:58px; height:58px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07);
+  overflow:hidden; flex-shrink:0; transition: transform .35s;
+}
+.tool-card:hover .tool-logo-wrap { transform:scale(1.1) rotate(3deg); }
+.tool-logo-wrap img { width:36px; height:36px; object-fit:contain; }
+.tool-card h3 { font-size:15px; font-weight:700; color:#fff; }
+.tool-card p  { font-size:12px; color:var(--muted); line-height:1.55; }
 
-/* ── ANIMATIONS ── */
+/* ════════════════════════════
+   FOOTER
+════════════════════════════ */
+footer {
+  position:relative; z-index:1;
+  text-align:center; padding:36px 40px;
+  background:rgba(2,6,23,0.9);
+  border-top:1px solid var(--border);
+  font-size:13px; color:var(--muted);
+}
+
+/* ════════════════════════════
+   ANIMATIONS
+════════════════════════════ */
 @keyframes fadeUp   { to { opacity:1; transform:translateY(0); } }
 @keyframes fadeDown { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:translateY(0); } }
 @keyframes pulse    { 0%,100%{ box-shadow:0 0 0 0 rgba(59,130,246,.5);} 50%{ box-shadow:0 0 0 5px rgba(59,130,246,0);} }
 
-/* ── RESPONSIVE ── */
+/* ════════════════════════════
+   RESPONSIVE
+════════════════════════════ */
 @media(max-width:900px){
   nav { padding:0 20px; }
   .nav-links, .nav-right .nav-btn-ghost { display:none; }
-  .section { padding:60px 20px; }
-  .section-header { flex-direction:column; align-items:flex-start; gap:12px; }
+  .cats-section, .section { padding:50px 20px; }
   .hero { padding:80px 20px 60px; }
+  .cats-grid { grid-template-columns:1fr 1fr; }
+  .section-header { flex-direction:column; align-items:flex-start; gap:12px; }
+}
+@media(max-width:500px){
+  .cats-grid { grid-template-columns:1fr; }
+  .tools-grid { grid-template-columns:1fr 1fr; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- ══════════ NAVBAR ══════════ -->
 <nav>
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-icon">A</div>
@@ -355,11 +467,11 @@ footer { position:relative; z-index:1; text-align:center; padding:36px 40px; bac
         <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="simple-drop">
-        <a href="chatgpt.html"><span>🤖</span> ChatGPT</a>
-        <a href="midjourney.html"><span>🎨</span> Midjourney</a>
-        <a href="copyai.html"><span>✍️</span> Copy AI</a>
-        <a href="notionai.html"><span>📝</span> Notion AI</a>
-        <a href="runway.html"><span>🎬</span> Runway ML</a>
+        <a href="chatgpt.html"><span class="si">🤖</span> ChatGPT</a>
+        <a href="midjourney.html"><span class="si">🎨</span> Midjourney</a>
+        <a href="copyai.html"><span class="si">✍️</span> Copy AI</a>
+        <a href="notionai.html"><span class="si">📝</span> Notion AI</a>
+        <a href="runway.html"><span class="si">🎬</span> Runway ML</a>
       </div>
     </li>
 
@@ -373,8 +485,9 @@ footer { position:relative; z-index:1; text-align:center; padding:36px 40px; bac
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ══════════ HERO ══════════ -->
 <section class="hero">
+
   <div class="hero-badge">
     <div class="hero-badge-dot"></div>
     500+ AI tools reviewed &amp; ranked
@@ -385,35 +498,44 @@ footer { position:relative; z-index:1; text-align:center; padding:36px 40px; bac
 
   <!-- SEARCH BAR -->
   <div class="search-wrapper">
-    <div class="search-bar" id="searchBar">
+    <div class="search-bar">
       <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
         <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
       </svg>
-      <input type="text" class="search-input" id="searchInput" placeholder="Search tools, categories, use cases…" autocomplete="off"/>
+
+      <input
+        type="text"
+        class="search-input"
+        id="searchInput"
+        placeholder="Search an AI tool…"
+        autocomplete="off"
+      />
+
+      <div class="search-divider"></div>
+
       <select class="search-filter" id="filterSelect">
         <option value="all">All</option>
         <option value="writing">Writing</option>
         <option value="image">Image</option>
         <option value="coding">Coding</option>
         <option value="video">Video</option>
+        <option value="productivity">Productivity</option>
+        <option value="chatbot">Chatbot</option>
       </select>
-      <button class="search-submit" onclick="handleSearch()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+
+      <button class="search-submit" id="searchBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
         Search
       </button>
     </div>
 
-    <div class="search-suggestions" id="suggestions">
-      <div class="sugg-section-title">🔥 Trending</div>
-      <div class="sugg-item" onclick="selectSugg('ChatGPT')"><span class="sugg-item-icon">🤖</span><span>ChatGPT</span><span class="sugg-tag">Chatbot</span></div>
-      <div class="sugg-item" onclick="selectSugg('Midjourney')"><span class="sugg-item-icon">🎨</span><span>Midjourney</span><span class="sugg-tag">Image</span></div>
-      <div class="sugg-item" onclick="selectSugg('Runway ML')"><span class="sugg-item-icon">🎬</span><span>Runway ML</span><span class="sugg-tag">Video</span></div>
-      <div class="sugg-section-title" style="margin-top:8px">📂 Categories</div>
-      <div class="sugg-item" onclick="selectSugg('Writing Tools')"><span class="sugg-item-icon">✍️</span><span>Writing Tools</span></div>
-      <div class="sugg-item" onclick="selectSugg('Coding Assistants')"><span class="sugg-item-icon">💻</span><span>Coding Assistants</span></div>
-    </div>
+    <!-- Suggestions dropdown -->
+    <div class="search-suggestions" id="suggestions"></div>
   </div>
 
+  <!-- Stats -->
   <div class="hero-stats">
     <div class="stat"><div class="stat-n">500+</div><div class="stat-l">AI Tools</div></div>
     <div class="stat-div"></div>
@@ -421,9 +543,128 @@ footer { position:relative; z-index:1; text-align:center; padding:36px 40px; bac
     <div class="stat-div"></div>
     <div class="stat"><div class="stat-n">50K+</div><div class="stat-l">Monthly Users</div></div>
   </div>
+
 </section>
 
-<!-- FEATURED TOOLS -->
+<!-- ══════════ CATEGORIES ══════════ -->
+<section class="cats-section">
+  <div class="section-label">Explore</div>
+  <div class="section-title">Most Popular Categories</div>
+
+  <div class="cats-grid">
+
+    <a href="ai-writing-tools.html" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(59,130,246,0.1)">✍️</div>
+      <div class="cat-info">
+        <strong>Writing & Editing</strong>
+        <span>Copywriting, blogs, scripts</span>
+      </div>
+      <span class="cat-count">48</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(168,85,247,0.1)">🎨</div>
+      <div class="cat-info">
+        <strong>Image Generation</strong>
+        <span>Art, design & visuals</span>
+      </div>
+      <span class="cat-count">36</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(245,158,11,0.1)">🎬</div>
+      <div class="cat-info">
+        <strong>Video & Audio</strong>
+        <span>Generation, editing, VFX</span>
+      </div>
+      <span class="cat-count">29</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(6,182,212,0.1)">💻</div>
+      <div class="cat-info">
+        <strong>Coding & DevTools</strong>
+        <span>Debugging, review, docs</span>
+      </div>
+      <span class="cat-count">41</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(239,68,68,0.1)">🤖</div>
+      <div class="cat-info">
+        <strong>Chatbots & Assistants</strong>
+        <span>AI chat, support bots</span>
+      </div>
+      <span class="cat-count">33</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(16,185,129,0.1)">📊</div>
+      <div class="cat-info">
+        <strong>Productivity</strong>
+        <span>Notes, tasks, automation</span>
+      </div>
+      <span class="cat-count">52</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(251,146,60,0.1)">📣</div>
+      <div class="cat-info">
+        <strong>Marketing & SEO</strong>
+        <span>Campaigns, ads, analytics</span>
+      </div>
+      <span class="cat-count">44</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(99,102,241,0.1)">🔬</div>
+      <div class="cat-info">
+        <strong>Research & Analysis</strong>
+        <span>Data, insights, reports</span>
+      </div>
+      <span class="cat-count">27</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(20,184,166,0.1)">🎧</div>
+      <div class="cat-info">
+        <strong>Audio & Voice</strong>
+        <span>TTS, cloning, transcription</span>
+      </div>
+      <span class="cat-count">22</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(234,179,8,0.1)">💬</div>
+      <div class="cat-info">
+        <strong>Customer Service</strong>
+        <span>Support, live chat, CRM</span>
+      </div>
+      <span class="cat-count">31</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(236,72,153,0.1)">🖌️</div>
+      <div class="cat-info">
+        <strong>Design & Creative</strong>
+        <span>UI, branding, illustration</span>
+      </div>
+      <span class="cat-count">38</span>
+    </a>
+
+    <a href="#" class="cat-card">
+      <div class="cat-icon-wrap" style="background:rgba(148,163,184,0.1)">⚙️</div>
+      <div class="cat-info">
+        <strong>Workflow Automation</strong>
+        <span>No-code, pipelines, APIs</span>
+      </div>
+      <span class="cat-count">19</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ══════════ FEATURED TOOLS ══════════ -->
 <section class="section">
   <div class="section-header">
     <div>
@@ -433,83 +674,158 @@ footer { position:relative; z-index:1; text-align:center; padding:36px 40px; bac
     <a href="ai-writing-tools.html" class="section-link">View all tools →</a>
   </div>
 
-  <div class="grid">
-    <a href="chatgpt.html" class="card">
-      <div class="card-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT"></div>
-      <h3>ChatGPT</h3><p>AI assistant for writing, coding and productivity.</p>
+  <div class="tools-grid">
+    <a href="chatgpt.html" class="tool-card">
+      <div class="tool-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT"></div>
+      <h3>ChatGPT</h3>
+      <p>AI assistant for writing, coding and productivity.</p>
     </a>
-    <a href="midjourney.html" class="card">
-      <div class="card-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png" alt="Midjourney"></div>
-      <h3>Midjourney</h3><p>Create stunning AI generated images.</p>
+    <a href="midjourney.html" class="tool-card">
+      <div class="tool-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png" alt="Midjourney"></div>
+      <h3>Midjourney</h3>
+      <p>Create stunning AI generated images.</p>
     </a>
-    <a href="copyai.html" class="card">
-      <div class="card-logo-wrap"><img src="images/copy.jpg" alt="Copy AI"></div>
-      <h3>Copy AI</h3><p>Generate marketing copy using AI.</p>
+    <a href="copyai.html" class="tool-card">
+      <div class="tool-logo-wrap"><img src="images/copy.jpg" alt="Copy AI"></div>
+      <h3>Copy AI</h3>
+      <p>Generate marketing copy using AI.</p>
     </a>
-    <a href="notionai.html" class="card">
-      <div class="card-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" alt="Notion AI"></div>
-      <h3>Notion AI</h3><p>AI writing and productivity assistant.</p>
+    <a href="notionai.html" class="tool-card">
+      <div class="tool-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" alt="Notion AI"></div>
+      <h3>Notion AI</h3>
+      <p>AI writing and productivity assistant.</p>
     </a>
-    <a href="runway.html" class="card">
-      <div class="card-logo-wrap"><img src="images/runway.png" alt="Runway ML"></div>
-      <h3>Runway ML</h3><p>Create AI videos and visual effects.</p>
+    <a href="runway.html" class="tool-card">
+      <div class="tool-logo-wrap"><img src="images/runway.png" alt="Runway ML"></div>
+      <h3>Runway ML</h3>
+      <p>Create AI videos and visual effects.</p>
     </a>
   </div>
 </section>
 
+<!-- ══════════ FOOTER ══════════ -->
 <footer>
   <p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p>
 </footer>
 
+<!-- ══════════ SEARCH JS ══════════ -->
 <script>
-const input = document.getElementById('searchInput');
-const suggestions = document.getElementById('suggestions');
-
-const allTools = [
-  {icon:'🤖', name:'ChatGPT',       tag:'Chatbot'},
-  {icon:'🎨', name:'Midjourney',     tag:'Image'},
-  {icon:'✍️', name:'Copy AI',        tag:'Writing'},
-  {icon:'📝', name:'Notion AI',      tag:'Productivity'},
-  {icon:'🎬', name:'Runway ML',      tag:'Video'},
-  {icon:'💻', name:'GitHub Copilot', tag:'Coding'},
-  {icon:'🔊', name:'ElevenLabs',     tag:'Audio'},
+// ─── Tool database with pages ───
+const TOOLS = [
+  { icon:'🤖', name:'ChatGPT',        desc:'AI chatbot for writing & coding',   tag:'Chatbot',      url:'chatgpt.html',       cat:'chatbot'     },
+  { icon:'🎨', name:'Midjourney',      desc:'AI image generation from prompts',  tag:'Image',        url:'midjourney.html',     cat:'image'       },
+  { icon:'✍️', name:'Copy AI',         desc:'AI copywriting & marketing tool',   tag:'Writing',      url:'copyai.html',         cat:'writing'     },
+  { icon:'📝', name:'Notion AI',       desc:'AI productivity & note-taking',     tag:'Productivity', url:'notionai.html',       cat:'productivity'},
+  { icon:'🎬', name:'Runway ML',       desc:'AI video generation & editing',     tag:'Video',        url:'runway.html',         cat:'video'       },
+  { icon:'💻', name:'GitHub Copilot',  desc:'AI pair programmer for developers', tag:'Coding',       url:'#',                   cat:'coding'      },
+  { icon:'🔊', name:'ElevenLabs',      desc:'AI voice & text-to-speech',         tag:'Audio',        url:'#',                   cat:'video'       },
+  { icon:'🖼️', name:'DALL·E 3',        desc:'OpenAI image generation model',     tag:'Image',        url:'#',                   cat:'image'       },
+  { icon:'⚡', name:'Jasper AI',        desc:'Long-form AI content writing',      tag:'Writing',      url:'ai-writing-tools.html', cat:'writing'   },
+  { icon:'🔍', name:'Perplexity AI',   desc:'AI-powered research & search',      tag:'Research',     url:'#',                   cat:'chatbot'     },
+  { icon:'🎵', name:'Suno AI',         desc:'Generate music from text prompts',  tag:'Audio',        url:'#',                   cat:'video'       },
+  { icon:'📧', name:'Mailchimp AI',    desc:'AI-powered email marketing',        tag:'Marketing',    url:'#',                   cat:'writing'     },
 ];
 
-input.addEventListener('focus', () => suggestions.classList.add('active'));
-document.addEventListener('click', e => { if(!e.target.closest('.search-wrapper')) suggestions.classList.remove('active'); });
+const input       = document.getElementById('searchInput');
+const sugBox      = document.getElementById('suggestions');
+const filterSel   = document.getElementById('filterSelect');
+const searchBtn   = document.getElementById('searchBtn');
 
-input.addEventListener('input', () => {
-  const q = input.value.trim().toLowerCase();
-  if(!q){ suggestions.innerHTML = defaultHTML(); return; }
-  const hits = allTools.filter(t => t.name.toLowerCase().includes(q));
-  if(!hits.length){ suggestions.innerHTML = `<div class="sugg-item" style="opacity:.5;cursor:default">No results found</div>`; return; }
-  suggestions.innerHTML = `<div class="sugg-section-title">Results</div>` +
-    hits.map(t=>`<div class="sugg-item" onclick="selectSugg('${t.name}')">
-      <span class="sugg-item-icon">${t.icon}</span>
-      <span>${hl(t.name,q)}</span>
-      <span class="sugg-tag">${t.tag}</span>
-    </div>`).join('');
+// ─── Show / hide ───
+input.addEventListener('focus', () => renderSugg(input.value.trim()));
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-wrapper')) sugBox.classList.remove('active');
 });
 
-function hl(str,q){
-  const i=str.toLowerCase().indexOf(q);
-  if(i<0)return str;
-  return str.slice(0,i)+'<strong style="color:#fff">'+str.slice(i,i+q.length)+'</strong>'+str.slice(i+q.length);
+// ─── Live filter while typing ───
+input.addEventListener('input', () => renderSugg(input.value.trim()));
+
+// ─── Render suggestions ───
+function renderSugg(q) {
+  const cat = filterSel.value;
+  let list = TOOLS;
+
+  // Filter by category dropdown
+  if (cat !== 'all') list = list.filter(t => t.cat === cat);
+
+  // Filter by query text
+  if (q) list = list.filter(t =>
+    t.name.toLowerCase().includes(q.toLowerCase()) ||
+    t.desc.toLowerCase().includes(q.toLowerCase()) ||
+    t.tag.toLowerCase().includes(q.toLowerCase())
+  );
+
+  if (!list.length) {
+    sugBox.innerHTML = `<div class="sugg-item" style="opacity:.45;cursor:default;justify-content:center">No tools found</div>`;
+    sugBox.classList.add('active');
+    return;
+  }
+
+  const trending = !q; // show "trending" label only when no query
+  let html = '';
+
+  if (trending) {
+    html += `<div class="sugg-section-title">🔥 Trending tools</div>`;
+    list = list.slice(0,6);
+  } else {
+    html += `<div class="sugg-section-title">Results for "${q}"</div>`;
+  }
+
+  html += list.map(t => `
+    <a class="sugg-item" href="${t.url}">
+      <span class="sugg-item-icon">${t.icon}</span>
+      <div class="sugg-item-info">
+        <strong>${hl(t.name, q)}</strong>
+        <span>${t.desc}</span>
+      </div>
+      <span class="sugg-tag">${t.tag}</span>
+    </a>
+  `).join('');
+
+  sugBox.innerHTML = html;
+  sugBox.classList.add('active');
 }
 
-function defaultHTML(){
-  return `<div class="sugg-section-title">🔥 Trending</div>
-    <div class="sugg-item" onclick="selectSugg('ChatGPT')"><span class="sugg-item-icon">🤖</span><span>ChatGPT</span><span class="sugg-tag">Chatbot</span></div>
-    <div class="sugg-item" onclick="selectSugg('Midjourney')"><span class="sugg-item-icon">🎨</span><span>Midjourney</span><span class="sugg-tag">Image</span></div>
-    <div class="sugg-item" onclick="selectSugg('Runway ML')"><span class="sugg-item-icon">🎬</span><span>Runway ML</span><span class="sugg-tag">Video</span></div>
-    <div class="sugg-section-title" style="margin-top:8px">📂 Categories</div>
-    <div class="sugg-item" onclick="selectSugg('Writing Tools')"><span class="sugg-item-icon">✍️</span><span>Writing Tools</span></div>
-    <div class="sugg-item" onclick="selectSugg('Coding Assistants')"><span class="sugg-item-icon">💻</span><span>Coding Assistants</span></div>`;
+// ─── Highlight matching text ───
+function hl(str, q) {
+  if (!q) return str;
+  const i = str.toLowerCase().indexOf(q.toLowerCase());
+  if (i < 0) return str;
+  return str.slice(0,i) +
+    '<strong style="color:#fff;background:rgba(59,130,246,0.2);border-radius:3px;padding:0 2px">' +
+    str.slice(i, i + q.length) + '</strong>' +
+    str.slice(i + q.length);
 }
 
-function selectSugg(name){ input.value=name; suggestions.classList.remove('active'); }
-function handleSearch(){ const q=input.value.trim(); if(q) console.log('Search:',q); }
-input.addEventListener('keydown', e=>{ if(e.key==='Enter') handleSearch(); });
+// ─── Search button / Enter → redirect or search page ───
+function doSearch() {
+  const q = input.value.trim().toLowerCase();
+  if (!q) return;
+
+  // Exact match → redirect directly to tool page
+  const exact = TOOLS.find(t => t.name.toLowerCase() === q);
+  if (exact && exact.url !== '#') {
+    window.location.href = exact.url;
+    return;
+  }
+
+  // Partial match with 1 result → redirect
+  const cat  = filterSel.value;
+  let hits   = TOOLS.filter(t => t.name.toLowerCase().includes(q));
+  if (cat !== 'all') hits = hits.filter(t => t.cat === cat);
+  if (hits.length === 1 && hits[0].url !== '#') {
+    window.location.href = hits[0].url;
+    return;
+  }
+
+  // Otherwise keep suggestions visible
+  renderSugg(q);
+}
+
+searchBtn.addEventListener('click', doSearch);
+input.addEventListener('keydown', e => { if(e.key === 'Enter') doSearch(); });
+filterSel.addEventListener('change', () => renderSugg(input.value.trim()));
 </script>
+
 </body>
 </html>
