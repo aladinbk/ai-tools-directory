@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>ChatGPT Review</title>
+<title>ChatGPT AI Tool Review</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -20,6 +21,8 @@ background:linear-gradient(135deg,#0f172a,#020617);
 color:white;
 }
 
+/* NAV */
+
 nav{
 display:flex;
 justify-content:space-between;
@@ -33,75 +36,76 @@ text-decoration:none;
 margin-left:25px;
 }
 
+/* HERO */
+
 .hero{
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:100px 80px;
+align-items:center;
+padding:100px;
 }
 
 .hero img{
-width:140px;
+width:120px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:40px;
 margin-bottom:10px;
 }
 
-.hero p{
-opacity:0.7;
-margin-bottom:25px;
-}
-
-.btn{
-padding:12px 22px;
-background:#3b82f6;
+.hero button{
+margin-top:20px;
+padding:12px 20px;
 border:none;
+background:#2563eb;
 color:white;
 border-radius:6px;
 cursor:pointer;
-margin-right:10px;
 }
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+text-align:center;
+padding:60px;
+background:#020617;
+}
+
+.stats h3{
+color:#60a5fa;
+}
+
+/* SECTION */
 
 .section{
 padding:80px;
 }
 
-.grid{
+.features{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
 margin-top:30px;
 }
 
-.card{
+.feature{
 background:#1e293b;
-padding:25px;
-border-radius:12px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-background:#334155;
-}
-
-ul{
-margin-top:15px;
-line-height:1.9;
+padding:20px;
+border-radius:10px;
 }
 
 footer{
 text-align:center;
 padding:40px;
 background:#020617;
-margin-top:60px;
 }
 
 </style>
-
 </head>
+
 
 <body>
 
@@ -112,7 +116,7 @@ margin-top:60px;
 <div>
 
 <a href="index.html">Home</a>
-<a href="#">Writing</a>
+<a href="ai-writing-tools.html">Writing</a>
 
 </div>
 
@@ -125,11 +129,11 @@ margin-top:60px;
 
 <h1>ChatGPT</h1>
 
-<p>The world's most powerful AI assistant for writing, coding and productivity.</p>
+<p>The world's most powerful AI assistant.</p>
 
-<button class="btn">Try ChatGPT</button>
-
-<button class="btn">Explore Features</button>
+<button onclick="window.open('https://chat.openai.com')">
+Try ChatGPT
+</button>
 
 </div>
 
@@ -138,32 +142,26 @@ margin-top:60px;
 </section>
 
 
-<section class="section">
+<section class="stats">
 
-<h2>Main Features</h2>
-
-<div class="grid">
-
-<div class="card">
-<h4>AI Writing Assistant</h4>
-<p>Create blog posts, marketing copy and scripts.</p>
+<div>
+<h3>100M+</h3>
+<p>Users</p>
 </div>
 
-<div class="card">
-<h4>Code Generation</h4>
-<p>Generate and debug code instantly.</p>
+<div>
+<h3>4.8/5</h3>
+<p>Rating</p>
 </div>
 
-<div class="card">
-<h4>Research & Learning</h4>
-<p>Explain complex topics easily.</p>
+<div>
+<h3>AI Powered</h3>
+<p>Technology</p>
 </div>
 
-<div class="card">
-<h4>Idea Generation</h4>
-<p>Brainstorm startup and business ideas.</p>
-</div>
-
+<div>
+<h3>2022</h3>
+<p>Launch</p>
 </div>
 
 </section>
@@ -171,17 +169,31 @@ margin-top:60px;
 
 <section class="section">
 
-<h2>Popular Use Cases</h2>
+<h2>Main Features</h2>
 
-<ul>
+<div class="features">
 
-<li>Writing blog articles and SEO content</li>
-<li>Creating marketing campaigns</li>
-<li>Programming and debugging</li>
-<li>Studying and research</li>
-<li>Customer support automation</li>
+<div class="feature">
+<h3>AI Writing Assistant</h3>
+<p>Create blog posts, marketing copy and scripts.</p>
+</div>
 
-</ul>
+<div class="feature">
+<h3>Code Generation</h3>
+<p>Generate and debug code easily.</p>
+</div>
+
+<div class="feature">
+<h3>Research</h3>
+<p>Explain complex topics instantly.</p>
+</div>
+
+<div class="feature">
+<h3>Idea Generation</h3>
+<p>Brainstorm business ideas.</p>
+</div>
+
+</div>
 
 </section>
 
