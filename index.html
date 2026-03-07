@@ -2,74 +2,129 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Best AI Tools Directory 2026</title>
+<title>AI Tools Directory</title>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+body{
+font-family:Poppins;
+margin:0;
+background:#0f172a;
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#020617;
+}
+
+header a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.tools{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:#334155;
+}
+
+.card img{
+width:60px;
+margin-bottom:10px;
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+}
+
+</style>
 
 </head>
+
 
 <body>
 
 <header>
 
-<div class="logo">AI Tools Directory</div>
+<h2>AI Tools</h2>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="#">Writing</a>
-<a href="#">Image</a>
-<a href="#">Video</a>
+<a href="#">Home</a>
+<a href="#">Tools</a>
+<a href="#">Categories</a>
 </nav>
 
 </header>
 
+
 <section class="hero">
 
-<h1>Discover the Best AI Tools</h1>
+<h1>Best AI Tools Directory</h1>
 
-<p>The ultimate directory to discover powerful artificial intelligence tools.</p>
-
-<div class="search-box">
-
-<input type="text" placeholder="Search AI tools...">
-
-<button>Search</button>
-
-</div>
+<p>Discover the most powerful artificial intelligence tools.</p>
 
 </section>
 
 
-<section class="featured">
+<section class="tools">
 
-<h2>Featured AI Tools</h2>
+<a href="chatgpt.html">
 
-<div class="tools-grid">
+<div class="card">
 
-
-<!-- CHATGPT CARD -->
-
-<a href="chatgpt.html" class="tool-card">
-
-<img src="images/chatgpt.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg">
 
 <h3>ChatGPT</h3>
 
-<p>Advanced AI assistant for writing, coding and productivity.</p>
+<p>AI assistant for writing, coding and productivity.</p>
+
+</div>
 
 </a>
 
 
-<!-- MIDJOURNEY -->
+<a href="midjourney.html">
 
-<div class="tool-card">
+<div class="card">
 
-<img src="images/midjourney.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png">
 
 <h3>Midjourney</h3>
 
@@ -77,110 +132,31 @@
 
 </div>
 
+</a>
 
-<!-- COPY AI -->
 
-<div class="tool-card">
+<a href="copyai.html">
 
-<img src="images/copyai.png">
+<div class="card">
+
+<img src="https://seeklogo.com/images/C/copy-ai-logo-41C36F8CFA-seeklogo.com.png">
 
 <h3>Copy AI</h3>
 
-<p>Generate marketing copy and content instantly.</p>
+<p>Generate marketing copy using AI.</p>
 
 </div>
 
+</a>
 
-<!-- RUNWAY -->
-
-<div class="tool-card">
-
-<img src="images/runway.png">
-
-<h3>Runway ML</h3>
-
-<p>AI powered video creation and editing platform.</p>
-
-</div>
-
-
-<!-- NOTION -->
-
-<div class="tool-card">
-
-<img src="images/notion.png">
-
-<h3>Notion AI</h3>
-
-<p>Productivity workspace powered by AI.</p>
-
-</div>
-
-</div>
 
 </section>
-
-
-<section class="categories">
-
-<h2>Explore AI Categories</h2>
-
-<div class="categories-grid">
-
-<div class="category">AI Writing Tools</div>
-
-<div class="category">AI Image Generators</div>
-
-<div class="category">AI Video Tools</div>
-
-<div class="category">AI Marketing Tools</div>
-
-<div class="category">AI Coding Tools</div>
-
-<div class="category">AI Productivity Tools</div>
-
-</div>
-
-</section>
-
-
-<section class="stats">
-
-<div class="stat">
-<h2>1000+</h2>
-<p>AI Tools Listed</p>
-</div>
-
-<div class="stat">
-<h2>50+</h2>
-<p>Categories</p>
-</div>
-
-<div class="stat">
-<h2>1M+</h2>
-<p>Monthly Visitors</p>
-</div>
-
-</section>
-
-
-<section class="cta">
-
-<h2>Find the Best AI Tools Today</h2>
-
-<p>Explore the largest collection of artificial intelligence tools.</p>
-
-<button>Explore AI Tools</button>
-
-</section>
-
 
 <footer>
 
-<p>© 2026 AI Tools Directory</p>
+<p>2026 AI Tools Directory</p>
 
 </footer>
 
 </body>
-
 </html>
