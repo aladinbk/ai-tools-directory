@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Blog — AI Tools Directory</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#3b82f6;--cyan:#06b6d4;--dark:#020617;--border:rgba(255,255,255,0.07);--text:#e2e8f0;--muted:rgba(148,163,184,0.7);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(59,130,246,0.18) 0%,transparent 70%),#020617;pointer-events:none;}
 
+/* --- NAVIGATION UNIFIÉE --- */
+nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;background:rgba(2,6,23,0.82);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;font-family:'Syne',sans-serif;box-shadow:0 0 18px rgba(59,130,246,0.45);}
+.nav-logo-text{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.3px;}
+.nav-logo-text span{color:#3b82f6;}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links>li{position:relative;}
+.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:5px;padding:8px 14px;border:none;background:transparent;color:var(--muted);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;text-decoration:none;border-radius:8px;cursor:pointer;transition:all .2s;}
+.nav-links>li:hover>a, .nav-links li:hover button{color:#fff;background:rgba(255,255,255,0.06);}
+.nav-arrow{width:14px;height:14px;opacity:.5;transition:transform .3s;}
+.nav-links>li:hover .nav-arrow{transform:rotate(180deg);opacity:1;}
+
+.mega-drop, .simple-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);opacity:0;pointer-events:none;transition:0.25s;background:rgba(10,18,40,0.97);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 30px 60px rgba(0,0,0,0.7);}
+.nav-links>li:hover .mega-drop, .nav-links>li:hover .simple-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
+.mega-drop-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+.mega-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text);transition:0.2s;}
+.mega-item:hover{background:rgba(59,130,246,0.1);}
+
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-size:13px;font-weight:600;cursor:pointer;}
+
+/* --- HERO SECTION --- */
+.hero-blog{text-align:center;padding:80px 20px 60px;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:99px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);font-size:12px;font-weight:500;color:#93c5fd;margin-bottom:28px;}
+.hero-blog h1{font-family:'Syne',sans-serif;font-size:clamp(38px,6vw,62px);font-weight:800;margin-bottom:18px;}
+.hero-blog h1 em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto;}
+
+/* --- BLOG GRID --- */
+.blog-section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 40px 100px;}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));gap:30px;}
+
+.blog-card{background:rgba(15,23,42,0.6);border:1px solid var(--border);border-radius:24px;overflow:hidden;text-decoration:none;transition:all 0.3s ease;display:flex;flex-direction:column;backdrop-filter:blur(12px);}
+.blog-card:hover{transform:translateY(-10px);border-color:rgba(59,130,246,0.4);box-shadow:0 20px 40px rgba(0,0,0,0.4);}
+
+.blog-img{width:100%;height:220px;background:rgba(255,255,255,0.05);overflow:hidden;}
+.blog-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
+.blog-card:hover .blog-img img{transform:scale(1.05);}
+
+.blog-content{padding:24px;display:flex;flex-direction:column;flex-grow:1;}
+.blog-tag{display:inline-block;padding:4px 12px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:#93c5fd;border-radius:8px;font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:16px;width:fit-content;}
+.blog-card h3{font-family:'Syne',sans-serif;font-size:22px;color:#fff;margin-bottom:12px;line-height:1.4;}
+.blog-card p{font-size:15px;color:var(--muted);line-height:1.6;margin-bottom:20px;flex-grow:1;}
+
+.blog-footer{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05);font-size:13px;color:var(--muted);}
+
+/* --- FOOTER UNIFIÉ --- */
+footer {position: relative;z-index: 1;background: rgba(2, 6, 23, 0.95);backdrop-filter: blur(20px);border-top: 1px solid var(--border);padding: 80px 60px 40px;margin-top: 100px;}
+.footer-grid {max-width: 1200px;margin: 0 auto;display: grid;grid-template-columns: 2fr 1fr 1fr 1.5fr;gap: 60px;margin-bottom: 60px;}
+.footer-brand p {font-size: 14px;color: var(--muted);line-height: 1.6;max-width: 280px;margin-top: 20px;}
+.footer-title {font-family: 'Syne', sans-serif;font-size: 16px;font-weight: 700;color: #fff;margin-bottom: 24px;text-transform: uppercase;letter-spacing: 1px;}
+.footer-links {list-style: none;}
+.footer-links li {margin-bottom: 12px;}
+.footer-links a {font-size: 14px;color: var(--muted);text-decoration: none;transition: all 0.2s ease;}
+.footer-links a:hover {color: var(--blue);padding-left: 5px;}
+.footer-bottom {max-width: 1200px;margin: 0 auto;padding-top: 30px;border-top: 1px solid rgba(255,255,255,0.05);display: flex;justify-content: space-between;align-items: center;color: var(--muted);font-size: 13px;}
+
+@media(max-width:900px){
+    nav{padding:0 20px;}.nav-links{display:none;}.footer-grid{grid-template-columns:1fr 1fr;}.blog-section{padding:0 20px 60px;}
+}
+@media(max-width:600px){ .footer-grid{grid-template-columns:1fr;} .footer-bottom{flex-direction:column;gap:15px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">A</div>
+    <span class="nav-logo-text">AI<span>Tools</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li>
+      <button>Categories <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mega-drop">
+        <div class="mega-drop-grid">
+          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon">✍️</div><div class="mega-item-text"><strong>Writing</strong><span>Blogs, Copy</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon">🎨</div><div class="mega-item-text"><strong>Images</strong><span>Art, Design</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon">🤖</div><div class="mega-item-text"><strong>Chatbots</strong><span>AI Assistants</span></div></a>
+        </div>
+      </div>
+    </li>
+    <li><a href="blog.html" style="color:#fff; font-weight:600;">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-btn-primary">+ Submit Tool</button>
+  </div>
+</nav>
+
+<section class="hero-blog">
+  <div class="hero-badge">Insights & Updates</div>
+  <h1>Our <em>AI Blog</em></h1>
+  <p class="hero-sub">Stay informed about the latest artificial intelligence trends, tutorials, and news from the directory.</p>
+</section>
+
+<section class="blog-section">
+  <div class="blog-grid">
+    <!-- Post 1 -->
+    <a href="#" class="blog-card">
+      <div class="blog-img">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="ChatGPT Tips">
+      </div>
+      <div class="blog-content">
+        <div class="blog-tag">Tutorial</div>
+        <h3>10 Pro Tips to Get Better Results from ChatGPT</h3>
+        <p>Master the art of prompting with these advanced techniques to boost your productivity with AI.</p>
+        <div class="blog-footer">
+          <span>March 5, 2026</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 2 -->
+    <a href="#" class="blog-card">
+      <div class="blog-img">
+        <img src="https://images.unsplash.com/photo-1620712943543-bcc4628c9757?auto=format&fit=crop&q=80&w=800" alt="Future of AI">
+      </div>
+      <div class="blog-content">
+        <div class="blog-tag">News</div>
+        <h3>The Future of Generative AI in 2026</h3>
+        <p>Exploring how AI models are evolving from simple text generators to multimodal agents.</p>
+        <div class="blog-footer">
+          <span>March 1, 2026</span>
+          <span>8 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 3 -->
+    <a href="#" class="blog-card">
+      <div class="blog-img">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" alt="AI Design">
+      </div>
+      <div class="blog-content">
+        <div class="blog-tag">Design</div>
+        <h3>Top 5 AI Tools for Web Designers this Year</h3>
+        <p>Speed up your workflow with these handpicked tools for UI/UX and image generation.</p>
+        <div class="blog-footer">
+          <span>February 24, 2026</span>
+          <span>4 min read</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">A</div>
+        <span class="nav-logo-text">AI<span>Tools</span></span>
+      </a>
+      <p>Discover the world's most powerful AI tools. We curate and review the best solutions for you.</p>
+    </div>
+    <div>
+      <h3 class="footer-title">Directory</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ai-writing-tools.html">Writing Tools</a></li>
+        <li><a href="blog.html">AI Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">Company</h3>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">Legal</h3>
+      <div style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+        <strong>Reach us</strong>
+        <a href="mailto:alaeddineboubaker@gmail.com" style="color: var(--blue); text-decoration: none;">alaeddineboubaker@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p>
+  </div>
+</footer>
+
+</body>
+</html>
