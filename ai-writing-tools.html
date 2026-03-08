@@ -3,540 +3,292 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Best AI Writing Tools - AI Tools Directory</title>
+<title>AI Writing Directory — Pro Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#3b82f6;--cyan:#06b6d4;--dark:#020617;--border:rgba(255,255,255,0.07);--text:#e2e8f0;--muted:rgba(148,163,184,0.7);--star:#fbbf24;}
+:root{--blue:#3b82f6;--cyan:#06b6d4;--dark:#020617;--border:rgba(255,255,255,0.08);--text:#e2e8f0;--muted:rgba(148,163,184,0.7);--star:#fbbf24;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(59,130,246,0.18) 0%,transparent 70%),#020617;pointer-events:none;}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;background:rgba(2,6,23,0.82);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 50% -10%,rgba(59,130,246,0.12) 0%,transparent 70%),#020617;pointer-events:none;}
+
+/* --- NAVIGATION (Identique index.html) --- */
+nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;background:rgba(2,6,23,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .nav-logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;font-family:'Syne',sans-serif;box-shadow:0 0 18px rgba(59,130,246,0.45);}
 .nav-logo-text{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.3px;}
 .nav-logo-text span{color:#3b82f6;}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
-.nav-links>li{position:relative;}
-.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:5px;padding:8px 14px;border:none;background:transparent;color:var(--muted);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;text-decoration:none;border-radius:8px;cursor:pointer;transition:color .2s,background .2s;}
-.nav-links>li>a:hover,.nav-links>li>button:hover,.nav-links>li:hover>button{color:#fff;background:rgba(255,255,255,0.06);}
-.nav-arrow{width:14px;height:14px;opacity:.5;transition:transform .3s;}
-.nav-links>li:hover .nav-arrow{transform:rotate(180deg);opacity:1;}
-.mega-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;min-width:760px;background:rgba(10,18,40,0.97);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 30px 60px rgba(0,0,0,0.7),0 0 0 1px rgba(59,130,246,0.08);}
-.nav-links>li:hover .mega-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
-.mega-drop-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding:0 4px;}
-.mega-drop-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
-.mega-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text);transition:background .2s,transform .2s;}
-.mega-item:hover{background:rgba(59,130,246,0.1);transform:translateX(2px);}
-.mega-icon{width:34px;height:34px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;}
-.mega-item-text strong{display:block;font-size:12px;font-weight:600;color:#fff;}
-.mega-item-text span{font-size:11px;color:var(--muted);}
-.simple-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;min-width:200px;background:rgba(10,18,40,0.97);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:12px;padding:8px;box-shadow:0 20px 50px rgba(0,0,0,0.5);}
-.nav-links>li:hover .simple-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
-.simple-drop a{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13px;transition:background .2s;}
-.simple-drop a:hover{background:rgba(255,255,255,0.06);}
-.simple-drop a .si{font-size:15px;}
-.nav-right{display:flex;align-items:center;gap:12px;}
-.nav-btn-ghost{padding:7px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:var(--text);font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;transition:border-color .2s,color .2s,background .2s;}
-.nav-btn-ghost:hover{border-color:rgba(59,130,246,0.5);color:#fff;background:rgba(59,130,246,0.08);}
-.nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 15px rgba(59,130,246,0.35);}
-.nav-btn-primary:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(59,130,246,0.5);}
-
-/* Dropdowns */
-.mega-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);opacity:0;pointer-events:none;transition:all .25s;min-width:760px;background:rgba(10,18,40,0.97);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 30px 60px rgba(0,0,0,0.7);}
-.nav-links>li:hover .mega-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
-.mega-drop-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
-.mega-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text);transition:0.2s;}
-.mega-item:hover{background:rgba(59,130,246,0.1);transform:translateX(2px);}
-.mega-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;background:rgba(59,130,246,0.12);}
-.mega-item-text strong{display:block;font-size:12px;font-weight:600;color:#fff;}
-.mega-item-text span{font-size:11px;color:var(--muted);}
+.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:5px;padding:8px 14px;border:none;background:transparent;color:var(--muted);font-size:14px;font-weight:500;text-decoration:none;border-radius:8px;cursor:pointer;transition:0.2s;}
+.nav-links>li:hover>a, .nav-links li:hover button{color:#fff;background:rgba(255,255,255,0.06);}
 
 .nav-right{display:flex;align-items:center;gap:12px;}
 .nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-size:13px;font-weight:600;cursor:pointer;}
 
-/* --- HERO --- */
-.hero-cat{text-align:center;padding:100px 20px 40px;position:relative;z-index:1;}
-.cat-badge{display:inline-flex;width:48px;height:48px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);border-radius:14px;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;}
-.hero-cat h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,54px);margin-bottom:14px;}
-.hero-cat h1 em { font-style: normal; background: linear-gradient(90deg, var(--blue), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+/* --- DASHBOARD LAYOUT --- */
+.dashboard{display:grid;grid-template-columns:280px 1fr;gap:40px;max-width:1600px;margin:40px auto;padding:0 60px;position:relative;z-index:1;}
 
-/* --- STICKY CATEGORY NAV --- */
-.cat-nav-wrapper {
-  position: sticky;
-  top: 68px;
-  z-index: 900;
-  background: rgba(2,6,23,0.8);
-  backdrop-filter: blur(15px);
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-}
-.cat-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 12px;
-  padding: 0 60px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.cat-nav::-webkit-scrollbar { display: none; }
-.cat-nav-btn {
-  white-space: nowrap;
-  padding: 8px 18px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--border);
-  border-radius: 99px;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.cat-nav-btn:hover, .cat-nav-btn.active {
-  background: var(--blue);
-  color: white;
-  border-color: var(--blue);
-  box-shadow: 0 0 15px rgba(59,130,246,0.3);
-}
+/* --- SIDEBAR --- */
+.sidebar{position:sticky;top:100px;height:fit-content;}
+.sidebar-title{font-family:'Syne',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:20px;padding-left:15px;}
+.side-nav{display:flex;flex-direction:column;gap:5px;}
+.side-btn{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:12px;color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:0.3s;border:1px solid transparent;}
+.side-btn:hover{background:rgba(255,255,255,0.03);color:#fff;}
+.side-btn.active{background:rgba(59,130,246,0.1);color:var(--blue);border-color:rgba(59,130,246,0.2);}
+.side-btn span{font-size:18px;width:24px;text-align:center;}
 
-/* --- CAROUSEL SECTIONS --- */
-.tools-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 40px 60px;
-  position: relative;
-  z-index: 1;
-}
-.section-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 24px;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.section-title span { font-size: 14px; color: var(--blue); font-weight: 400; background: rgba(59,130,246,0.1); padding: 2px 10px; border-radius: 20px;}
+/* --- MAIN PANEL --- */
+.panel-header{margin-bottom:35px;display:flex;justify-content:space-between;align-items:flex-end;}
+.panel-title h1{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;margin-bottom:8px;}
+.panel-title p{color:var(--muted);font-size:14px;}
 
-.carousel-wrapper { position: relative; margin-bottom: 80px; }
-.carousel {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 10px 5px 30px;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-}
-.carousel::-webkit-scrollbar { height: 4px; }
-.carousel::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 10px; }
+.search-container{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);padding:12px 20px;border-radius:16px;width:320px;transition:0.3s;}
+.search-container:focus-within{border-color:var(--blue);background:rgba(15,23,42,0.6);box-shadow:0 0 20px rgba(59,130,246,0.1);}
+.search-container input{background:transparent;border:none;color:#fff;outline:none;font-size:14px;width:100%;}
 
-/* --- CARD DESIGN --- */
-.card {
-  min-width: 320px;
-  max-width: 320px;
-  background: rgba(15,23,42,0.5);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 28px;
-  text-decoration: none;
-  color: var(--text);
-  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  backdrop-filter: blur(12px);
-  display: flex;
-  flex-direction: column;
-}
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--blue);
-  background: rgba(15,23,42,0.8);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-.card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-.card-logo {
-  width: 54px; height: 54px; border-radius: 14px;
-  background: rgba(255,255,255,0.03);
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
-  border: 1px solid var(--border);
-}
-.card-logo img { width: 36px; height: 36px; object-fit: contain; }
-.card-score {
-  display: flex; align-items: center; gap: 4px;
-  background: rgba(255,255,255,0.05); padding: 6px 14px;
-  border-radius: 99px; font-size: 13px; font-weight: 700; color: #fff;
-}
-.card-score svg { width: 14px; height: 14px; fill: var(--star); }
-.card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.card p { font-size: 14px; color: var(--muted); line-height: 1.6; height: 45px; overflow: hidden; margin-bottom: 25px; }
-.card-footer { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
-.card-tag {
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
-  color: #93c5fd; background: rgba(59,130,246,0.1);
-  padding: 5px 12px; border-radius: 8px; border: 1px solid rgba(59,130,246,0.2);
-}
-.card-arrow { color: var(--muted); transition: 0.3s; }
-.card:hover .card-arrow { transform: translateX(5px); color: var(--blue); }
+/* --- GRID & CARDS --- */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:20px;}
 
-/* --- FOOTER (Identique index.html) --- */
-footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-top: 1px solid var(--border); padding: 80px 60px 40px; margin-top: 100px;}
-.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; margin-bottom: 60px;}
-.footer-title { font-family: 'Syne', sans-serif; font-size: 16px; color: #fff; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px;}
+.tool-card{background:rgba(15,23,42,0.3);border:1px solid var(--border);border-radius:24px;padding:26px;text-decoration:none;position:relative;overflow:hidden;transition:0.4s cubic-bezier(0.2, 1, 0.2, 1);display:flex;flex-direction:column;height:230px;backdrop-filter:blur(10px);}
+
+/* Spotlight Effect */
+.tool-card::before{content:'';position:absolute;inset:0;background:radial-gradient(500px circle at var(--x) var(--y), rgba(59,130,246,0.12),transparent 40%);opacity:0;transition:opacity 0.4s;}
+.tool-card:hover::before{opacity:1;}
+.tool-card:hover{transform:translateY(-5px);border-color:rgba(59,130,246,0.3);background:rgba(15,23,42,0.6);}
+
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;z-index:2;}
+.card-logo{width:50px;height:50px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.card-logo img{width:32px;height:32px;object-fit:contain;}
+.card-logo div{font-weight:800;font-size:20px;color:#fff;} /* Initials fallback */
+
+.card-score{display:flex;align-items:center;gap:5px;font-weight:700;font-size:12px;color:#fff;background:rgba(255,255,255,0.05);padding:5px 12px;border-radius:99px;}
+.card-score svg{width:12px;height:12px;fill:var(--star);}
+
+.card-info{z-index:2;flex-grow:1;}
+.card-info h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;}
+.card-info p{font-size:13.5px;color:var(--muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+
+.card-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;z-index:2;}
+.card-tag{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--blue);background:rgba(59,130,246,0.1);padding:5px 10px;border-radius:6px;border:1px solid rgba(59,130,246,0.15);}
+.card-arrow{color:var(--muted);transition:0.3s;}
+.tool-card:hover .card-arrow{color:var(--blue);transform:translateX(4px);}
+
+/* --- FOOTER (Unifié) --- */
+footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-top: 1px solid var(--border); padding: 80px 60px 40px; margin-top: 100px; }
+.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
+.footer-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 24px; text-transform: uppercase; }
 .footer-links { list-style: none; }
 .footer-links li { margin-bottom: 12px; }
 .footer-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: 0.2s; }
 .footer-links a:hover { color: var(--blue); padding-left: 5px; }
 
-@media(max-width:900px){
-  nav, .cat-nav, .tools-container { padding: 0 20px; }
-  .nav-links, .footer-grid { display: none; }
-  .card { min-width: 280px; }
-}
-/* --- FOOTER MODERNE & COMPLET --- */
-footer {
-  position: relative;
-  z-index: 1;
-  background: rgba(2, 6, 23, 0.95);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid var(--border);
-  padding: 80px 60px 40px;
-  margin-top: 100px;
-}
-
-.footer-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 60px;
-  margin-bottom: 60px;
-}
-
-.footer-brand .nav-logo {
-  margin-bottom: 20px;
-}
-
-.footer-brand p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-  max-width: 280px;
-}
-
-.footer-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 24px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.footer-links {
-  list-style: none;
-}
-
-.footer-links li {
-  margin-bottom: 12px;
-}
-
-.footer-links a {
-  font-size: 14px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: var(--blue);
-  padding-left: 5px;
-}
-
-.footer-contact-info {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.footer-contact-info strong {
-  color: #fff;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* RESPONSIVE FOOTER */
-@media(max-width: 900px) {
-  footer { padding: 60px 20px 30px; }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-}
-
-@media(max-width: 500px) {
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+@media(max-width:1100px){
+    .dashboard{grid-template-columns:1fr; padding: 0 20px;}
+    .sidebar{position:relative;top:0;margin-bottom:30px;}
+    .side-nav{flex-direction:row;overflow-x:auto;padding-bottom:10px;scrollbar-width:none;}
+    .side-nav::-webkit-scrollbar{display:none;}
+    .panel-header{flex-direction:column;align-items:flex-start;gap:20px;}
+    .search-container{width:100%;}
 }
 </style>
 </head>
 <body>
 
+<!-- NAVIGATION -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">A</div>
-    <span class="nav-logo-text">AI<span>Tools</span></span>
+    <div class="nav-logo-icon">A</div><span class="nav-logo-text">AI<span>Tools</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li>
-      <button>Categories <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="mega-drop">
-        <div class="mega-drop-title">Browse all 12 categories</div>
-        <div class="mega-drop-grid">
-          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon" style="background:rgba(59,130,246,0.12)">✍️</div><div class="mega-item-text"><strong>Writing & Editing</strong><span>Copywriting, blogs, scripts</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(168,85,247,0.12)">🎨</div><div class="mega-item-text"><strong>Image Generation</strong><span>Art, design & visuals</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(245,158,11,0.12)">🎬</div><div class="mega-item-text"><strong>Video & Audio</strong><span>Generation, editing, VFX</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(6,182,212,0.12)">💻</div><div class="mega-item-text"><strong>Coding & DevTools</strong><span>Debugging, review, docs</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(239,68,68,0.12)">🤖</div><div class="mega-item-text"><strong>Chatbots & Assistants</strong><span>AI chat, support bots</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(16,185,129,0.12)">📊</div><div class="mega-item-text"><strong>Productivity</strong><span>Notes, tasks, automation</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(251,146,60,0.12)">📣</div><div class="mega-item-text"><strong>Marketing & SEO</strong><span>Campaigns, ads, analytics</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(99,102,241,0.12)">🔬</div><div class="mega-item-text"><strong>Research & Analysis</strong><span>Data, insights, reports</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(20,184,166,0.12)">🎧</div><div class="mega-item-text"><strong>Audio & Voice</strong><span>TTS, cloning, transcription</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(234,179,8,0.12)">💬</div><div class="mega-item-text"><strong>Customer Service</strong><span>Support, live chat, CRM</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(236,72,153,0.12)">🖌️</div><div class="mega-item-text"><strong>Design & Creative</strong><span>UI, branding, illustration</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(148,163,184,0.12)">⚙️</div><div class="mega-item-text"><strong>Workflow Automation</strong><span>No-code, pipelines, APIs</span></div></a>
-        </div>
-      </div>
-    </li>
-    <li>
-      <button>Top Tools <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="simple-drop">
-        <a href="chatgpt.html"><span class="si">🤖</span> ChatGPT</a>
-        <a href="midjourney.html"><span class="si">🎨</span> Midjourney</a>
-        <a href="copyai.html"><span class="si">✍️</span> Copy AI</a>
-        <a href="notionai.html"><span class="si">📝</span> Notion AI</a>
-        <a href="runway.html"><span class="si">🎬</span> Runway ML</a>
-      </div>
-    </li>
+    <li><button style="color:white;font-weight:600;">Writing Tools</button></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="#">Submit Tool</a></li>
   </ul>
-  <div class="nav-right">
-    <a href="#" class="nav-btn-ghost">Sign in</a>
-    <button class="nav-btn-primary">+ Submit Tool</button>
-  </div>
+  <div class="nav-right"><button class="nav-btn-primary">+ Submit Tool</button></div>
 </nav>
-<section class="hero-cat">
-  <div class="cat-badge">✍️</div>
-  <h1>Master <em>AI Writing</em></h1>
-  <p>The ultimate ergonomic collection of 47 high-end writing assistants for every use case.</p>
-</section>
 
-<div class="cat-nav-wrapper">
-  <div class="cat-nav">
-    <a href="#top-rated" class="cat-nav-btn active">🏆 Top Rated</a>
-    <a href="#seo-blog" class="cat-nav-btn">📝 SEO & Blogging</a>
-    <a href="#marketing" class="cat-nav-btn">📣 Marketing & Ads</a>
-    <a href="#editing" class="cat-nav-btn">✨ Editing & Grammar</a>
-    <a href="#specialized" class="cat-nav-btn">🎭 Creative & Specialized</a>
-  </div>
+<div class="dashboard">
+  <!-- SIDEBAR FILTERS -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Categories</div>
+    <nav class="side-nav">
+      <a href="#" class="side-btn active" data-filter="all"><span>💎</span> All Tools</a>
+      <a href="#" class="side-btn" data-filter="top"><span>🏆</span> Top Rated</a>
+      <a href="#" class="side-btn" data-filter="seo"><span>📝</span> SEO & Blogging</a>
+      <a href="#" class="side-btn" data-filter="marketing"><span>📣</span> Marketing & Ads</a>
+      <a href="#" class="side-btn" data-filter="editing"><span>✨</span> Editing</a>
+      <a href="#" class="side-btn" data-filter="specialized"><span>🎭</span> Creative</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN VIEW -->
+  <main class="main-panel">
+    <header class="panel-header">
+      <div class="panel-title">
+        <h1 id="currentCatName">All Writing Tools</h1>
+        <p>Exploring <span id="toolCount">47</span> intelligent assistants</p>
+      </div>
+      <div class="search-container">
+        <svg width="18" height="18" fill="var(--muted)" viewBox="0 0 24 24"><path d="M11 2a9 9 0 106.32 15.435l4.387 4.386a1 1 0 001.414-1.414l-4.386-4.387A9 9 0 0011 2zm0 2a7 7 0 110 14 7 7 0 010-14z"/></svg>
+        <input type="text" id="toolSearch" placeholder="Find an tool by name...">
+      </div>
+    </header>
+
+    <div class="tool-grid" id="toolGrid">
+      <!-- Generated by JavaScript -->
+    </div>
+  </main>
 </div>
 
-<main class="tools-container" id="mainContent"></main>
-
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
-    <!-- Colonne 1: Brand -->
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">A</div>
-        <span class="nav-logo-text">AI<span>Tools</span></span>
-      </a>
-      <p>Discover the world's most powerful AI tools. We curate and review the best solutions to help you boost productivity and creativity.</p>
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">A</div><span class="nav-logo-text">AI<span>Tools</span></span></a>
+      <p style="margin-top:20px;">Curating the best AI writing solutions for professionals and creators.</p>
     </div>
-
-    <!-- Colonne 2: Directory -->
     <div>
-      <h3 class="footer-title">Directory</h3>
+      <h3 class="footer-title">Links</h3>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="ai-writing-tools.html">Writing Tools</a></li>
-        <li><a href="#">Image Generators</a></li>
-        <li><a href="#">Coding AI</a></li>
-        <li><a href="#">Video Tools</a></li>
-      </ul>
-    </div>
-
-    <!-- Colonne 3: Company -->
-    <div>
-      <h3 class="footer-title">Company</h3>
-      <ul class="footer-links">
         <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#">Submit a Tool</a></li>
+        <li><a href="blog.html">AI Blog</a></li>
       </ul>
     </div>
-
-    <!-- Colonne 4: Support & Legal -->
     <div>
       <h3 class="footer-title">Legal</h3>
       <ul class="footer-links">
         <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
-      <div class="footer-contact-info" style="margin-top: 25px;">
-        <strong>Reach us</strong>
-        <a href="mailto:alaeddineboubaker@gmail.com" style="color: var(--blue); text-decoration: none; font-size: 13px;">alaeddineboubaker@gmail.com</a>
-      </div>
     </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p>
-    <div style="display: flex; gap: 20px;">
-      <a href="#" style="color: var(--muted); text-decoration: none;">Twitter</a>
-      <a href="#" style="color: var(--muted); text-decoration: none;">LinkedIn</a>
+    <div>
+      <h3 class="footer-title">Contact</h3>
+      <a href="mailto:alaeddineboubaker@gmail.com" style="color:var(--blue);text-decoration:none;font-size:14px;">alaeddineboubaker@gmail.com</a>
     </div>
   </div>
 </footer>
 
 <script>
 const allWritingTools = [
-  // TOP RATED (6)
-  { name: "Jasper AI", desc: "The enterprise-grade platform for professional marketing teams.", tag: "Marketing", score: "4.9", img: "images/jasper.png", url: "jasper.html", sec: "top" },
-//{ name: "ChatGPT", desc: "The world's most versatile assistant for writing and brainstorming.", tag: "General", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", url: "chatgpt.html", sec: "top" },
-//{ name: "Claude", desc: "Anthropic’s AI known for natural, human-like writing quality.", tag: "General", score: "4.9", img: "https://www.anthropic.com/favicon.ico", url: "claude.html", sec: "top" },
-//{ name: "Gemini", desc: "Google’s powerful multimodal AI integrated with Workspace.", tag: "General", score: "4.8", img: "", url: "#", sec: "top" },
-//{ name: "Notion AI", desc: "Powerful AI assistant living directly inside your Notion notes.", tag: "Productivity", score: "4.8", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", url: "notionai.html", sec: "top" },
-  { name: "Writesonic", desc: "All-in-one AI writer for high-ranking blog posts and articles.", tag: "SEO", score: "4.7", img: "images/writesonic.png", url: "writesonic.html", sec: "top" },
+  // --- TOP RATED ---
+  { name: "Jasper AI", desc: "The ultimate AI for enterprise content and marketing teams.", tag: "Marketing", score: "4.9", img: "images/jasper.png", url: "jasper.html", sec: "top" },
+  { name: "ChatGPT", desc: "Versatile conversational AI for any writing or coding task.", tag: "Assistant", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", url: "chatgpt.html", sec: "top" },
+  { name: "Claude AI", desc: "Anthropic’s model known for natural and nuanced writing.", tag: "Assistant", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Claude_AI_logo.svg", url: "claude.html", sec: "top" },
+  { name: "Writesonic", desc: "AI writer for high-ranking blog posts and SEO articles.", tag: "SEO", score: "4.7", img: "images/writesonic.png", url: "writesonic.html", sec: "top" },
+  { name: "Notion AI", desc: "Integrated assistant inside your Notion notes and workspace.", tag: "Productivity", score: "4.8", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", url: "notionai.html", sec: "top" },
+  { name: "Copy AI", desc: "Generate high-converting marketing copy and social posts.", tag: "Marketing", score: "4.8", img: "images/copy.jpg", url: "copyai.html", sec: "top" },
 
-  // SEO & BLOGGING (11)
-  { name: "Frase", desc: "Research and optimize high-quality SEO content in record time.", tag: "SEO", score: "4.6", img: "images/frase.png", url: "frase.html", sec: "seo" },
-  { name: "Surfer SEO", desc: "Analyze and optimize your writing for search engine dominance.", tag: "SEO", score: "4.8", img: "images/surfer.png", url: "surferseo.html", sec: "seo" },
-  { name: "Scalenut", desc: "Manage your entire SEO content lifecycle in one AI platform.", tag: "SEO", score: "4.7", img: "images/scalenut.png", url: "scalenut.html", sec: "seo" },
+  // --- SEO & BLOGGING ---
+  { name: "Frase", desc: "Research and optimize SEO content in record time.", tag: "SEO", score: "4.6", img: "images/frase.png", url: "frase.html", sec: "seo" },
+  { name: "Surfer SEO", desc: "Analyze and optimize writing for search engine dominance.", tag: "SEO", score: "4.8", img: "images/surfer.png", url: "surferseo.html", sec: "seo" },
+  { name: "Scalenut", desc: "All-in-one SEO content research and writing platform.", tag: "SEO", score: "4.7", img: "images/scalenut.png", url: "scalenut.html", sec: "seo" },
   { name: "LongShot AI", desc: "Generate fact-checked, long-form SEO content effortlessly.", tag: "Blogging", score: "4.5", img: "images/longshot.png", url: "longshot.html", sec: "seo" },
-  { name: "Article Forge", desc: "Automatically generate unique, high-quality SEO articles.", tag: "Blogging", score: "4.2", img: "images/forge.png", url: "article_forge.html", sec: "seo" },
-  { name: "Hypotenuse AI", desc: "Turn simple keywords into full, optimized blog posts.", tag: "Blogging", score: "4.5", img: "images/hypotenuse.png", url: "hypotenuse.html", sec: "seo" },
-  { name: "Typli", desc: "Intuitive AI writing assistant with built-in SEO checker.", tag: "SEO", score: "4.2", img: "images/typli.png", url: "typli.html", sec: "seo" },
+  { name: "Article Forge", desc: "Automated high-quality article generation using AI.", tag: "Blogging", score: "4.2", img: "images/forge.png", url: "article_forge.html", sec: "seo" },
+  { name: "Hypotenuse AI", desc: "Transform keywords into full-length blog posts and ads.", tag: "Blogging", score: "4.5", img: "images/hypotenuse.png", url: "hypotenuse.html", sec: "seo" },
+  { name: "Typli", desc: "Writing assistant with a powerful built-in SEO checker.", tag: "SEO", score: "4.2", img: "images/typli.png", url: "typli.html", sec: "seo" },
   { name: "SEO.ai", desc: "Generate high-ranking content with smart SEO scoring.", tag: "SEO", score: "4.4", img: "images/seo.png", url: "seo.html", sec: "seo" },
-  { name: "Bramework", desc: "Built specifically to help bloggers finish posts 5x faster.", tag: "Blogging", score: "4.4", img: "images/bramework.png", url: "bramework.html", sec: "seo" },
-  { name: "AI Writer", desc: "Generate accurate, unique articles from just a headline.", tag: "Blogging", score: "4.2", img: "images/ai-writer.png", url: "ai_writing.html", sec: "seo" },
+  { name: "Bramework", desc: "Help bloggers finish high-quality posts 5x faster.", tag: "Blogging", score: "4.4", img: "images/bramework.png", url: "bramework.html", sec: "seo" },
+  { name: "AI-Writer", desc: "Generate accurate articles with verifiable citations.", tag: "Blogging", score: "4.2", img: "images/ai-writer.png", url: "ai_writing.html", sec: "seo" },
   { name: "Outranking", desc: "Data-driven SEO strategy and content creation software.", tag: "SEO", score: "4.5", img: "images/outranking.png", url: "outranking.html", sec: "seo" },
 
-  // MARKETING & ADS (13)
-  { name: "Copy AI", desc: "High-converting marketing copy and social media posts.", tag: "Marketing", score: "4.8", img: "images/copy.jpg", url: "copyai.html", sec: "marketing" },
-  { name: "Anyword", desc: "Predictive AI copy that tells you how well your ads will perform.", tag: "Marketing", score: "4.5", img: "", url: "#", sec: "marketing" },
-  { name: "Copysmith", desc: "AI content generation tailored for eCommerce and agencies.", tag: "E-commerce", score: "4.4", img: "", url: "#", sec: "marketing" },
-  { name: "Peppertype", desc: "Your virtual content assistant for fast social and blog ideas.", tag: "Copywriting", score: "4.6", img: "", url: "#", sec: "marketing" },
-  { name: "Neuroflash", desc: "Europe’s leading AI text generator for marketing teams.", tag: "Marketing", score: "4.5", img: "", url: "#", sec: "marketing" },
-  { name: "Simplified", desc: "All-in-one design and writing app for social media managers.", tag: "Social Media", score: "4.6", img: "", url: "#", sec: "marketing" },
-  { name: "Writecream", desc: "Innovative tools for cold emails and LinkedIn outreach.", tag: "Email", score: "4.4", img: "", url: "#", sec: "marketing" },
-  { name: "ClosersCopy", desc: "Sales-focused copywriting using custom AI frameworks.", tag: "Sales", score: "4.3", img: "", url: "#", sec: "marketing" },
-  { name: "ContentBot", desc: "Advanced AI for digital marketers and content workflows.", tag: "Marketing", score: "4.4", img: "", url: "#", sec: "marketing" },
-  { name: "GoCharlie", desc: "Creative AI engine built for full marketing campaigns.", tag: "Marketing", score: "4.3", img: "", url: "#", sec: "marketing" },
-  { name: "Hoppy Copy", desc: "Write high-converting email newsletters and sequences.", tag: "Email", score: "4.6", img: "", url: "#", sec: "marketing" },
-  { name: "Bertha AI", desc: "The ultimate AI assistant built directly for WordPress.", tag: "WordPress", score: "4.5", img: "", url: "#", sec: "marketing" },
-  { name: "Creator.ai", desc: "Effortless content creation for social media and ads.", tag: "Social Media", score: "4.3", img: "", url: "#", sec: "marketing" },
+  // --- MARKETING ---
+  { name: "Anyword", desc: "Predictive AI copy that tells you how well ads will perform.", tag: "Marketing", score: "4.5", img: "", url: "#", sec: "marketing" },
+  { name: "Copysmith", desc: "AI content generation tailored for eCommerce teams.", tag: "E-commerce", score: "4.4", img: "", url: "#", sec: "marketing" },
+  { name: "Peppertype", desc: "Virtual assistant for quick social media and blog ideas.", tag: "Copywriting", score: "4.6", img: "", url: "#", sec: "marketing" },
+  { name: "Neuroflash", desc: "European AI focused on high-quality German/English copy.", tag: "Marketing", score: "4.5", img: "", url: "#", sec: "marketing" },
+  { name: "Simplified", desc: "Unified tool for AI writing, design, and scheduling.", tag: "Design", score: "4.6", img: "", url: "#", sec: "marketing" },
+  { name: "Writecream", desc: "AI for cold outreach, emails and LinkedIn messages.", tag: "Email", score: "4.4", img: "", url: "#", sec: "marketing" },
+  { name: "ClosersCopy", desc: "Sales-focused copywriting using custom frameworks.", tag: "Sales", score: "4.3", img: "", url: "#", sec: "marketing" },
+  { name: "ContentBot", desc: "Flexible AI assistant for bloggers and automation.", tag: "Marketing", score: "4.4", img: "", url: "#", sec: "marketing" },
+  { name: "GoCharlie", desc: "Creative AI engine for full-scale marketing campaigns.", tag: "Marketing", score: "4.3", img: "", url: "#", sec: "marketing" },
+  { name: "Hoppy Copy", desc: "Email marketing AI for high-converting newsletters.", tag: "Email", score: "4.6", img: "", url: "#", sec: "marketing" },
+  { name: "Bertha AI", desc: "AI copywriting assistant built for WordPress users.", tag: "WordPress", score: "4.5", img: "", url: "#", sec: "marketing" },
+  { name: "Creator.ai", desc: "Effortless content creation for social media and ads.", tag: "Social", score: "4.3", img: "", url: "#", sec: "marketing" },
+  { name: "Mailchimp AI", desc: "Built-in AI to optimize email marketing campaigns.", tag: "Email", score: "4.4", img: "", url: "#", sec: "marketing" },
 
-  // EDITING & GRAMMAR (5)
-  { name: "Grammarly", desc: "The industry standard for correction and tone adjustment.", tag: "Editing", score: "4.8", img: "images/grammarly.png", url: "#", sec: "editing" },
-  { name: "QuillBot", desc: "Advanced paraphrasing to improve fluency and vocabulary.", tag: "Editing", score: "4.7", img: "", url: "#", sec: "editing" },
-  { name: "Wordtune", desc: "Rewrite and rephrase your sentences for perfect impact.", tag: "Editing", score: "4.7", img: "", url: "#", sec: "editing" },
-  { name: "ProWritingAid", desc: "Premium grammar and style editor for serious authors.", tag: "Editing", score: "4.8", img: "", url: "#", sec: "editing" },
-  { name: "ParagraphAI", desc: "AI writing app and keyboard for instant, smart replies.", tag: "Editing", score: "4.2", img: "", url: "#", sec: "editing" },
+  // --- EDITING ---
+  { name: "Grammarly", desc: "Advanced grammar checker and tone adjustment assistant.", tag: "Editing", score: "4.8", img: "images/grammarly.png", url: "#", sec: "editing" },
+  { name: "QuillBot", desc: "Professional paraphrasing and summarization tool.", tag: "Editing", score: "4.7", img: "", url: "#", sec: "editing" },
+  { name: "Wordtune", desc: "Rewrite sentences perfectly to match your intent.", tag: "Editing", score: "4.7", img: "", url: "#", sec: "editing" },
+  { name: "ProWritingAid", desc: "Comprehensive grammar and style editor for authors.", tag: "Editing", score: "4.8", img: "", url: "#", sec: "editing" },
+  { name: "ParagraphAI", desc: "AI writing app and keyboard extension for replies.", tag: "Editing", score: "4.2", img: "", url: "#", sec: "editing" },
 
-  // SPECIALIZED & CREATIVE (12)
-  { name: "Sudowrite", desc: "The ultimate AI tool designed for novelists and fiction writers.", tag: "Creative", score: "4.8", img: "", url: "#", sec: "specialized" },
-  { name: "NovelAI", desc: "AI authorship and virtual companionship through storytelling.", tag: "Creative", score: "4.6", img: "", url: "#", sec: "specialized" },
-  { name: "Lex", desc: "Modern word processor with AI built-in for deep focus writing.", tag: "Writing", score: "4.7", img: "", url: "#", sec: "specialized" },
-  { name: "Moonbeam", desc: "AI assistant specialized for long-form essays and academic work.", tag: "Academic", score: "4.3", img: "", url: "#", sec: "specialized" },
-  { name: "TextCortex", desc: "Customizable AI companion tailored to your personal style.", tag: "General", score: "4.4", img: "", url: "#", sec: "specialized" },
+  // --- CREATIVE / SPECIALIZED ---
+  { name: "Sudowrite", desc: "Creative writing assistant for novelists and storytellers.", tag: "Fiction", score: "4.8", img: "", url: "#", sec: "specialized" },
+  { name: "NovelAI", desc: "AI authorship tool for fiction and virtual storytelling.", tag: "Fiction", score: "4.6", img: "", url: "#", sec: "specialized" },
+  { name: "Lex", desc: "Minimal word processor with powerful built-in AI.", tag: "Writing", score: "4.7", img: "", url: "#", sec: "specialized" },
+  { name: "Moonbeam", desc: "Assistant specialized for long essays and academic work.", tag: "Academic", score: "4.3", img: "", url: "#", sec: "specialized" },
+  { name: "TextCortex", desc: "Customizable AI co-pilot that learns your writing style.", tag: "Assistant", score: "4.4", img: "", url: "#", sec: "specialized" },
   { name: "INK", desc: "All-in-one suite optimizing for safety, SEO and readability.", tag: "SEO", score: "4.6", img: "", url: "#", sec: "specialized" },
-  { name: "Writer.com", desc: "Enterprise platform to keep your brand voice consistent.", tag: "Enterprise", score: "4.7", img: "", url: "#", sec: "specialized" },
-  { name: "SmartWriter", desc: "Generate personalized outreach that actually gets replies.", tag: "Email", score: "4.5", img: "", url: "#", sec: "specialized" },
-  { name: "Spin Rewriter", desc: "Rewrite one article into dozens of unique, human-quality versions.", tag: "Rewriting", score: "4.1", img: "", url: "#", sec: "specialized" },
-  { name: "WordAI", desc: "Uses ML to completely restructure and rewrite your content.", tag: "Rewriting", score: "4.3", img: "", url: "#", sec: "specialized" },
-  { name: "Zyro", desc: "Website builder featuring automated AI content tools.", tag: "Web", score: "4.1", img: "", url: "#", sec: "specialized" },
-  { name: "Chinchilla", desc: "Highly efficient language model for high-end reasoning.", tag: "General", score: "4.8", img: "", url: "#", sec: "specialized" }
+  { name: "Writer.com", desc: "Secure enterprise platform for consistent brand language.", tag: "Enterprise", score: "4.7", img: "", url: "#", sec: "specialized" },
+  { name: "SmartWriter", desc: "Generate personalized cold outreach that gets replies.", tag: "Email", score: "4.5", img: "", url: "#", sec: "specialized" },
+  { name: "Spin Rewriter", desc: "Rewrite articles into unique, human-quality versions.", tag: "Rewriting", score: "4.1", img: "", url: "#", sec: "specialized" },
+  { name: "WordAI", desc: "Restructure and rewrite content using machine learning.", tag: "Rewriting", score: "4.3", img: "", url: "#", sec: "specialized" },
+  { name: "Zyro", desc: "Website builder with integrated AI content tools.", tag: "Web", score: "4.1", img: "", url: "#", sec: "specialized" },
+  { name: "Chinchilla", desc: "Language model optimized for high-end reasoning tasks.", tag: "General", score: "4.8", img: "", url: "#", sec: "specialized" }
 ];
 
-const sections = [
-    { id: "top-rated", title: "🏆 Top Rated Picks", filter: "top" },
-    { id: "seo-blog", title: "📝 SEO & Blogging", filter: "seo" },
-    { id: "marketing", title: "📣 Marketing & Ads", filter: "marketing" },
-    { id: "editing", title: "✨ Editing & Grammar", filter: "editing" },
-    { id: "specialized", title: "🎭 Creative & Specialized", filter: "specialized" }
-];
+const grid = document.getElementById('toolGrid');
+const countDisplay = document.getElementById('toolCount');
+const searchInput = document.getElementById('toolSearch');
+const sideBtns = document.querySelectorAll('.side-btn');
 
-const container = document.getElementById('mainContent');
+function render(filter = "all", search = "") {
+    let filtered = allWritingTools;
+    if(filter !== "all") filtered = filtered.filter(t => t.sec === filter);
+    if(search) filtered = filtered.filter(t => t.name.toLowerCase().includes(search.toLowerCase()));
 
-function renderPage() {
-    container.innerHTML = sections.map(sec => {
-        const list = allWritingTools.filter(t => t.sec === sec.filter);
-        return `
-            <div class="carousel-wrapper" id="${sec.id}">
-                <h2 class="section-title">${sec.title} <span>${list.length} tools</span></h2>
-                <div class="carousel">
-                    ${list.map(tool => `
-                        <a href="${tool.url}" class="card">
-                            <div class="card-top">
-                                <div class="card-logo">
-                                    ${tool.img ? `<img src="${tool.img}" alt="${tool.name}">` : `<div style="font-weight:800; color:white; font-size:20px;">${tool.name[0]}</div>`}
-                                </div>
-                                <div class="card-score">
-                                    ${tool.score} <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                </div>
-                            </div>
-                            <h3>${tool.name}</h3>
-                            <p>${tool.desc}</p>
-                            <div class="card-footer">
-                                <span class="card-tag">${tool.tag}</span>
-                                <div class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9-9M17 17V7H7"/></svg></div>
-                            </div>
-                        </a>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-    }).join('');
+    countDisplay.innerText = filtered.length;
+    
+    grid.innerHTML = filtered.map(tool => `
+      <a href="${tool.url}" class="tool-card">
+        <div class="card-top">
+          <div class="card-logo">
+            ${tool.img ? `<img src="${tool.img}" alt="${tool.name}">` : `<div>${tool.name[0]}</div>`}
+          </div>
+          <div class="card-score">${tool.score} <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        </div>
+        <div class="card-info">
+          <h3>${tool.name}</h3>
+          <p>${tool.desc}</p>
+        </div>
+        <div class="card-bottom">
+          <span class="card-tag">${tool.tag}</span>
+          <div class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9-9M17 17V7H7"/></svg></div>
+        </div>
+      </a>
+    `).join('');
+
+    // Re-apply spotlight movement logic
+    document.querySelectorAll('.tool-card').forEach(card => {
+        card.onmousemove = e => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+            card.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+        };
+    });
 }
 
-renderPage();
-
-// Activer le bouton sub-nav au clic et au scroll
-document.querySelectorAll('.cat-nav-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelectorAll('.cat-nav-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-    });
+// Side Nav Filtering
+sideBtns.forEach(btn => {
+    btn.onclick = (e) => {
+        e.preventDefault();
+        sideBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('currentCatName').innerText = btn.innerText.substring(3);
+        render(btn.dataset.filter, searchInput.value);
+    };
 });
 
-window.addEventListener('scroll', () => {
-    let current = "";
-    sections.forEach(sec => {
-        const el = document.getElementById(sec.id);
-        if (el && window.pageYOffset >= el.offsetTop - 180) {
-            current = sec.id;
-        }
-    });
-    document.querySelectorAll('.cat-nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('href').substring(1) === current) btn.classList.add('active');
-    });
-});
+// Search functionality
+searchInput.oninput = () => {
+    const activeFilter = document.querySelector('.side-btn.active').dataset.filter;
+    render(activeFilter, searchInput.value);
+};
+
+// Initial Render
+render();
 </script>
 </body>
 </html>
