@@ -186,6 +186,19 @@ footer {
   font-size: 13px;
 }
 
+/* RESPONSIVE FOOTER */
+@media(max-width: 900px) {
+  footer { padding: 60px 20px 30px; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media(max-width: 500px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+}
 @media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.tool-hero{flex-direction:column-reverse;gap:30px;}.stats-bar{grid-template-columns:1fr 1fr;}.features-grid{grid-template-columns:1fr;}.pc-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
