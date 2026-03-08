@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Writing Directory — Pro Dashboard</title>
+<title>AI Writing Directory — Professional Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root{--blue:#3b82f6;--cyan:#06b6d4;--dark:#020617;--border:rgba(255,255,255,0.08);--text:#e2e8f0;--muted:rgba(148,163,184,0.7);--star:#fbbf24;}
@@ -12,7 +12,7 @@
 body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 50% -10%,rgba(59,130,246,0.12) 0%,transparent 70%),#020617;pointer-events:none;}
 
-/* --- NAVIGATION (Identique index.html) --- */
+/* --- NAVIGATION UNIFIÉE --- */
 nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;background:rgba(2,6,23,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .nav-logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;font-family:'Syne',sans-serif;box-shadow:0 0 18px rgba(59,130,246,0.45);}
@@ -25,7 +25,7 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .nav-right{display:flex;align-items:center;gap:12px;}
 .nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-size:13px;font-weight:600;cursor:pointer;}
 
-/* --- DASHBOARD LAYOUT --- */
+/* --- DASHBOARD STRUCTURE --- */
 .dashboard{display:grid;grid-template-columns:280px 1fr;gap:40px;max-width:1600px;margin:40px auto;padding:0 60px;position:relative;z-index:1;}
 
 /* --- SIDEBAR --- */
@@ -59,7 +59,7 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;z-index:2;}
 .card-logo{width:50px;height:50px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .card-logo img{width:32px;height:32px;object-fit:contain;}
-.card-logo div{font-weight:800;font-size:20px;color:#fff;} /* Initials fallback */
+.card-logo div{font-weight:800;font-size:20px;color:#fff;} 
 
 .card-score{display:flex;align-items:center;gap:5px;font-weight:700;font-size:12px;color:#fff;background:rgba(255,255,255,0.05);padding:5px 12px;border-radius:99px;}
 .card-score svg{width:12px;height:12px;fill:var(--star);}
@@ -73,8 +73,8 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .card-arrow{color:var(--muted);transition:0.3s;}
 .tool-card:hover .card-arrow{color:var(--blue);transform:translateX(4px);}
 
-/* --- FOOTER (Unifié) --- */
-footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-top: 1px solid var(--border); padding: 80px 60px 40px; margin-top: 100px; }
+/* --- FOOTER UNIFIÉ --- */
+footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-top: 1px solid var(--border); padding: 80px 60px 40px; margin-top: 100px; }
 .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
 .footer-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 24px; text-transform: uppercase; }
 .footer-links { list-style: none; }
@@ -86,7 +86,6 @@ footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-t
     .dashboard{grid-template-columns:1fr; padding: 0 20px;}
     .sidebar{position:relative;top:0;margin-bottom:30px;}
     .side-nav{flex-direction:row;overflow-x:auto;padding-bottom:10px;scrollbar-width:none;}
-    .side-nav::-webkit-scrollbar{display:none;}
     .panel-header{flex-direction:column;align-items:flex-start;gap:20px;}
     .search-container{width:100%;}
 }
@@ -94,7 +93,6 @@ footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-t
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav>
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-icon">A</div><span class="nav-logo-text">AI<span>Tools</span></span>
@@ -110,14 +108,14 @@ footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-t
 <div class="dashboard">
   <!-- SIDEBAR FILTERS -->
   <aside class="sidebar">
-    <div class="sidebar-title">Categories</div>
+    <div class="sidebar-title">Explore Writing</div>
     <nav class="side-nav">
-      <a href="#" class="side-btn active" data-filter="all"><span>💎</span> All Tools</a>
-      <a href="#" class="side-btn" data-filter="top"><span>🏆</span> Top Rated</a>
+      <a href="#" class="side-btn active" data-filter="all"><span>💎</span> All Assistants</a>
+      <a href="#" class="side-btn" data-filter="top"><span>🏆</span> Top Picks</a>
       <a href="#" class="side-btn" data-filter="seo"><span>📝</span> SEO & Blogging</a>
       <a href="#" class="side-btn" data-filter="marketing"><span>📣</span> Marketing & Ads</a>
-      <a href="#" class="side-btn" data-filter="editing"><span>✨</span> Editing</a>
-      <a href="#" class="side-btn" data-filter="specialized"><span>🎭</span> Creative</a>
+      <a href="#" class="side-btn" data-filter="editing"><span>✨</span> Grammar & Style</a>
+      <a href="#" class="side-btn" data-filter="specialized"><span>🎭</span> Creative & Fiction</a>
     </nav>
   </aside>
 
@@ -126,11 +124,11 @@ footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-t
     <header class="panel-header">
       <div class="panel-title">
         <h1 id="currentCatName">All Writing Tools</h1>
-        <p>Exploring <span id="toolCount">47</span> intelligent assistants</p>
+        <p>Browsing <span id="toolCount">47</span> tools optimized for content creation</p>
       </div>
       <div class="search-container">
         <svg width="18" height="18" fill="var(--muted)" viewBox="0 0 24 24"><path d="M11 2a9 9 0 106.32 15.435l4.387 4.386a1 1 0 001.414-1.414l-4.386-4.387A9 9 0 0011 2zm0 2a7 7 0 110 14 7 7 0 010-14z"/></svg>
-        <input type="text" id="toolSearch" placeholder="Find an tool by name...">
+        <input type="text" id="toolSearch" placeholder="Filter by name or keyword...">
       </div>
     </header>
 
@@ -145,26 +143,27 @@ footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-t
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="nav-logo"><div class="nav-logo-icon">A</div><span class="nav-logo-text">AI<span>Tools</span></span></a>
-      <p style="margin-top:20px;">Curating the best AI writing solutions for professionals and creators.</p>
+      <p style="margin-top:20px;">Curating the best AI writing solutions for professionals.</p>
     </div>
     <div>
-      <h3 class="footer-title">Links</h3>
+      <h3 class="footer-title">Directory</h3>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">Company</h3>
+      <ul class="footer-links">
         <li><a href="about.html">About Us</a></li>
-        <li><a href="blog.html">AI Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     <div>
       <h3 class="footer-title">Legal</h3>
       <ul class="footer-links">
         <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
       </ul>
-    </div>
-    <div>
-      <h3 class="footer-title">Contact</h3>
-      <a href="mailto:alaeddineboubaker@gmail.com" style="color:var(--blue);text-decoration:none;font-size:14px;">alaeddineboubaker@gmail.com</a>
     </div>
   </div>
 </footer>
@@ -172,61 +171,61 @@ footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-t
 <script>
 const allWritingTools = [
   // --- TOP RATED ---
-  { name: "Jasper AI", desc: "The ultimate AI for enterprise content and marketing teams.", tag: "Marketing", score: "4.9", img: "images/jasper.png", url: "jasper.html", sec: "top" },
-  { name: "ChatGPT", desc: "Versatile conversational AI for any writing or coding task.", tag: "Assistant", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", url: "chatgpt.html", sec: "top" },
-  { name: "Claude AI", desc: "Anthropic’s model known for natural and nuanced writing.", tag: "Assistant", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Claude_AI_logo.svg", url: "claude.html", sec: "top" },
-  { name: "Writesonic", desc: "AI writer for high-ranking blog posts and SEO articles.", tag: "SEO", score: "4.7", img: "images/writesonic.png", url: "writesonic.html", sec: "top" },
-  { name: "Notion AI", desc: "Integrated assistant inside your Notion notes and workspace.", tag: "Productivity", score: "4.8", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", url: "notionai.html", sec: "top" },
-  { name: "Copy AI", desc: "Generate high-converting marketing copy and social posts.", tag: "Marketing", score: "4.8", img: "images/copy.jpg", url: "copyai.html", sec: "top" },
+  { name: "Jasper AI", desc: "The gold standard for enterprise marketing teams and brand content.", tag: "Marketing", score: "4.9", img: "images/jasper.png", url: "jasper.html", sec: "top" },
+  { name: "ChatGPT", desc: "OpenAI's legendary assistant for brainstorming, drafting, and logic.", tag: "Assistant", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", url: "chatgpt.html", sec: "top" },
+  { name: "Claude AI", desc: "Superior natural writing quality with human-like reasoning and safety.", tag: "Assistant", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Claude_AI_logo.svg", url: "claude.html", sec: "top" },
+  { name: "Writesonic", desc: "All-in-one platform for long-form blogs and SEO landing pages.", tag: "SEO", score: "4.7", img: "images/writesonic.png", url: "writesonic.html", sec: "top" },
+  { name: "Notion AI", desc: "Harness AI directly inside your notes, docs, and team projects.", tag: "Productivity", score: "4.8", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", url: "notionai.html", sec: "top" },
+  { name: "Copy AI", desc: "Generate high-converting sales copy and ad descriptions instantly.", tag: "Marketing", score: "4.8", img: "images/copy.jpg", url: "copyai.html", sec: "top" },
 
   // --- SEO & BLOGGING ---
-  { name: "Frase", desc: "Research and optimize SEO content in record time.", tag: "SEO", score: "4.6", img: "images/frase.png", url: "frase.html", sec: "seo" },
-  { name: "Surfer SEO", desc: "Analyze and optimize writing for search engine dominance.", tag: "SEO", score: "4.8", img: "images/surfer.png", url: "surferseo.html", sec: "seo" },
-  { name: "Scalenut", desc: "All-in-one SEO content research and writing platform.", tag: "SEO", score: "4.7", img: "images/scalenut.png", url: "scalenut.html", sec: "seo" },
-  { name: "LongShot AI", desc: "Generate fact-checked, long-form SEO content effortlessly.", tag: "Blogging", score: "4.5", img: "images/longshot.png", url: "longshot.html", sec: "seo" },
-  { name: "Article Forge", desc: "Automated high-quality article generation using AI.", tag: "Blogging", score: "4.2", img: "images/forge.png", url: "article_forge.html", sec: "seo" },
-  { name: "Hypotenuse AI", desc: "Transform keywords into full-length blog posts and ads.", tag: "Blogging", score: "4.5", img: "images/hypotenuse.png", url: "hypotenuse.html", sec: "seo" },
-  { name: "Typli", desc: "Writing assistant with a powerful built-in SEO checker.", tag: "SEO", score: "4.2", img: "images/typli.png", url: "typli.html", sec: "seo" },
-  { name: "SEO.ai", desc: "Generate high-ranking content with smart SEO scoring.", tag: "SEO", score: "4.4", img: "images/seo.png", url: "seo.html", sec: "seo" },
-  { name: "Bramework", desc: "Help bloggers finish high-quality posts 5x faster.", tag: "Blogging", score: "4.4", img: "images/bramework.png", url: "bramework.html", sec: "seo" },
-  { name: "AI-Writer", desc: "Generate accurate articles with verifiable citations.", tag: "Blogging", score: "4.2", img: "images/ai-writer.png", url: "ai_writing.html", sec: "seo" },
-  { name: "Outranking", desc: "Data-driven SEO strategy and content creation software.", tag: "SEO", score: "4.5", img: "images/outranking.png", url: "outranking.html", sec: "seo" },
+  { name: "Frase", desc: "Research top SERP results and write optimized content briefs.", tag: "SEO", score: "4.6", img: "images/frase.png", url: "frase.html", sec: "seo" },
+  { name: "Surfer SEO", desc: "Data-driven content editor to outrank competitors on Google.", tag: "SEO", score: "4.8", img: "images/surfer.png", url: "surferseo.html", sec: "seo" },
+  { name: "Scalenut", desc: "Managed SEO content lifecycle from keyword clusters to drafts.", tag: "SEO", score: "4.7", img: "images/scalenut.png", url: "scalenut.html", sec: "seo" },
+  { name: "LongShot AI", desc: "Fact-checked long-form content for high-authority blogs.", tag: "Blogging", score: "4.5", img: "images/longshot.png", url: "longshot.html", sec: "seo" },
+  { name: "Article Forge", desc: "Automated article creation using deep learning and AI.", tag: "Blogging", score: "4.2", img: "images/forge.png", url: "article_forge.html", sec: "seo" },
+  { name: "Hypotenuse AI", desc: "Turn simple keywords into comprehensive blog posts and product copy.", tag: "Blogging", score: "4.5", img: "images/hypotenuse.png", url: "hypotenuse.html", sec: "seo" },
+  { name: "Typli", desc: "Seamless writing assistant with an integrated SEO checking tool.", tag: "SEO", score: "4.2", img: "images/typli.png", url: "typli.html", sec: "seo" },
+  { name: "SEO.ai", desc: "AI engine built for finding keywords and ranking articles faster.", tag: "SEO", score: "4.4", img: "images/seo.png", url: "seo.html", sec: "seo" },
+  { name: "Bramework", desc: "Finish blog posts 5x faster with smart keyword integration.", tag: "Blogging", score: "4.4", img: "images/bramework.png", url: "bramework.html", sec: "seo" },
+  { name: "AI-Writer", desc: "Verifiable citations for every claim in your AI-generated articles.", tag: "Blogging", score: "4.2", img: "images/ai-writer.png", url: "ai_writing.html", sec: "seo" },
+  { name: "Outranking", desc: "Expert strategy and content creation for building topical authority.", tag: "SEO", score: "4.5", img: "images/outranking.png", url: "outranking.html", sec: "seo" },
 
   // --- MARKETING ---
-  { name: "Anyword", desc: "Predictive AI copy that tells you how well ads will perform.", tag: "Marketing", score: "4.5", img: "", url: "#", sec: "marketing" },
-  { name: "Copysmith", desc: "AI content generation tailored for eCommerce teams.", tag: "E-commerce", score: "4.4", img: "", url: "#", sec: "marketing" },
-  { name: "Peppertype", desc: "Virtual assistant for quick social media and blog ideas.", tag: "Copywriting", score: "4.6", img: "", url: "#", sec: "marketing" },
-  { name: "Neuroflash", desc: "European AI focused on high-quality German/English copy.", tag: "Marketing", score: "4.5", img: "", url: "#", sec: "marketing" },
-  { name: "Simplified", desc: "Unified tool for AI writing, design, and scheduling.", tag: "Design", score: "4.6", img: "", url: "#", sec: "marketing" },
-  { name: "Writecream", desc: "AI for cold outreach, emails and LinkedIn messages.", tag: "Email", score: "4.4", img: "", url: "#", sec: "marketing" },
-  { name: "ClosersCopy", desc: "Sales-focused copywriting using custom frameworks.", tag: "Sales", score: "4.3", img: "", url: "#", sec: "marketing" },
-  { name: "ContentBot", desc: "Flexible AI assistant for bloggers and automation.", tag: "Marketing", score: "4.4", img: "", url: "#", sec: "marketing" },
-  { name: "GoCharlie", desc: "Creative AI engine for full-scale marketing campaigns.", tag: "Marketing", score: "4.3", img: "", url: "#", sec: "marketing" },
-  { name: "Hoppy Copy", desc: "Email marketing AI for high-converting newsletters.", tag: "Email", score: "4.6", img: "", url: "#", sec: "marketing" },
-  { name: "Bertha AI", desc: "AI copywriting assistant built for WordPress users.", tag: "WordPress", score: "4.5", img: "", url: "#", sec: "marketing" },
-  { name: "Creator.ai", desc: "Effortless content creation for social media and ads.", tag: "Social", score: "4.3", img: "", url: "#", sec: "marketing" },
-  { name: "Mailchimp AI", desc: "Built-in AI to optimize email marketing campaigns.", tag: "Email", score: "4.4", img: "", url: "#", sec: "marketing" },
+  { name: "Anyword", desc: "Data-driven copywriting that predicts ad performance scores.", tag: "Marketing", score: "4.5", img: "", url: "#", sec: "marketing" },
+  { name: "Copysmith", desc: "Product descriptions and bulk content for eCommerce teams.", tag: "E-commerce", score: "4.4", img: "", url: "#", sec: "marketing" },
+  { name: "Peppertype", desc: "Fast virtual assistant for social media captions and blog ideas.", tag: "Copywriting", score: "4.6", img: "", url: "#", sec: "marketing" },
+  { name: "Neuroflash", desc: "Leading European AI for high-quality marketing copy.", tag: "Marketing", score: "4.5", img: "", url: "#", sec: "marketing" },
+  { name: "Simplified", desc: "Write, design and schedule posts in one unified dashboard.", tag: "Social", score: "4.6", img: "", url: "#", sec: "marketing" },
+  { name: "Writecream", desc: "AI personalized cold emails, LinkedIn intros and outreach.", tag: "Email", score: "4.4", img: "", url: "#", sec: "marketing" },
+  { name: "ClosersCopy", desc: "Sales copywriting powered by custom AI and proprietary frameworks.", tag: "Sales", score: "4.3", img: "", url: "#", sec: "marketing" },
+  { name: "ContentBot", desc: "Automated workflows and assistant for digital marketers.", tag: "Marketing", score: "4.4", img: "", url: "#", sec: "marketing" },
+  { name: "GoCharlie", desc: "Creative content engine for building marketing campaigns.", tag: "Marketing", score: "4.3", img: "", url: "#", sec: "marketing" },
+  { name: "Hoppy Copy", desc: "Write high-converting email newsletters and drip sequences.", tag: "Email", score: "4.6", img: "", url: "#", sec: "marketing" },
+  { name: "Bertha AI", desc: "AI assistant designed to live inside your WordPress editor.", tag: "WordPress", score: "4.5", img: "", url: "#", sec: "marketing" },
+  { name: "Creator.ai", desc: "Effortless creative content across social channels.", tag: "Social", score: "4.3", img: "", url: "#", sec: "marketing" },
+  { name: "Mailchimp AI", desc: "Built-in optimization for email marketing performance.", tag: "Email", score: "4.4", img: "", url: "#", sec: "marketing" },
 
-  // --- EDITING ---
-  { name: "Grammarly", desc: "Advanced grammar checker and tone adjustment assistant.", tag: "Editing", score: "4.8", img: "images/grammarly.png", url: "#", sec: "editing" },
-  { name: "QuillBot", desc: "Professional paraphrasing and summarization tool.", tag: "Editing", score: "4.7", img: "", url: "#", sec: "editing" },
-  { name: "Wordtune", desc: "Rewrite sentences perfectly to match your intent.", tag: "Editing", score: "4.7", img: "", url: "#", sec: "editing" },
-  { name: "ProWritingAid", desc: "Comprehensive grammar and style editor for authors.", tag: "Editing", score: "4.8", img: "", url: "#", sec: "editing" },
-  { name: "ParagraphAI", desc: "AI writing app and keyboard extension for replies.", tag: "Editing", score: "4.2", img: "", url: "#", sec: "editing" },
+  // --- EDITING & GRAMMAR ---
+  { name: "Grammarly", desc: "The standard for correction, clarity and tone adjustment.", tag: "Editing", score: "4.8", img: "images/grammarly.png", url: "#", sec: "editing" },
+  { name: "QuillBot", desc: "Advanced paraphrasing tool to improve flow and vocabulary.", tag: "Editing", score: "4.7", img: "", url: "#", sec: "editing" },
+  { name: "Wordtune", desc: "Rephrase sentences perfectly to match your target intent.", tag: "Editing", score: "4.7", img: "", url: "#", sec: "editing" },
+  { name: "ProWritingAid", desc: "Comprehensive style and grammar editor for authors.", tag: "Editing", score: "4.8", img: "", url: "#", sec: "editing" },
+  { name: "ParagraphAI", desc: "AI writing keyboard and app for fast, professional replies.", tag: "Editing", score: "4.2", img: "", url: "#", sec: "editing" },
 
-  // --- CREATIVE / SPECIALIZED ---
-  { name: "Sudowrite", desc: "Creative writing assistant for novelists and storytellers.", tag: "Fiction", score: "4.8", img: "", url: "#", sec: "specialized" },
-  { name: "NovelAI", desc: "AI authorship tool for fiction and virtual storytelling.", tag: "Fiction", score: "4.6", img: "", url: "#", sec: "specialized" },
-  { name: "Lex", desc: "Minimal word processor with powerful built-in AI.", tag: "Writing", score: "4.7", img: "", url: "#", sec: "specialized" },
-  { name: "Moonbeam", desc: "Assistant specialized for long essays and academic work.", tag: "Academic", score: "4.3", img: "", url: "#", sec: "specialized" },
-  { name: "TextCortex", desc: "Customizable AI co-pilot that learns your writing style.", tag: "Assistant", score: "4.4", img: "", url: "#", sec: "specialized" },
-  { name: "INK", desc: "All-in-one suite optimizing for safety, SEO and readability.", tag: "SEO", score: "4.6", img: "", url: "#", sec: "specialized" },
-  { name: "Writer.com", desc: "Secure enterprise platform for consistent brand language.", tag: "Enterprise", score: "4.7", img: "", url: "#", sec: "specialized" },
-  { name: "SmartWriter", desc: "Generate personalized cold outreach that gets replies.", tag: "Email", score: "4.5", img: "", url: "#", sec: "specialized" },
-  { name: "Spin Rewriter", desc: "Rewrite articles into unique, human-quality versions.", tag: "Rewriting", score: "4.1", img: "", url: "#", sec: "specialized" },
-  { name: "WordAI", desc: "Restructure and rewrite content using machine learning.", tag: "Rewriting", score: "4.3", img: "", url: "#", sec: "specialized" },
-  { name: "Zyro", desc: "Website builder with integrated AI content tools.", tag: "Web", score: "4.1", img: "", url: "#", sec: "specialized" },
-  { name: "Chinchilla", desc: "Language model optimized for high-end reasoning tasks.", tag: "General", score: "4.8", img: "", url: "#", sec: "specialized" }
+  // --- CREATIVE ---
+  { name: "Sudowrite", desc: "Fiction writing assistant for novelists and storytellers.", tag: "Fiction", score: "4.8", img: "", url: "#", sec: "specialized" },
+  { name: "NovelAI", desc: "AI authorship and virtual companionship through storytelling.", tag: "Fiction", score: "4.6", img: "", url: "#", sec: "specialized" },
+  { name: "Lex", desc: "Modern word processor with powerful built-in deep focus AI.", tag: "Writing", score: "4.7", img: "", url: "#", sec: "specialized" },
+  { name: "Moonbeam", desc: "AI specialized for long academic essays and reports.", tag: "Academic", score: "4.3", img: "", url: "#", sec: "specialized" },
+  { name: "TextCortex", desc: "Customizable co-pilot that adapts to your writing voice.", tag: "Assistant", score: "4.4", img: "", url: "#", sec: "specialized" },
+  { name: "INK", desc: "SEO, safety and readability analysis in one editor.", tag: "SEO", score: "4.6", img: "", url: "#", sec: "specialized" },
+  { name: "Writer.com", desc: "Secure platform to keep enterprise brand voice consistent.", tag: "Enterprise", score: "4.7", img: "", url: "#", sec: "specialized" },
+  { name: "SmartWriter", desc: "Scale personalized cold outreach to get more replies.", tag: "Email", score: "4.5", img: "", url: "#", sec: "specialized" },
+  { name: "Spin Rewriter", desc: "Rewrite articles into unique versions for bulk usage.", tag: "Rewriting", score: "4.1", img: "", url: "#", sec: "specialized" },
+  { name: "WordAI", desc: "Deep learning restructuring for completely unique content.", tag: "Rewriting", score: "4.3", img: "", url: "#", sec: "specialized" },
+  { name: "Zyro", desc: "Site builder with auto-generation for web copy.", tag: "Web", score: "4.1", img: "", url: "#", sec: "specialized" },
+  { name: "Chinchilla", desc: "High-efficiency model for nuanced language tasks.", tag: "General", score: "4.8", img: "", url: "#", sec: "specialized" }
 ];
 
 const grid = document.getElementById('toolGrid');
@@ -237,7 +236,10 @@ const sideBtns = document.querySelectorAll('.side-btn');
 function render(filter = "all", search = "") {
     let filtered = allWritingTools;
     if(filter !== "all") filtered = filtered.filter(t => t.sec === filter);
-    if(search) filtered = filtered.filter(t => t.name.toLowerCase().includes(search.toLowerCase()));
+    if(search) filtered = filtered.filter(t => 
+        t.name.toLowerCase().includes(search.toLowerCase()) || 
+        t.desc.toLowerCase().includes(search.toLowerCase())
+    );
 
     countDisplay.innerText = filtered.length;
     
@@ -260,7 +262,7 @@ function render(filter = "all", search = "") {
       </a>
     `).join('');
 
-    // Re-apply spotlight movement logic
+    // Active spotlight effect
     document.querySelectorAll('.tool-card').forEach(card => {
         card.onmousemove = e => {
             const rect = card.getBoundingClientRect();
@@ -270,7 +272,7 @@ function render(filter = "all", search = "") {
     });
 }
 
-// Side Nav Filtering
+// Event Listeners for Filters
 sideBtns.forEach(btn => {
     btn.onclick = (e) => {
         e.preventDefault();
@@ -281,7 +283,7 @@ sideBtns.forEach(btn => {
     };
 });
 
-// Search functionality
+// Real-time Search
 searchInput.oninput = () => {
     const activeFilter = document.querySelector('.side-btn.active').dataset.filter;
     render(activeFilter, searchInput.value);
