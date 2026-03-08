@@ -101,7 +101,7 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .pc-card.cons{border-top:2px solid #ef4444;}
 .pc-list{list-style:none;margin-top:15px;}.pc-list li{font-size:13px;margin-bottom:8px;color:var(--muted);display:flex;gap:10px;}
 
-/* --- FOOTER MODERNE --- */
+/* --- FOOTER MODERNE & COMPLET --- */
 footer {
   position: relative;
   z-index: 1;
@@ -186,7 +186,21 @@ footer {
   font-size: 13px;
 }
 
+/* RESPONSIVE FOOTER */
+@media(max-width: 900px) {
+  footer { padding: 60px 20px 30px; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media(max-width: 500px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+}
 @media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.tool-hero{flex-direction:column-reverse;gap:30px;}.stats-bar{grid-template-columns:1fr 1fr;}.features-grid{grid-template-columns:1fr;}.pc-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+
 </style>
 </head>
 <body>
