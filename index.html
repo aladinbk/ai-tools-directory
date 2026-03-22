@@ -53,11 +53,13 @@ nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-c
 .nav-btn-ghost:hover{border-color:rgba(59,130,246,0.5);color:#fff;background:rgba(59,130,246,0.08);}
 .nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 15px rgba(59,130,246,0.35);}
 .nav-btn-primary:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(59,130,246,0.5);}
+
 /* --- HERO & SEARCH --- */
 .hero{position:relative;z-index:1;text-align:center;padding:100px 20px 80px;}
 .hero-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:99px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);font-size:12px;font-weight:500;color:#93c5fd;margin-bottom:28px;}
 h1{font-family:'Syne',sans-serif;font-size:clamp(38px,6vw,68px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:18px;}
 h1 em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p.hero-sub { font-size: clamp(16px, 2vw, 18px); color: var(--muted); max-width: 600px; margin: 0 auto 40px auto; line-height: 1.6;}
 
 .search-wrapper{position:relative;max-width:660px;margin:0 auto;z-index:50;} 
 .search-bar{display:flex;align-items:center;background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.22);border-radius:16px;padding:6px 6px 6px 20px;gap:10px;backdrop-filter:blur(20px);}
@@ -71,15 +73,15 @@ h1 em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webki
 .section { padding: 60px 60px; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1;}
 .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px;}
 .section-label { font-size: 11px; text-transform: uppercase; color: var(--blue); letter-spacing: 2px; font-weight: 700; margin-bottom: 8px;}
-.section-title { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; }
+.section-title { font-family: 'Syne', sans-serif; font-size: clamp(24px, 4vw, 28px); font-weight: 800; } /* Responsive title */
 .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;}
 
 .tool-card { background: rgba(15,23,42,0.6); border: 1px solid var(--border); border-radius: 20px; padding: 25px; text-decoration: none; color: var(--text); display: flex; flex-direction: column; align-items: center; text-align: center; transition: 0.3s; backdrop-filter: blur(10px); height: 100%;}
 .tool-card:hover { transform: translateY(-8px); border-color: var(--blue); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-.tool-logo-wrap { width: 54px; height: 54px; border-radius: 12px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 15px; overflow: hidden; border: 1px solid var(--border);}
+.tool-logo-wrap { width: 54px; height: 54px; border-radius: 12px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 15px; overflow: hidden; border: 1px solid var(--border); font-size: 24px; /* For text icons */}
 .tool-logo-wrap img { width: 34px; height: 34px; object-fit: contain; }
-.tool-card h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.tool-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.tool-card h3 { font-size: clamp(15px, 3vw, 17px); font-weight: 700; color: #fff; margin-bottom: 8px; } /* Responsive title */
+.tool-card p { font-size: clamp(12px, 2.5vw, 13px); color: var(--muted); line-height: 1.5; } /* Responsive text */
 
 /* --- VIDEO HUB (SHORTS) --- */
 .video-section { padding: 80px 60px; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1;}
@@ -91,9 +93,10 @@ h1 em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webki
 /* --- WHY AI SECTION --- */
 .why-ai-section { position: relative; z-index: 1; padding: 60px; max-width: 1200px; margin: 0 auto; }
 .why-ai-card { background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); border-radius: 32px; padding: 60px; backdrop-filter: blur(12px); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.why-ai-text h2 { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
-.why-ai-text p { font-size: 17px; color: var(--muted); line-height: 1.8; }
+.why-ai-text h2 { font-family: 'Syne', sans-serif; font-size: clamp(28px, 5vw, 32px); font-weight: 800; margin-bottom: 20px; line-height: 1.2; } /* Responsive title */
+.why-ai-text p { font-size: clamp(15px, 3vw, 17px); color: var(--muted); line-height: 1.8; } /* Responsive text */
 .stat-box { padding: 24px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 20px; text-align: center; }
+.stat-box span { font-size: 28px; margin-bottom: 12px; display: block; } /* Icon size */
 
 /* --- FOOTER MODERNE & COMPLET --- */
 footer {
@@ -180,284 +183,244 @@ footer {
   font-size: 13px;
 }
 
-/* RESPONSIVE FOOTER */
+/* --- RESPONSIVE DESIGN --- */
+
+/* Navigation */
+@media (max-width: 900px) {
+  nav {
+    padding: 0 20px; /* Réduire le padding sur les côtés */
+  }
+  .nav-logo-icon {
+    width: 30px; height: 30px; font-size: 14px; /* Ajuster l'icône */
+  }
+  .nav-logo-text {
+    font-size: 16px; /* Ajuster le texte du logo */
+  }
+  .nav-links {
+    display: none; /* Masquer les liens de navigation sur mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(2, 6, 23, 0.95);
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  }
+  .nav-links.open {
+    display: flex; /* Afficher les liens quand le menu est ouvert */
+  }
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .nav-links li a, .nav-links li button {
+    width: 100%;
+    justify-content: center;
+  }
+  /* Mega Dropdown pour mobile */
+  .mega-drop {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: all;
+    min-width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: none;
+    border: none;
+     background: rgba(10, 18, 40, 0.95); /* Légère différence pour le distinguo */
+  }
+   .mega-drop-grid {
+    grid-template-columns: 1fr 1fr; /* 2 colonnes sur mobile */
+  }
+  .mega-item {
+    padding: 8px;
+   }
+   .mega-item-text strong { font-size: 11px; }
+   .mega-item-text span { font-size: 10px; }
+
+  /* Simple Dropdown pour mobile */
+  .simple-drop {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: all;
+    min-width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    box-shadow: none;
+    border: none;
+    background: rgba(10, 18, 40, 0.95);
+  }
+  .simple-drop a { padding: 9px 12px; font-size: 13px; }
+
+  .nav-right {
+    display: none; /* Masquer les boutons sur mobile pour l'instant, ajouter un bouton menu */
+  }
+   .nav-right .nav-btn-ghost { display: none; } /* Cache le bouton Sign In */
+   .nav-right .nav-btn-primary { display: none; } /* Cache le bouton Submit Tool */
+
+  .hamburger-menu { /* Bouton menu hamburger - ajout */
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+  }
+  .hamburger-menu div {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text);
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+}
+
+/* Hero */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 20px 60px;
+  }
+  h1 {
+    font-size: clamp(30px, 8vw, 54px); /* Réduire la taille du titre principal */
+  }
+  .hero-badge {
+    font-size: 11px;
+    padding: 4px 12px;
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: clamp(15px, 3vw, 17px);
+    margin-bottom: 30px;
+  }
+  .search-bar {
+    padding: 4px 4px 4px 15px; /* Réduire padding barre de recherche */
+  }
+  .search-input {
+    font-size: 14px;
+  }
+  .search-submit {
+    padding: 0 18px;
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+/* Sections principales */
+@media (max-width: 900px) {
+    nav, .section, .video-section, .why-ai-section { padding: 30px 20px; } /* Padding réduit pour les sections */
+    .section-header { flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+    .section-header > div { margin-bottom: 15px; }
+    .section-header a { font-size: 12px; }
+
+    .tools-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Grille plus petite */
+      gap: 15px;
+    }
+    .tool-card { padding: 20px; }
+    .tool-logo-wrap { width: 48px; height: 48px; margin-bottom: 12px; }
+    .tool-card h3 { font-size: 15px; margin-bottom: 6px; }
+    .tool-card p { font-size: 12px; }
+
+    /* Video Section */
+    .video-section { padding: 60px 20px; }
+    .shorts-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); } /* Colonnes pour les shorts */
+
+    /* Why AI Section */
+    .why-ai-section { padding: 40px 20px; }
+    .why-ai-card { grid-template-columns: 1fr; padding: 40px; text-align: center; gap: 30px;}
+    .why-ai-text h2 { font-size: 28px; }
+    .why-ai-text p { font-size: 15px; }
+    .why-ai-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; } /* Stats côte à côte */
+}
+
+/* Footer */
 @media(max-width: 900px) {
   footer { padding: 60px 20px 30px; }
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes pour le footer */
     gap: 40px;
   }
+  .footer-bottom {
+    flex-direction: column; /* Aligner les éléments du bas du footer en colonne */
+    gap: 15px;
+    text-align: center;
+  }
+  .footer-bottom p { font-size: 12px; }
+  .footer-bottom div { display: flex; justify-content: center; width: 100%; } /* Pour centrer les liens sociaux */
 }
 
 @media(max-width: 500px) {
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
-}
-@media(max-width:1100px){
-    .dashboard{grid-template-columns:1fr; padding: 0 20px;}
-    .sidebar{position:relative;top:0;margin-bottom:30px;}
-    .side-nav{flex-direction:row;overflow-x:auto;padding-bottom:10px;scrollbar-width:none;}
-    .panel-header{flex-direction:column;align-items:flex-start;gap:20px;}
-    .search-container{width:100%;}
+  .footer-grid { grid-template-columns: 1fr; /* 1 colonne pour les petits écrans */ }
+  .footer-title { margin-bottom: 16px; }
+  .footer-links a { font-size: 13px; }
 }
 
-@media(max-width:900px){
-    nav, .section, .video-section, .why-ai-section { padding: 20px; }
-    .nav-links, .footer-grid { display: none; }
-    .why-ai-card { grid-template-columns: 1fr; padding: 40px; text-align: center;}
+/* Ajustements spécifiques pour les petits écrans (ex: téléphone) */
+@media (max-width: 480px) {
+  nav { height: 60px; } /* Hauteur de la nav plus petite */
+  .nav-logo-icon { width: 28px; height: 28px; font-size: 13px; }
+  .nav-logo-text { font-size: 15px; }
+  
+  .hero { padding: 60px 15px 40px; }
+  h1 { font-size: 32px; line-height: 1.2; } /* Titre plus petit */
+  .hero-badge { display: none; } /* Cacher le badge sur très petits écrans */
+  .hero-sub { font-size: 14px; margin-bottom: 25px;}
+  .search-wrapper { width: 100%; }
+  .search-bar { padding: 4px 4px 4px 12px; border-radius: 12px; }
+  .search-input { font-size: 13px; }
+  .search-submit { padding: 0 15px; height: 38px; font-size: 12px; border-radius: 10px;}
+
+  .section { padding: 40px 15px; }
+  .section-title { font-size: 22px; }
+  .tools-grid { grid-template-columns: 1fr; gap: 15px; } /* Une seule colonne pour les cartes */
+  .tool-card { padding: 18px; }
+  .tool-logo-wrap { width: 44px; height: 44px; margin-bottom: 10px; }
+  .tool-card h3 { font-size: 14px; margin-bottom: 5px; }
+  .tool-card p { font-size: 11px; }
+
+  .video-section { padding: 50px 15px; }
+  .shorts-grid { grid-template-columns: 1fr; gap: 15px; } /* Une seule colonne pour les shorts */
+
+  .why-ai-section { padding: 30px 15px; }
+  .why-ai-card { padding: 30px; gap: 20px; }
+  .why-ai-text h2 { font-size: 24px; }
+  .why-ai-text p { font-size: 14px; }
+  .stat-box { padding: 20px; }
+  .stat-box span { font-size: 24px; margin-bottom: 10px; }
+
+  footer { padding: 50px 15px 25px; margin-top: 70px;}
+  .footer-grid { margin-bottom: 40px; }
+  .footer-bottom { padding-top: 20px; font-size: 12px; }
 }
-</style>
-</head>
-<body>
 
-<nav>
-  <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">A</div>
-    <span class="nav-logo-text">AI<span>Tools</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li>
-      <button>Categories <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="mega-drop">
-        <div class="mega-drop-title">Browse all 12 categories</div>
-        <div class="mega-drop-grid">
-          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon" style="background:rgba(59,130,246,0.12)">✍️</div><div class="mega-item-text"><strong>Writing & Editing</strong><span>Copywriting, blogs, scripts</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(168,85,247,0.12)">🎨</div><div class="mega-item-text"><strong>Image Generation</strong><span>Art, design & visuals</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(245,158,11,0.12)">🎬</div><div class="mega-item-text"><strong>Video & Audio</strong><span>Generation, editing, VFX</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(6,182,212,0.12)">💻</div><div class="mega-item-text"><strong>Coding & DevTools</strong><span>Debugging, review, docs</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(239,68,68,0.12)">🤖</div><div class="mega-item-text"><strong>Chatbots & Assistants</strong><span>AI chat, support bots</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(16,185,129,0.12)">📊</div><div class="mega-item-text"><strong>Productivity</strong><span>Notes, tasks, automation</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(251,146,60,0.12)">📣</div><div class="mega-item-text"><strong>Marketing & SEO</strong><span>Campaigns, ads, analytics</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(99,102,241,0.12)">🔬</div><div class="mega-item-text"><strong>Research & Analysis</strong><span>Data, insights, reports</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(20,184,166,0.12)">🎧</div><div class="mega-item-text"><strong>Audio & Voice</strong><span>TTS, cloning, transcription</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(234,179,8,0.12)">💬</div><div class="mega-item-text"><strong>Customer Service</strong><span>Support, live chat, CRM</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(236,72,153,0.12)">🖌️</div><div class="mega-item-text"><strong>Design & Creative</strong><span>UI, branding, illustration</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(148,163,184,0.12)">⚙️</div><div class="mega-item-text"><strong>Workflow Automation</strong><span>No-code, pipelines, APIs</span></div></a>
-        </div>
-      </div>
-    </li>
-    <li>
-      <button>Top Tools <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="simple-drop">
-        <a href="chatgpt.html"><span class="si">🤖</span> ChatGPT</a>
-        <a href="midjourney.html"><span class="si">🎨</span> Midjourney</a>
-        <a href="copyai.html"><span class="si">✍️</span> Copy AI</a>
-        <a href="notionai.html"><span class="si">📝</span> Notion AI</a>
-        <a href="runway.html"><span class="si">🎬</span> Runway ML</a>
-      </div>
-    </li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="#">Submit Tool</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="#" class="nav-btn-ghost">Sign in</a>
-    <button class="nav-btn-primary">+ Submit Tool</button>
-  </div>
-</nav>
-<section class="hero">
-  <div class="hero-badge">Curated AI Tools & Expert Video Reviews</div>
-  <h1>Find the <em>Perfect AI Tool</em><br>for Your Workflow</h1>
-  <p class="hero-sub">Discover 500+ tools reviewed, ranked and explained through data and video tutorials.</p>
+/* Ajout d'un bouton menu hamburger quand les nav-links sont masqués */
+.hamburger-menu {
+    display: none; /* Caché par défaut, affiché sur mobile par @media */
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-left: auto; /* Pousse le bouton vers la droite */
+}
 
-  <div class="search-wrapper">
-    <div class="search-bar">
-      <input type="text" class="search-input" id="searchInput" placeholder="Type a tool name (ex: ChatGPT, Jasper, Runway...)" autocomplete="off"/>
-      <button class="search-submit" id="searchBtn">Search</button>
-    </div>
-    <div class="search-suggestions" id="suggestions"></div>
-  </div>
-</section>
+.hamburger-menu .bar {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text);
+    margin: 4px 0;
+    transition: 0.4s;
+}
 
-<!-- SECTION 1: PRODUCTIVITY & CHAT -->
-<section class="section">
-  <div class="section-header">
-    <div><div class="section-label">General Assistants</div><h2 class="section-title">AI for Productivity</h2></div>
-    <a href="#" style="color:var(--blue); font-size:13px; text-decoration:none;">Explore all →</a>
-  </div>
-  <div class="tools-grid">
-    <a href="chatgpt.html" class="tool-card"><div class="tool-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"></div><h3>ChatGPT</h3><p>The standard for any productivity and coding task.</p></a>
-    <a href="claude.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/claude.png"></div><h3>Claude AI</h3><p>Superior reasoning and human-like writing.</p></a>
-    <a href="notionai.html" class="tool-card"><div class="tool-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png"></div><h3>Notion AI</h3><p>Harness the power of AI inside your docs.</p></a>
-    <a href="#" class="tool-card"><div class="tool-logo-wrap"><img src="images/preplexity.png"></div><h3>Perplexity</h3><p>The AI-powered search engine for citations.</p></a>
-  </div>
-</section>
-
-<!-- SECTION VIDEO HUB: YOUTUBE SHORTS -->
-<section class="video-section">
-  <div class="section-header">
-    <div><div class="section-label">Aladin Tech Reviews</div><h2 class="section-title">Shorts <em>Tutorials</em></h2></div>
-    <a href="https://www.youtube.com/@AladinTech-ex" target="_blank" style="color:var(--blue); font-size:13px; text-decoration:none;">Visit Channel →</a>
-  </div>
-  <div class="shorts-grid">
-   <!-- <div class="short-card"><iframe src="https://www.youtube.com/embed?listType=user_uploads&list=AladinTech-ex"></iframe></div> -->
-  <div class="short-card">
-  <iframe 
-    src="https://www.youtube.com/embed/yoMr-olCSvo" 
-    title="YouTube video player" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
-  </div>
-    <div class="short-card">
-  <iframe 
-    src="https://youtube.com//embed/Y9mpHijUChU" 
-    title="YouTube video player" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
-  </div>
-    <div class="short-card"><div style="height:100%; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; text-align:center; padding:20px;">Writesonic vs Copy AI <br> (Coming Soon)</div></div>
-  </div>
-</section>
-
-<!-- SECTION 2: WRITING & CONTENT -->
-<section class="section">
-  <div class="section-header">
-    <div><div class="section-label">Content Creation</div><h2 class="section-title">AI for Writing</h2></div>
-    <a href="ai-writing-tools.html" style="color:var(--blue); font-size:13px; text-decoration:none;">View all 47 tools →</a>
-  </div>
-  <div class="tools-grid">
-    <a href="jasper.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/jasper.png"></div><h3>Jasper AI</h3><p>Enterprise marketing and brand voice.</p></a>
-    <a href="writesonic.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/writesonic.png"></div><h3>Writesonic</h3><p>SEO-optimized blogs and long articles.</p></a>
-    <a href="copyai.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/copy.jpg"></div><h3>Copy AI</h3><p>High-converting marketing copy.</p></a>
-    <a href="frase.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/frase.png"></div><h3>Frase</h3><p>SEO research and content drafting.</p></a>
-  </div>
-</section>
-
-<!-- SECTION 3: DESIGN & CREATIVE -->
-<section class="section">
-    <div class="section-header">
-      <div><div class="section-label">Visual Arts</div><h2 class="section-title">Design & Creative</h2></div>
-    </div>
-    <div class="tools-grid">
-      <a href="midjourney.html" class="tool-card"><div class="tool-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png"></div><h3>Midjourney</h3><p>Professional AI image generation.</p></a>
-      <a href="runway.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/runway.png"></div><h3>Runway</h3><p>Next-gen AI video and visual effects.</p></a>
-      <a href="#" class="tool-card"><div class="tool-logo-wrap">🎨</div><h3>DALL·E 3</h3><p>OpenAI's precise image creation model.</p></a>
-      <a href="#" class="tool-card"><div class="tool-logo-wrap">🎧</div><h3>ElevenLabs</h3><p>The most realistic AI voice generator.</p></a>
-    </div>
-</section>
-
-<!-- WHY AI SECTION -->
-<section class="why-ai-section">
-  <div class="why-ai-card">
-    <div class="why-ai-text">
-      <div class="section-label">Insight</div>
-      <h2>Why AI tools are <br><em>important today</em></h2>
-      <p>Artificial intelligence tools are transforming the way people work online. From writing assistants to video generators, AI tools help creators, entrepreneurs, and businesses automate tasks and increase productivity.</p>
-    </div>
-    <div class="why-ai-stats">
-      <div class="stat-box"><span>🚀</span><strong>Automation</strong></div>
-      <div class="stat-box"><span>📈</span><strong>Productivity</strong></div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <!-- Colonne 1: Brand -->
-    <div class="footer-brand">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">A</div>
-        <span class="nav-logo-text">AI<span>Tools</span></span>
-      </a>
-      <p>Discover the world's most powerful AI tools. We curate and review the best solutions to help you boost productivity and creativity.</p>
-    </div>
-
-    <!-- Colonne 2: Directory -->
-    <div>
-      <h3 class="footer-title">Directory</h3>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ai-writing-tools.html">Writing Tools</a></li>
-        <li><a href="#">Image Generators</a></li>
-        <li><a href="#">Coding AI</a></li>
-        <li><a href="#">Video Tools</a></li>
-      </ul>
-    </div>
-
-    <!-- Colonne 3: Company -->
-    <div>
-      <h3 class="footer-title">Company</h3>
-      <ul class="footer-links">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="https://www.youtube.com/@AladinTech-ex">YouTube Channel</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#">Submit a Tool</a></li>
-      </ul>
-    </div>
-
-    <!-- Colonne 4: Support & Legal -->
-    <div>
-      <h3 class="footer-title">Legal</h3>
-      <ul class="footer-links">
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-      </ul>
-      <div class="footer-contact-info" style="margin-top: 25px;">
-        <strong>Reach us</strong>
-        <a href="mailto:alaeddineboubaker@gmail.com" style="color: var(--blue); text-decoration: none; font-size: 13px;">alaeddineboubaker@gmail.com</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p>
-    <div style="display: flex; gap: 20px;">
-      <a href="#" style="color: var(--muted); text-decoration: none;">Twitter</a>
-      <a href="#" style="color: var(--muted); text-decoration: none;">LinkedIn</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-// BASE DE DONNÉES COMPLÈTE (Tous les outils cités)
-const TOOLS = [
-  {icon:'🤖',name:'ChatGPT',url:'chatgpt.html'},
-  {icon:'🧠',name:'Claude AI',url:'claude.html'},
-  {icon:'🎨',name:'Midjourney',url:'midjourney.html'},
-  {icon:'⚡',name:'Jasper AI',url:'jasper.html'},
-  {icon:'📝',name:'Writesonic',url:'writesonic.html'},
-  {icon:'✍️',name:'Copy AI',url:'copyai.html'},
-  {icon:'📓',name:'Notion AI',url:'notionai.html'},
-  {icon:'🎬',name:'Runway ML',url:'runway.html'},
-  {icon:'🎯',name:'Frase',url:'frase.html'},
-  {icon:'🏄',name:'Surfer SEO',url:'surferseo.html'},
-  {icon:'🚀',name:'Scalenut',url:'scalenut.html'},
-  {icon:'🔭',name:'LongShot AI',url:'longshot.html'},
-  {icon:'🛠️',name:'Article Forge',url:'article_forge.html'},
-  {icon:'📐',name:'Hypotenuse AI',url:'hypotenuse.html'},
-  {icon:'🔍',name:'Perplexity AI',url:'#'},
-  {icon:'🔊',name:'ElevenLabs',url:'#'},
-  {icon:'🎵',name:'Suno AI',url:'#'},
-  {icon:'💻',name:'GitHub Copilot',url:'#'},
-  {icon:'⌨️',name:'ParagraphAI',url:'#'},
-  {icon:'🔄',name:'QuillBot',url:'#'},
-  {icon:'📈',name:'SEO.ai',url:'seo.html'},
-  {icon:'🖥️',name:'Bramework',url:'bramework.html'}
-];
-
-const input=document.getElementById('searchInput');
-const sugBox=document.getElementById('suggestions');
-
-input.addEventListener('input',()=>{
-  const q=input.value.trim().toLowerCase();
-  if(!q){sugBox.classList.remove('open');return;}
-  const hits = TOOLS.filter(t => t.name.toLowerCase().includes(q));
-  if(hits.length > 0){
-    sugBox.innerHTML = hits.map(t => `<a href="${t.url}" style="display:block;padding:12px;color:white;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.05); font-size:14px;">${t.icon} ${t.name}</a>`).join('');
-    sugBox.classList.add('open');
-  } else {
-    sugBox.classList.remove('open');
-  }
-});
-
-// Fermer les suggestions si on clique ailleurs
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.search-wrapper')) sugBox.classList.remove('open');
-});
-</script>
-</body>
-</html>
+/* Style pour le menu hamburger ouvert */
+nav.menu-open .hamburger-menu .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+nav.menu-open .hamburger-menu .bar:nth-child(2) {
+  opacity: 0;
+}
+nav.menu-open .hamburger-menu .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
