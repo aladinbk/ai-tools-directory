@@ -3,120 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Writing Directory — Professional Dashboard</title>
+<meta name='impact-site-verification' value='96bf728e-a2d8-40bb-a2f6-5f482e5b84f5'>
+<title>Best AI Tools Directory — Discover the Future of Work</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8783224760065899" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GFVDP1NZX0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GFVDP1NZX0');
+</script>
 <style>
-:root{--blue:#3b82f6;--cyan:#06b6d4;--dark:#020617;--border:rgba(255,255,255,0.08);--text:#e2e8f0;--muted:rgba(148,163,184,0.7);--star:#fbbf24;}
+:root{--blue:#3b82f6;--cyan:#06b6d4;--dark:#020617;--border:rgba(255,255,255,0.07);--text:#e2e8f0;--muted:rgba(148,163,184,0.7);--star:#fbbf24;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-
 body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 50% -10%,rgba(59,130,246,0.12) 0%,transparent 70%),#020617;pointer-events:none;}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(59,130,246,0.18) 0%,transparent 70%),#020617;pointer-events:none;}
 
-/* --- NAV (Identique index.html) --- */
-nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;background:rgba(2,6,23,0.82);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none; flex-shrink: 0;}
-.nav-logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;font-family:'Syne',sans-serif;}
+/* NAV */
+nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;background:rgba(2,6,23,0.82);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;font-family:'Syne',sans-serif;box-shadow:0 0 18px rgba(59,130,246,0.45);}
 .nav-logo-text{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.3px;}
 .nav-logo-text span{color:#3b82f6;}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
-.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:5px;padding:8px 14px;border:none;background:transparent;color:var(--muted);font-size:14px;font-weight:500;text-decoration:none;border-radius:8px;cursor:pointer;transition:all .2s;}
-.nav-links>li:hover>a, .nav-links li:hover button{color:#fff;background:rgba(255,255,255,0.06);}
+.nav-links>li{position:relative;}
+.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:5px;padding:8px 14px;border:none;background:transparent;color:var(--muted);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;text-decoration:none;border-radius:8px;cursor:pointer;transition:color .2s,background .2s;}
+.nav-links>li>a:hover,.nav-links>li>button:hover,.nav-links>li:hover>button{color:#fff;background:rgba(255,255,255,0.06);}
+.nav-arrow{width:14px;height:14px;opacity:.5;transition:transform .3s;}
+.nav-links>li:hover .nav-arrow{transform:rotate(180deg);opacity:1;}
+.mega-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;min-width:760px;background:rgba(10,18,40,0.97);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 30px 60px rgba(0,0,0,0.7),0 0 0 1px rgba(59,130,246,0.08);}
+.nav-links>li:hover .mega-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
+.mega-drop-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding:0 4px;}
+.mega-drop-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+.mega-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text);transition:background .2s,transform .2s;}
+.mega-item:hover{background:rgba(59,130,246,0.1);transform:translateX(2px);}
+.mega-icon{width:34px;height:34px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.mega-item-text strong{display:block;font-size:12px;font-weight:600;color:#fff;}
+.mega-item-text span{font-size:11px;color:var(--muted);}
+.simple-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;min-width:200px;background:rgba(10,18,40,0.97);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:12px;padding:8px;box-shadow:0 20px 50px rgba(0,0,0,0.5);}
+.nav-links>li:hover .simple-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
+.simple-drop a{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13px;transition:background .2s;}
+.simple-drop a:hover{background:rgba(255,255,255,0.06);}
+.simple-drop a .si{font-size:15px;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-btn-ghost{padding:7px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:var(--text);font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;transition:border-color .2s,color .2s,background .2s;}
+.nav-btn-ghost:hover{border-color:rgba(59,130,246,0.5);color:#fff;background:rgba(59,130,246,0.08);}
+.nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 15px rgba(59,130,246,0.35);}
+.nav-btn-primary:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(59,130,246,0.5);}
+/* --- HERO & SEARCH --- */
+.hero{position:relative;z-index:1;text-align:center;padding:100px 20px 80px;}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:99px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);font-size:12px;font-weight:500;color:#93c5fd;margin-bottom:28px;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(38px,6vw,68px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:18px;}
+h1 em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 
-.nav-right{display:flex;align-items:center;gap:12px; flex-shrink: 0;}
-.nav-btn-ghost{padding:7px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:var(--text);font-size:13px;text-decoration:none;}
-.nav-btn-primary{padding:7px 18px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 4px 15px rgba(59,130,246,0.35);}
+.search-wrapper{position:relative;max-width:660px;margin:0 auto;z-index:50;} 
+.search-bar{display:flex;align-items:center;background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.22);border-radius:16px;padding:6px 6px 6px 20px;gap:10px;backdrop-filter:blur(20px);}
+.search-input{flex:1;border:none;background:transparent;color:#fff;font-size:15px;outline:none;}
+.search-submit{padding:0 22px;height:44px;border-radius:12px;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;color:#fff;font-weight:600;cursor:pointer;}
 
-/* --- DASHBOARD STRUCTURE --- */
-.dashboard{display:grid;grid-template-columns:280px 1fr;gap:40px;max-width:1600px;margin:40px auto;padding:0 60px;position:relative;z-index:1;}
+.search-suggestions{position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:500;background:#060c1e;border:1px solid rgba(59,130,246,0.3);border-radius:16px;padding:10px;opacity:0;pointer-events:none;transform:translateY(-6px);transition:0.2s ease; text-align: left;}
+.search-suggestions.open{opacity:1;pointer-events:all;transform:translateY(0);}
 
-/* --- SIDEBAR --- */
-.sidebar{position:sticky;top:100px;height:fit-content;}
-.sidebar-title{font-family:'Syne',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:20px;padding-left:15px;}
-.side-nav{display:flex;flex-direction:column;gap:5px;}
-.side-btn{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:12px;color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:0.3s;border:1px solid transparent;}
-.side-btn:hover{background:rgba(255,255,255,0.03);color:#fff;}
-.side-btn.active{background:rgba(59,130,246,0.1);color:var(--blue);border-color:rgba(59,130,246,0.2);}
-.side-btn span{font-size:18px;width:24px;text-align:center;}
+/* --- SECTIONS THEMES (Les "Rayons") --- */
+.section { padding: 60px 60px; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1;}
+.section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px;}
+.section-label { font-size: 11px; text-transform: uppercase; color: var(--blue); letter-spacing: 2px; font-weight: 700; margin-bottom: 8px;}
+.section-title { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;}
 
-/* --- MAIN PANEL --- */
-.panel-header{margin-bottom:35px;display:flex;justify-content:space-between;align-items:flex-end;}
-.panel-title h1{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;margin-bottom:8px;}
-.panel-title p{color:var(--muted);font-size:14px;}
+.tool-card { background: rgba(15,23,42,0.6); border: 1px solid var(--border); border-radius: 20px; padding: 25px; text-decoration: none; color: var(--text); display: flex; flex-direction: column; align-items: center; text-align: center; transition: 0.3s; backdrop-filter: blur(10px); height: 100%;}
+.tool-card:hover { transform: translateY(-8px); border-color: var(--blue); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.tool-logo-wrap { width: 54px; height: 54px; border-radius: 12px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 15px; overflow: hidden; border: 1px solid var(--border);}
+.tool-logo-wrap img { width: 34px; height: 34px; object-fit: contain; }
+.tool-card h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.tool-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-.search-container{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);padding:12px 20px;border-radius:16px;width:320px;transition:0.3s;}
-.search-container:focus-within{border-color:var(--blue);background:rgba(15,23,42,0.6);}
-.search-container input{background:transparent;border:none;color:#fff;outline:none;font-size:14px;width:100%;}
+/* --- VIDEO HUB (SHORTS) --- */
+.video-section { padding: 80px 60px; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1;}
+.shorts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 30px;}
+.short-card { background: #000; border-radius: 24px; overflow: hidden; aspect-ratio: 9/16; border: 1px solid var(--border); transition: 0.3s; position: relative;}
+.short-card:hover { transform: translateY(-5px); border-color: var(--blue); box-shadow: 0 0 30px rgba(59,130,246,0.2); }
+.short-card iframe { width: 100%; height: 100%; border: none; }
 
-/* --- GRID & CARDS --- */
-.tool-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:20px;}
-.tool-card{background:rgba(15,23,42,0.3);border:1px solid var(--border);border-radius:24px;padding:26px;text-decoration:none;position:relative;overflow:hidden;transition:0.4s cubic-bezier(0.2, 1, 0.2, 1);display:flex;flex-direction:column;height:230px;backdrop-filter:blur(10px);}
+/* --- WHY AI SECTION --- */
+.why-ai-section { position: relative; z-index: 1; padding: 60px; max-width: 1200px; margin: 0 auto; }
+.why-ai-card { background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); border-radius: 32px; padding: 60px; backdrop-filter: blur(12px); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.why-ai-text h2 { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+.why-ai-text p { font-size: 17px; color: var(--muted); line-height: 1.8; }
+.stat-box { padding: 24px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 20px; text-align: center; }
 
-/* Spotlight FX */
-.tool-card::before{content:'';position:absolute;inset:0;background:radial-gradient(500px circle at var(--x) var(--y), rgba(59,130,246,0.12),transparent 40%);opacity:0;transition:opacity 0.4s;}
-.tool-card:hover::before{opacity:1;}
-.tool-card:hover{transform:translateY(-5px);border-color:rgba(59,130,246,0.3);background:rgba(15,23,42,0.6);}
-
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;z-index:2;}
-.card-logo{width:50px;height:50px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.card-logo img{width:32px;height:32px;object-fit:contain;}
-.card-logo div{font-weight:800;font-size:20px;color:#fff;} 
-
-.card-score{display:flex;align-items:center;gap:5px;font-weight:700;font-size:12px;color:#fff;background:rgba(255,255,255,0.05);padding:5px 12px;border-radius:99px;}
-.card-score svg{width:12px;height:12px;fill:var(--star);}
-
-.card-info h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px; z-index: 2; position: relative;}
-.card-info p{font-size:13.5px;color:var(--muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden; z-index: 2; position: relative;}
-
-.card-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;z-index:2;}
-.card-tag{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--blue);background:rgba(59,130,246,0.1);padding:5px 10px;border-radius:6px;}
-.card-arrow{color:var(--muted);transition:0.3s;}
-.tool-card:hover .card-arrow{color:var(--blue);transform:translateX(4px);}
-
-/* --- FOOTER --- */
-footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-top: 1px solid var(--border); padding: 80px 60px 40px; margin-top: 100px; position:relative; z-index: 1;}
-.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; text-align: left;}
-.footer-brand p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 280px; margin-top: 20px;}
-.footer-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; }
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 12px; }
-.footer-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: all 0.2s ease; }
-.footer-links a:hover { color: var(--blue); }
-.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 13px; }
-
-/* ============================================================
-   RESPONSIVE DESIGN (FIXES)
-   ============================================================ */
-
-@media (max-width: 1100px) {
-    .dashboard { grid-template-columns: 1fr; padding: 0 20px; }
-    .sidebar { position: relative; top: 0; margin-bottom: 30px; }
-    .side-nav { 
-        flex-direction: row; 
-        overflow-x: auto; 
-        padding-bottom: 10px; 
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-    }
-    .side-nav::-webkit-scrollbar { display: none; }
-    .side-btn { white-space: nowrap; }
-    .panel-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .search-container { width: 100%; }
+/* --- FOOTER MODERNE & COMPLET --- */
+footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(2, 6, 23, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  padding: 80px 60px 40px;
+  margin-top: 100px;
 }
 
-@media (max-width: 900px) {
-    nav { padding: 0 20px; }
-    .nav-links { display: none; }
-    .nav-logo-text span { display: none; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 60px;
+  margin-bottom: 60px;
 }
 
-@media (max-width: 600px) {
-    .panel-title h1 { font-size: 26px; }
-    .tool-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; text-align: center; }
-    .footer-brand p { margin: 10px auto; }
-    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+.footer-brand .nav-logo {
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.footer-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--blue);
+  padding-left: 5px;
+}
+
+.footer-contact-info {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.footer-contact-info strong {
+  color: #fff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* RESPONSIVE FOOTER */
+@media(max-width: 900px) {
+  footer { padding: 60px 20px 30px; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media(max-width: 500px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+}
+@media(max-width:1100px){
+    .dashboard{grid-template-columns:1fr; padding: 0 20px;}
+    .sidebar{position:relative;top:0;margin-bottom:30px;}
+    .side-nav{flex-direction:row;overflow-x:auto;padding-bottom:10px;scrollbar-width:none;}
+    .panel-header{flex-direction:column;align-items:flex-start;gap:20px;}
+    .search-container{width:100%;}
+}
+
+@media(max-width:900px){
+    nav, .section, .video-section, .why-ai-section { padding: 20px; }
+    .nav-links, .footer-grid { display: none; }
+    .why-ai-card { grid-template-columns: 1fr; padding: 40px; text-align: center;}
 }
 </style>
 </head>
@@ -124,169 +212,252 @@ footer { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-t
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">A</div><span class="nav-logo-text">AI<span>Tools</span></span>
+    <div class="nav-logo-icon">A</div>
+    <span class="nav-logo-text">AI<span>Tools</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><button style="color:white;font-weight:600;">Writing Tools</button></li>
+    <li>
+      <button>Categories <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mega-drop">
+        <div class="mega-drop-title">Browse all 12 categories</div>
+        <div class="mega-drop-grid">
+          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon" style="background:rgba(59,130,246,0.12)">✍️</div><div class="mega-item-text"><strong>Writing & Editing</strong><span>Copywriting, blogs, scripts</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(168,85,247,0.12)">🎨</div><div class="mega-item-text"><strong>Image Generation</strong><span>Art, design & visuals</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(245,158,11,0.12)">🎬</div><div class="mega-item-text"><strong>Video & Audio</strong><span>Generation, editing, VFX</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(6,182,212,0.12)">💻</div><div class="mega-item-text"><strong>Coding & DevTools</strong><span>Debugging, review, docs</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(239,68,68,0.12)">🤖</div><div class="mega-item-text"><strong>Chatbots & Assistants</strong><span>AI chat, support bots</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(16,185,129,0.12)">📊</div><div class="mega-item-text"><strong>Productivity</strong><span>Notes, tasks, automation</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(251,146,60,0.12)">📣</div><div class="mega-item-text"><strong>Marketing & SEO</strong><span>Campaigns, ads, analytics</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(99,102,241,0.12)">🔬</div><div class="mega-item-text"><strong>Research & Analysis</strong><span>Data, insights, reports</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(20,184,166,0.12)">🎧</div><div class="mega-item-text"><strong>Audio & Voice</strong><span>TTS, cloning, transcription</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(234,179,8,0.12)">💬</div><div class="mega-item-text"><strong>Customer Service</strong><span>Support, live chat, CRM</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(236,72,153,0.12)">🖌️</div><div class="mega-item-text"><strong>Design & Creative</strong><span>UI, branding, illustration</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(148,163,184,0.12)">⚙️</div><div class="mega-item-text"><strong>Workflow Automation</strong><span>No-code, pipelines, APIs</span></div></a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <button>Top Tools <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="simple-drop">
+        <a href="chatgpt.html"><span class="si">🤖</span> ChatGPT</a>
+        <a href="midjourney.html"><span class="si">🎨</span> Midjourney</a>
+        <a href="copyai.html"><span class="si">✍️</span> Copy AI</a>
+        <a href="notionai.html"><span class="si">📝</span> Notion AI</a>
+        <a href="runway.html"><span class="si">🎬</span> Runway ML</a>
+      </div>
+    </li>
     <li><a href="blog.html">Blog</a></li>
+    <li><a href="#">Submit Tool</a></li>
   </ul>
   <div class="nav-right">
     <a href="#" class="nav-btn-ghost">Sign in</a>
-    <button class="nav-btn-primary">+ Submit</button>
+    <button class="nav-btn-primary">+ Submit Tool</button>
   </div>
 </nav>
+<section class="hero">
+  <div class="hero-badge">Curated AI Tools & Expert Video Reviews</div>
+  <h1>Find the <em>Perfect AI Tool</em><br>for Your Workflow</h1>
+  <p class="hero-sub">Discover 500+ tools reviewed, ranked and explained through data and video tutorials.</p>
 
-<div class="dashboard">
-  <!-- SIDEBAR FILTERS -->
-  <aside class="sidebar">
-    <div class="sidebar-title">Categories</div>
-    <nav class="side-nav">
-      <a href="#" class="side-btn active" data-filter="all"><span>💎</span> All Tools</a>
-      <a href="#" class="side-btn" data-filter="top"><span>🏆</span> Top Picks</a>
-      <a href="#" class="side-btn" data-filter="seo"><span>📝</span> SEO & Blogging</a>
-      <a href="#" class="side-btn" data-filter="marketing"><span>📣</span> Marketing & Ads</a>
-      <a href="#" class="side-btn" data-filter="editing"><span>✨</span> Editing</a>
-      <a href="#" class="side-btn" data-filter="specialized"><span>🎭</span> Creative</a>
-    </nav>
-  </aside>
-
-  <!-- MAIN PANEL -->
-  <main class="main-panel">
-    <header class="panel-header">
-      <div class="panel-title">
-        <h1 id="currentCatName">All Writing Tools</h1>
-        <p>Exploring <span id="toolCount">47</span> premium assistants</p>
-      </div>
-      <div class="search-container">
-        <svg width="18" height="18" fill="var(--muted)" viewBox="0 0 24 24"><path d="M11 2a9 9 0 106.32 15.435l4.387 4.386a1 1 0 001.414-1.414l-4.386-4.387A9 9 0 0011 2zm0 2a7 7 0 110 14 7 7 0 010-14z"/></svg>
-        <input type="text" id="toolSearch" placeholder="Find a tool...">
-      </div>
-    </header>
-
-    <div class="tool-grid" id="toolGrid">
-      <!-- Generated by JS -->
+  <div class="search-wrapper">
+    <div class="search-bar">
+      <input type="text" class="search-input" id="searchInput" placeholder="Type a tool name (ex: ChatGPT, Jasper, Runway...)" autocomplete="off"/>
+      <button class="search-submit" id="searchBtn">Search</button>
     </div>
-  </main>
-</div>
+    <div class="search-suggestions" id="suggestions"></div>
+  </div>
+</section>
+
+<!-- SECTION 1: PRODUCTIVITY & CHAT -->
+<section class="section">
+  <div class="section-header">
+    <div><div class="section-label">General Assistants</div><h2 class="section-title">AI for Productivity</h2></div>
+    <a href="#" style="color:var(--blue); font-size:13px; text-decoration:none;">Explore all →</a>
+  </div>
+  <div class="tools-grid">
+    <a href="chatgpt.html" class="tool-card"><div class="tool-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"></div><h3>ChatGPT</h3><p>The standard for any productivity and coding task.</p></a>
+    <a href="claude.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/claude.png"></div><h3>Claude AI</h3><p>Superior reasoning and human-like writing.</p></a>
+    <a href="notionai.html" class="tool-card"><div class="tool-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png"></div><h3>Notion AI</h3><p>Harness the power of AI inside your docs.</p></a>
+    <a href="#" class="tool-card"><div class="tool-logo-wrap"><img src="images/preplexity.png"></div><h3>Perplexity</h3><p>The AI-powered search engine for citations.</p></a>
+  </div>
+</section>
+
+<!-- SECTION VIDEO HUB: YOUTUBE SHORTS -->
+<section class="video-section">
+  <div class="section-header">
+    <div><div class="section-label">Aladin Tech Reviews</div><h2 class="section-title">Shorts <em>Tutorials</em></h2></div>
+    <a href="https://www.youtube.com/@AladinTech-ex" target="_blank" style="color:var(--blue); font-size:13px; text-decoration:none;">Visit Channel →</a>
+  </div>
+  <div class="shorts-grid">
+   <!-- <div class="short-card"><iframe src="https://www.youtube.com/embed?listType=user_uploads&list=AladinTech-ex"></iframe></div> -->
+  <div class="short-card">
+  <iframe 
+    src="https://www.youtube.com/embed/yoMr-olCSvo" 
+    title="YouTube video player" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+  </iframe>
+  </div>
+    <div class="short-card">
+  <iframe 
+    src="https://youtube.com//embed/Y9mpHijUChU" 
+    title="YouTube video player" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+  </iframe>
+  </div>
+    <div class="short-card"><div style="height:100%; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; text-align:center; padding:20px;">Writesonic vs Copy AI <br> (Coming Soon)</div></div>
+  </div>
+</section>
+
+<!-- SECTION 2: WRITING & CONTENT -->
+<section class="section">
+  <div class="section-header">
+    <div><div class="section-label">Content Creation</div><h2 class="section-title">AI for Writing</h2></div>
+    <a href="ai-writing-tools.html" style="color:var(--blue); font-size:13px; text-decoration:none;">View all 47 tools →</a>
+  </div>
+  <div class="tools-grid">
+    <a href="jasper.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/jasper.png"></div><h3>Jasper AI</h3><p>Enterprise marketing and brand voice.</p></a>
+    <a href="writesonic.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/writesonic.png"></div><h3>Writesonic</h3><p>SEO-optimized blogs and long articles.</p></a>
+    <a href="copyai.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/copy.jpg"></div><h3>Copy AI</h3><p>High-converting marketing copy.</p></a>
+    <a href="frase.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/frase.png"></div><h3>Frase</h3><p>SEO research and content drafting.</p></a>
+  </div>
+</section>
+
+<!-- SECTION 3: DESIGN & CREATIVE -->
+<section class="section">
+    <div class="section-header">
+      <div><div class="section-label">Visual Arts</div><h2 class="section-title">Design & Creative</h2></div>
+    </div>
+    <div class="tools-grid">
+      <a href="midjourney.html" class="tool-card"><div class="tool-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png"></div><h3>Midjourney</h3><p>Professional AI image generation.</p></a>
+      <a href="runway.html" class="tool-card"><div class="tool-logo-wrap"><img src="images/runway.png"></div><h3>Runway</h3><p>Next-gen AI video and visual effects.</p></a>
+      <a href="#" class="tool-card"><div class="tool-logo-wrap">🎨</div><h3>DALL·E 3</h3><p>OpenAI's precise image creation model.</p></a>
+      <a href="#" class="tool-card"><div class="tool-logo-wrap">🎧</div><h3>ElevenLabs</h3><p>The most realistic AI voice generator.</p></a>
+    </div>
+</section>
+
+<!-- WHY AI SECTION -->
+<section class="why-ai-section">
+  <div class="why-ai-card">
+    <div class="why-ai-text">
+      <div class="section-label">Insight</div>
+      <h2>Why AI tools are <br><em>important today</em></h2>
+      <p>Artificial intelligence tools are transforming the way people work online. From writing assistants to video generators, AI tools help creators, entrepreneurs, and businesses automate tasks and increase productivity.</p>
+    </div>
+    <div class="why-ai-stats">
+      <div class="stat-box"><span>🚀</span><strong>Automation</strong></div>
+      <div class="stat-box"><span>📈</span><strong>Productivity</strong></div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
+    <!-- Colonne 1: Brand -->
     <div class="footer-brand">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-icon">A</div>
         <span class="nav-logo-text">AI<span>Tools</span></span>
       </a>
-      <p>Discover the world's most powerful AI tools. We curate and review the best solutions for productivity and creativity.</p>
+      <p>Discover the world's most powerful AI tools. We curate and review the best solutions to help you boost productivity and creativity.</p>
     </div>
+
+    <!-- Colonne 2: Directory -->
     <div>
       <h3 class="footer-title">Directory</h3>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="ai-writing-tools.html">Writing Tools</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#">Image Generators</a></li>
+        <li><a href="#">Coding AI</a></li>
+        <li><a href="#">Video Tools</a></li>
       </ul>
     </div>
+
+    <!-- Colonne 3: Company -->
     <div>
       <h3 class="footer-title">Company</h3>
       <ul class="footer-links">
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="https://www.youtube.com/@AladinTech-ex">YouTube Channel</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#">Submit a Tool</a></li>
       </ul>
     </div>
+
+    <!-- Colonne 4: Support & Legal -->
     <div>
-      <h3 class="footer-title">Support</h3>
-      <a href="mailto:alaeddineboubaker@gmail.com" style="color: var(--blue); text-decoration: none; font-size: 14px;">alaeddineboubaker@gmail.com</a>
+      <h3 class="footer-title">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+      <div class="footer-contact-info" style="margin-top: 25px;">
+        <strong>Reach us</strong>
+        <a href="mailto:alaeddineboubaker@gmail.com" style="color: var(--blue); text-decoration: none; font-size: 13px;">alaeddineboubaker@gmail.com</a>
+      </div>
     </div>
   </div>
+
   <div class="footer-bottom">
     <p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p>
+    <div style="display: flex; gap: 20px;">
+      <a href="#" style="color: var(--muted); text-decoration: none;">Twitter</a>
+      <a href="#" style="color: var(--muted); text-decoration: none;">LinkedIn</a>
+    </div>
   </div>
 </footer>
 
 <script>
-const allWritingTools = [
-  { name: "Jasper AI", desc: "The enterprise-grade platform for professional marketing teams.", tag: "Marketing", score: "4.9", img: "images/jasper.png", url: "jasper.html", sec: "top" },
-  { name: "ChatGPT", desc: "The world's most versatile assistant for writing and brainstorming.", tag: "Assistant", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", url: "chatgpt.html", sec: "top" },
-  { name: "Claude AI", desc: "Anthropic’s AI known for natural and human-like writing quality.", tag: "Assistant", score: "4.9", img: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Claude_AI_logo.svg", url: "claude.html", sec: "top" },
-  { name: "Writesonic", desc: "All-in-one platform for long-form blog posts and SEO articles.", tag: "SEO", score: "4.7", img: "images/writesonic.png", url: "writesonic.html", sec: "top" },
-  { name: "Notion AI", desc: "Harness AI directly inside your notes, docs, and workspace.", tag: "Productivity", score: "4.8", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", url: "notionai.html", sec: "top" },
-  { name: "Copy AI", desc: "Generate high-converting marketing copy and social posts.", tag: "Marketing", score: "4.8", img: "images/copy.jpg", url: "copyai.html", sec: "top" },
-  { name: "Frase", desc: "Research and optimize SEO content in record time.", tag: "SEO", score: "4.6", img: "images/frase.png", url: "frase.html", sec: "seo" },
-  { name: "Surfer SEO", desc: "Data-driven content editor to outrank competitors on Google.", tag: "SEO", score: "4.8", img: "images/surfer.png", url: "surferseo.html", sec: "seo" },
-  { name: "Scalenut", desc: "Managed SEO content lifecycle from keywords to drafts.", tag: "SEO", score: "4.7", img: "images/scalenut.png", url: "scalenut.html", sec: "seo" },
-  { name: "LongShot AI", desc: "Fact-checked long-form content for high-authority blogs.", tag: "Blogging", score: "4.5", img: "images/longshot.png", url: "longshot.html", sec: "seo" },
-  { name: "Article Forge", desc: "Automated article creation using deep learning and AI.", tag: "Blogging", score: "4.2", img: "images/forge.png", url: "article_forge.html", sec: "seo" },
-  { name: "Hypotenuse AI", desc: "Turn keywords into comprehensive blog posts and product copy.", tag: "Blogging", score: "4.5", img: "images/hypotenuse.png", url: "hypotenuse.html", sec: "seo" },
-  { name: "Typli", desc: "Seamless writing assistant with an integrated SEO checker.", tag: "SEO", score: "4.2", img: "images/typli.png", url: "typli.html", sec: "seo" },
-  { name: "SEO.ai", desc: "AI tool that generates high-ranking SEO content formats.", tag: "SEO", score: "4.4", img: "images/seo.png", url: "seo.html", sec: "seo" },
-  { name: "Bramework", desc: "Built specifically to help bloggers finish posts 5x faster.", tag: "Blogging", score: "4.4", img: "images/bramework.png", url: "bramework.html", sec: "seo" },
-  { name: "AI-Writer", desc: "Generate accurate articles with verifiable citations.", tag: "Blogging", score: "4.2", img: "images/ai-writer.png", url: "ai_writing.html", sec: "seo" },
-  { name: "Outranking", desc: "Strategy and content creation for building topical authority.", tag: "SEO", score: "4.5", img: "images/outranking.png", url: "outranking.html", sec: "seo" },
-  { name: "Grammarly", desc: "The industry standard for correction and tone adjustment.", tag: "Editing", score: "4.8", img: "images/grammarly.png", url: "grammarly.html", sec: "editing" }
+// BASE DE DONNÉES COMPLÈTE (Tous les outils cités)
+const TOOLS = [
+  {icon:'🤖',name:'ChatGPT',url:'chatgpt.html'},
+  {icon:'🧠',name:'Claude AI',url:'claude.html'},
+  {icon:'🎨',name:'Midjourney',url:'midjourney.html'},
+  {icon:'⚡',name:'Jasper AI',url:'jasper.html'},
+  {icon:'📝',name:'Writesonic',url:'writesonic.html'},
+  {icon:'✍️',name:'Copy AI',url:'copyai.html'},
+  {icon:'📓',name:'Notion AI',url:'notionai.html'},
+  {icon:'🎬',name:'Runway ML',url:'runway.html'},
+  {icon:'🎯',name:'Frase',url:'frase.html'},
+  {icon:'🏄',name:'Surfer SEO',url:'surferseo.html'},
+  {icon:'🚀',name:'Scalenut',url:'scalenut.html'},
+  {icon:'🔭',name:'LongShot AI',url:'longshot.html'},
+  {icon:'🛠️',name:'Article Forge',url:'article_forge.html'},
+  {icon:'📐',name:'Hypotenuse AI',url:'hypotenuse.html'},
+  {icon:'🔍',name:'Perplexity AI',url:'#'},
+  {icon:'🔊',name:'ElevenLabs',url:'#'},
+  {icon:'🎵',name:'Suno AI',url:'#'},
+  {icon:'💻',name:'GitHub Copilot',url:'#'},
+  {icon:'⌨️',name:'ParagraphAI',url:'#'},
+  {icon:'🔄',name:'QuillBot',url:'#'},
+  {icon:'📈',name:'SEO.ai',url:'seo.html'},
+  {icon:'🖥️',name:'Bramework',url:'bramework.html'}
 ];
 
-const grid = document.getElementById('toolGrid');
-const countDisplay = document.getElementById('toolCount');
-const searchInput = document.getElementById('toolSearch');
-const sideBtns = document.querySelectorAll('.side-btn');
+const input=document.getElementById('searchInput');
+const sugBox=document.getElementById('suggestions');
 
-function render(filter = "all", search = "") {
-    let filtered = allWritingTools;
-    if(filter !== "all") filtered = filtered.filter(t => t.sec === filter);
-    if(search) filtered = filtered.filter(t => 
-        t.name.toLowerCase().includes(search.toLowerCase()) || 
-        t.desc.toLowerCase().includes(search.toLowerCase())
-    );
-
-    countDisplay.innerText = filtered.length;
-    
-    grid.innerHTML = filtered.map(tool => `
-      <a href="${tool.url}" class="tool-card">
-        <div class="card-top">
-          <div class="card-logo">
-            ${tool.img ? `<img src="${tool.img}" alt="${tool.name}">` : `<div>${tool.name[0]}</div>`}
-          </div>
-          <div class="card-score">${tool.score} <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        </div>
-        <div class="card-info">
-          <h3>${tool.name}</h3>
-          <p>${tool.desc}</p>
-        </div>
-        <div class="card-bottom">
-          <span class="card-tag">${tool.tag}</span>
-          <div class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9-9M17 17V7H7"/></svg></div>
-        </div>
-      </a>
-    `).join('');
-
-    document.querySelectorAll('.tool-card').forEach(card => {
-        card.onmousemove = e => {
-            const rect = card.getBoundingClientRect();
-            card.style.setProperty('--x', (e.clientX - rect.left) + 'px');
-            card.style.setProperty('--y', (e.clientY - rect.top) + 'px');
-        };
-    });
-}
-
-sideBtns.forEach(btn => {
-    btn.onclick = (e) => {
-        e.preventDefault();
-        sideBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('currentCatName').innerText = btn.innerText.substring(3);
-        render(btn.dataset.filter, searchInput.value);
-    };
+input.addEventListener('input',()=>{
+  const q=input.value.trim().toLowerCase();
+  if(!q){sugBox.classList.remove('open');return;}
+  const hits = TOOLS.filter(t => t.name.toLowerCase().includes(q));
+  if(hits.length > 0){
+    sugBox.innerHTML = hits.map(t => `<a href="${t.url}" style="display:block;padding:12px;color:white;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.05); font-size:14px;">${t.icon} ${t.name}</a>`).join('');
+    sugBox.classList.add('open');
+  } else {
+    sugBox.classList.remove('open');
+  }
 });
 
-searchInput.oninput = () => {
-    const activeFilter = document.querySelector('.side-btn.active').dataset.filter;
-    render(activeFilter, searchInput.value);
-};
-
-render();
+// Fermer les suggestions si on clique ailleurs
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-wrapper')) sugBox.classList.remove('open');
+});
 </script>
 </body>
 </html>
