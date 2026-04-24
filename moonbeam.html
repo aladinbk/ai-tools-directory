@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8783224760065899" crossorigin="anonymous"></script>
 <style>
-/* COULEURS SPECIFIQUES MOONBEAM (Lunar Purple Theme) */
+/* COULEURS SPECIFIQUES MOONBEAM */
 :root {
     --blue: #3b82f6;
     --cyan: #06b6d4;
@@ -16,7 +16,7 @@
     --text: #e2e8f0;
     --muted: rgba(148,163,184,0.7);
     --star: #fbbf24;
-    --lex-blue: #8b5cf6; /* Violet pour Moonbeam */
+    --lex-blue: #8b5cf6; /* Accent Violet Moonbeam */
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,7 +28,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Background Glow Effect */
+/* Background Glow */
 body::before {
     content: '';
     position: fixed;
@@ -91,13 +91,13 @@ nav {
 .mega-drop-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
 .mega-item { display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: 10px; text-decoration: none; color: var(--text); transition: 0.2s; }
 .mega-item:hover { background: rgba(59,130,246,0.1); transform: translateX(2px); }
-.mega-icon { width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.mega-icon { width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; background: rgba(59,130,246,0.12); }
 
 .nav-right { display: flex; align-items: center; gap: 12px; }
 .nav-btn-ghost { padding: 7px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: var(--text); font-size: 13px; text-decoration: none; }
 .nav-btn-primary { padding: 7px 18px; border-radius: 8px; background: linear-gradient(135deg,#3b82f6,#06b6d4); border: none; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(59,130,246,0.35); }
 
-/* --- PAGE CONTENT (ALIGNÉ À GAUCHE DANS CONTENEUR CENTRÉ) --- */
+/* --- PAGE CONTENT --- */
 .page { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 60px 40px; }
 @media(max-width:768px){.page{padding:40px 20px 60px;}}
 
@@ -111,10 +111,10 @@ nav {
 .tool-hero-left { flex: 1; text-align: left; }
 @media(max-width:900px){.tool-hero-left{text-align:center;}}
 
-.tool-badge { display: inline-flex; align-items: center; gap: 7px; padding: 4px 13px; border-radius: 99px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.25); font-size: 11px; font-weight: 600; color: #c084fc; margin-bottom: 20px; }
+.tool-badge { display: inline-flex; align-items: center; gap: 7px; padding: 4px 13px; border-radius: 99px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.25); font-size: 11px; font-weight: 600; color: var(--blue); margin-bottom: 20px; }
 .tool-hero-left h1 { font-family: 'Syne', sans-serif; font-size: clamp(32px, 4vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
 .tool-hero-left h1 em { font-style: normal; background: linear-gradient(90deg, var(--lex-blue), #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.tool-desc { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 28px; max-width: 520px; }
+.tool-desc { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 28px; }
 
 /* Buttons */
 .tool-actions { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -139,23 +139,37 @@ nav {
 .stat-item-l { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
 /* Features Grid */
-.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 56px; text-align: left; }
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 56px; }
 @media(max-width:768px){.features-grid{grid-template-columns: 1fr;}}
 .feat-card { padding: 24px; border-radius: 16px; background: rgba(15,23,42,0.6); border: 1px solid var(--border); }
 .feat-card h3 { color: #fff; font-size: 16px; margin-bottom: 8px; font-weight: 700; }
 .feat-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
+/* Pros & Cons */
+.pc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 56px; }
+@media(max-width:900px){.pc-grid{grid-template-columns: 1fr;}}
+.pc-card { padding: 24px; border-radius: 16px; background: rgba(15,23,42,0.6); border: 1px solid var(--border); }
+.pc-card.pros { border-top: 2px solid #10b981; }.pc-card.cons { border-top: 2px solid #ef4444; }
+.pc-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: .8px; }
+.pc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pc-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--muted); line-height: 1.55; }
+.pc-card.pros li::before { content: '✓'; color: #10b981; }
+.pc-card.cons li::before { content: '✕'; color: #ef4444; }
+
 /* --- FOOTER (STRICTEMENT IDENTIQUE À LEX.HTML) --- */
-footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-top: 1px solid var(--border); padding: 60px 20px 40px; margin-top: 100px; }
+footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-top: 1px solid var(--border); padding: 80px 60px 40px; margin-top: 100px; }
 .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; text-align: left; }
 @media(min-width:640px){ .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media(min-width:1024px){ .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; } }
+
 .footer-brand p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 280px; margin-top: 20px; }
 .footer-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; }
 .footer-links { list-style: none; }
 .footer-links li { margin-bottom: 12px; }
 .footer-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: 0.2s; }
 .footer-links a:hover { color: var(--blue); }
+.footer-contact-info { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.footer-contact-info strong { color: #fff; display: block; margin-bottom: 8px; }
 .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 13px; flex-wrap:wrap; gap:15px; }
 @media(max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } }
 </style>
@@ -165,37 +179,30 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
 <!-- NAVIGATION -->
 <nav id="mainNav">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">A</div>
-    <span class="nav-logo-text">AI<span>Tools</span></span>
+    <div class="nav-logo-icon">A</div><span class="nav-logo-text">AI<span>Tools</span></span>
   </a>
 
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li>
-      <button>Categories <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <button>Categories <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="mega-drop">
         <div class="mega-drop-title">Browse all 12 categories</div>
         <div class="mega-drop-grid">
-          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon" style="background:rgba(59,130,246,0.12)">✍️</div><div class="mega-item-text"><strong>Writing & Editing</strong><span>Copywriting, blogs, scripts</span></div></a>
+          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon">✍️</div><div class="mega-item-text"><strong>Writing & Editing</strong><span>Long-form, Essays, Blogs</span></div></a>
           <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(168,85,247,0.12)">🎨</div><div class="mega-item-text"><strong>Image Generation</strong><span>Art, design & visuals</span></div></a>
-          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(239,68,68,0.12)">🤖</div><div class="mega-item-text"><strong>Chatbots & Assistants</strong><span>AI chat, support bots</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon">🤖</div><div class="mega-item-text"><strong>Chatbots & Assistants</strong><span>AI chat, support bots</span></div></a>
         </div>
       </div>
     </li>
     <li>
-      <button>Top Tools <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <button>Top Tools <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="simple-drop">
         <a href="chatgpt.html"><span class="si">🤖</span> ChatGPT</a>
-        <a href="midjourney.html"><span class="si">🎨</span> Midjourney</a>
-        <a href="copyai.html"><span class="si">✍️</span> Copy AI</a>
-        <a href="notionai.html"><span class="si">📝</span> Notion AI</a>
-        <a href="runway.html"><span class="si">🎬</span> Runway ML</a>
+        <a href="lex.html"><span class="si">📝</span> Lex AI</a>
+        <a href="moonbeam.html"><span class="si">🌕</span> Moonbeam</a>
       </div>
     </li>
     <li><a href="blog.html">Blog</a></li>
@@ -226,8 +233,9 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
       </div>
 
       <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;">
-        <span style="padding:5px 12px; background:rgba(255,255,255,0.05); border-radius:20px; font-size:12px; color:var(--muted); border:1px solid var(--border)">Long-form Engine</span>
-        <span style="padding:5px 12px; background:rgba(255,255,255,0.05); border-radius:20px; font-size:12px; color:var(--muted); border:1px solid var(--border)">Academic Writing</span>
+        <span class="tag">Long-form Engine</span>
+        <span class="tag">Academic Writing</span>
+        <span class="tag">Luna AI</span>
       </div>
     </div>
     <div class="tool-hero-right">
@@ -265,6 +273,27 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
       <p>Integrated tools to expand paragraphs, rewrite sentences for clarity, or change tone with a single click.</p>
     </div>
   </div>
+
+  <!-- Pros & Cons -->
+  <h2 style="font-family:Syne;font-size:22px;margin-bottom:24px;font-weight:800;">Pros & Cons</h2>
+  <div class="pc-grid">
+    <div class="pc-card pros">
+      <h3 style="color:#10b981;">✅ Pros</h3>
+      <ul class="pc-list">
+        <li>Exceptional for structured academic and professional drafts</li>
+        <li>Luna engine is optimized for long texts unlike general models</li>
+        <li>Very intuitive wizard-based workflow for beginners</li>
+      </ul>
+    </div>
+    <div class="pc-card cons">
+      <h3 style="color:#ef4444;">❌ Cons</h3>
+      <ul class="pc-list">
+        <li>Free tier is quite limited compared to general assistants</li>
+        <li>Primarily optimized for English language</li>
+        <li>Subscription can be steep for occasional students</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER -->
@@ -275,20 +304,17 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
         <div class="nav-logo-icon">A</div>
         <span class="nav-logo-text">AI<span>Tools</span></span>
       </a>
-      <p>Discover the world's most powerful AI tools. We curate and review the best solutions to help you boost productivity and creativity.</p>
+      <p>Discover the world's most powerful AI tools. We curate and review the best solutions for the AI community.</p>
     </div>
-
     <div>
       <h3 class="footer-title">Directory</h3>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="ai-writing-tools.html">Writing Tools</a></li>
         <li><a href="#">Image Generators</a></li>
-        <li><a href="#">Coding AI</a></li>
         <li><a href="#">Video Tools</a></li>
       </ul>
     </div>
-
     <div>
       <h3 class="footer-title">Company</h3>
       <ul class="footer-links">
@@ -298,7 +324,6 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
         <li><a href="#">Submit a Tool</a></li>
       </ul>
     </div>
-
     <div>
       <h3 class="footer-title">Legal</h3>
       <ul class="footer-links">
@@ -311,7 +336,6 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
       </div>
     </div>
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p>
     <div style="display: flex; gap: 20px;">
@@ -330,16 +354,6 @@ const mainNav = document.getElementById('mainNav');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   mainNav.classList.toggle('menu-open');
-});
-
-// CLOSE MENU ON LINK CLICK
-document.querySelectorAll('.nav-links a, .nav-links button').forEach(item => {
-  item.addEventListener('click', () => {
-    if (window.innerWidth < 1024) {
-      hamburger.classList.remove('active');
-      mainNav.classList.remove('menu-open');
-    }
-  });
 });
 
 // SAVE TOOL FUNCTIONALITY
