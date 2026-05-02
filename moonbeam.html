@@ -16,7 +16,7 @@
     --text: #e2e8f0;
     --muted: rgba(148,163,184,0.7);
     --star: #fbbf24;
-    --lex-blue: #8b5cf6; /* Violet pour Moonbeam */
+    --moon-purple: #8b5cf6;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,7 +38,7 @@ body::before {
     pointer-events: none;
 }
 
-/* --- NAV (IDENTIQUE LEX.HTML) --- */
+/* --- NAV AVEC HAMBURGER --- */
 nav {
     position: sticky;
     top: 0;
@@ -68,99 +68,215 @@ nav {
 
 @media(max-width: 1023px) { 
     .hamburger { display: flex; } 
-    .nav-links { 
-        display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; 
-        background: rgba(15,23,42,0.95); padding: 20px; border-bottom: 1px solid var(--border); backdrop-filter: blur(24px);
-    }
-    nav.menu-open .nav-links { display: flex; }
-    nav.menu-open .nav-right { display: flex; flex-direction: column; width: 100%; margin-top: 10px; }
 }
 
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
-.nav-links > li { position: relative; width: 100%; }
-.nav-links li a, .nav-links li button { display: flex; align-items: center; gap: 5px; padding: 8px 14px; color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; border-radius: 8px; transition: 0.2s; border: none; background: transparent; width: 100%; cursor: pointer; }
+@media(max-width: 1023px) {
+    .nav-links { display: none; }
+}
+
+.nav-links > li { position: relative; }
+.nav-links li a, .nav-links li button { display: flex; align-items: center; gap: 5px; padding: 8px 14px; color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; border-radius: 8px; transition: 0.2s; border: none; background: transparent; cursor: pointer; }
 .nav-links li a:hover, .nav-links li button:hover { color: #fff; background: rgba(255,255,255,0.06); }
 
+.nav-arrow { width: 14px; height: 14px; opacity: 0.5; transition: transform 0.3s; }
+.nav-links li:hover .nav-arrow { transform: rotate(180deg); opacity: 1; }
+
+/* Dropdown Styles for Desktop */
 @media(min-width: 1024px) {
-    .mega-drop, .simple-drop { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(-6px); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; background: rgba(10,18,40,0.97); backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 16px; padding: 22px; box-shadow: 0 30px 60px rgba(0,0,0,0.7); }
+    .mega-drop, .simple-drop { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(-6px); opacity: 0; pointer-events: none; transition: all 0.25s; background: rgba(10,18,40,0.97); backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 16px; padding: 22px; box-shadow: 0 30px 60px rgba(0,0,0,0.7); }
     .mega-drop { min-width: 760px; }
     .simple-drop { min-width: 200px; padding: 8px; }
     .nav-links > li:hover .mega-drop, .nav-links > li:hover .simple-drop { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
 }
 
+.mega-drop-title { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; padding: 0 4px; }
+
+/* Mega Dropdown Grid */
 .mega-drop-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
 .mega-item { display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: 10px; text-decoration: none; color: var(--text); transition: 0.2s; }
 .mega-item:hover { background: rgba(59,130,246,0.1); transform: translateX(2px); }
 .mega-icon { width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.mega-item-text strong { display: block; font-size: 12px; font-weight: 600; color: #fff; }
+.mega-item-text span { font-size: 11px; color: var(--muted); }
+
+.simple-drop a { display: flex; align-items: center; gap: 9px; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: var(--text); font-size: 13px; transition: background 0.2s; }
+.simple-drop a:hover { background: rgba(255,255,255,0.06); }
 
 .nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-btn-ghost { padding: 7px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: var(--text); font-size: 13px; text-decoration: none; }
-.nav-btn-primary { padding: 7px 18px; border-radius: 8px; background: linear-gradient(135deg,#3b82f6,#06b6d4); border: none; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(59,130,246,0.35); }
+@media(max-width: 1023px) { .nav-right { display: none; } }
+
+.nav-btn-ghost { padding: 7px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: var(--text); font-size: 13px; font-weight: 500; text-decoration: none; cursor: pointer; transition: 0.2s; font-family: 'Outfit', sans-serif; }
+.nav-btn-ghost:hover { border-color: rgba(139,92,246,0.5); color: #fff; background: rgba(139,92,246,0.08); }
+
+.nav-btn-primary { padding: 7px 18px; border-radius: 8px; background: linear-gradient(135deg,#3b82f6,#06b6d4); border: none; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(59,130,246,0.35); transition: 0.2s; font-family: 'Outfit', sans-serif; }
+.nav-btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* Mobile Menu Open State */
+@media(max-width: 1023px) {
+    nav.menu-open .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(15,23,42,0.95);
+        padding: 20px;
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(24px);
+        gap: 8px;
+    }
+    
+    nav.menu-open .nav-links > li { width: 100%; }
+    nav.menu-open .nav-links li a,
+    nav.menu-open .nav-links li button { width: 100%; padding: 12px 16px; }
+    
+    nav.menu-open .mega-drop,
+    nav.menu-open .simple-drop {
+        position: static;
+        transform: none;
+        opacity: 1;
+        pointer-events: all;
+        background: rgba(139, 92, 246, 0.08);
+        margin-top: 8px;
+        box-shadow: none;
+    }
+    
+    nav.menu-open .mega-drop-grid { grid-template-columns: 1fr; }
+    
+    nav.menu-open .nav-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        gap: 8px;
+    }
+}
 
 /* --- PAGE CONTENT --- */
 .page { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 60px 40px; }
-@media(max-width:768px){.page{padding:40px 20px 60px;}}
+@media(max-width:768px){ .page { padding: 40px 20px 60px; } }
 
 .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin-bottom: 48px; flex-wrap: wrap; }
 .breadcrumb a { color: var(--muted); text-decoration: none; transition: 0.2s; }
 .breadcrumb a:hover { color: #fff; }
+.breadcrumb span { opacity: 0.4; }
 
 .tool-hero { display: flex; align-items: flex-start; gap: 60px; margin-bottom: 56px; }
-@media(max-width:900px){.tool-hero{flex-direction:column-reverse; gap:30px; text-align:center; align-items:center;}}
+@media(max-width:900px) { .tool-hero { flex-direction: column-reverse; gap: 30px; } }
 
-.tool-hero-left { flex: 1; text-align: left; }
-@media(max-width:900px){.tool-hero-left{text-align:center;}}
-
-.tool-badge { display: inline-flex; align-items: center; gap: 7px; padding: 4px 13px; border-radius: 99px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.25); font-size: 11px; font-weight: 600; color: var(--blue); margin-bottom: 20px; }
+.tool-hero-left { flex: 1; }
+.tool-badge { display: inline-flex; align-items: center; gap: 7px; padding: 4px 13px; border-radius: 99px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.25); font-size: 11px; font-weight: 600; color: var(--moon-purple); margin-bottom: 20px; }
 .tool-hero-left h1 { font-family: 'Syne', sans-serif; font-size: clamp(32px, 4vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
-.tool-hero-left h1 em { font-style: normal; background: linear-gradient(90deg, var(--lex-blue), #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.tool-hero-left h1 em { font-style: normal; background: linear-gradient(90deg, var(--moon-purple), #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .tool-desc { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 28px; max-width: 520px; }
 
 /* Action Buttons */
-.tool-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-@media(max-width:900px){.tool-actions{justify-content:center;}}
+.tool-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
 
-.btn-primary-moon { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 12px; background: linear-gradient(135deg, var(--lex-blue), #2563eb); color: #fff; text-decoration: none; font-weight: 600; transition: 0.2s; box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3); border: none; font-family: 'Outfit', sans-serif; cursor: pointer; }
-.btn-primary-moon:hover { opacity: .9; transform: translateY(-2px); }
+.btn-primary-moon { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 12px; background: linear-gradient(135deg, var(--moon-purple), #6d28d9); color: #fff; text-decoration: none; font-weight: 600; transition: 0.2s; box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3); border: none; font-family: 'Outfit', sans-serif; cursor: pointer; }
+.btn-primary-moon:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4); }
 
-.btn-ghost-tool { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); color: var(--text); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.3s; }
-.btn-ghost-tool:hover { border-color: var(--lex-blue); background: rgba(59, 130, 246, 0.05); transform: translateY(-2px); }
-.btn-ghost-tool.saved { border-color: var(--lex-blue); background: rgba(139, 92, 246, 0.15); color: #fff; }
+.btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); color: var(--text); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.3s; }
+.btn-ghost:hover { border-color: var(--moon-purple); background: rgba(139,92,246,0.07); transform: translateY(-2px); }
 
-.tool-logo-card { width: 180px; height: 180px; border-radius: 24px; background: rgba(15,23,42,0.8); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(0,0,0,0.5); flex-shrink: 0; }
-@media(max-width:900px){.tool-logo-card{width:120px; height:120px;}}
+.btn-ghost.saved { border-color: var(--moon-purple); background: rgba(139, 92, 246, 0.15); color: #fff; }
+
+.tool-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { padding: 5px 12px; border-radius: 99px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+
+.tool-hero-right { flex-shrink: 0; }
+
+.tool-logo-card { width: 180px; height: 180px; border-radius: 24px; background: rgba(15,23,42,0.8); border: 1px solid rgba(139, 92, 246, 0.2); display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+@media(max-width:900px) { .tool-logo-card { width: 120px; height: 120px; } }
 .tool-logo-card img { width: 100px; height: 100px; object-fit: cover; border-radius: 12px; }
 
 /* Stats Bar */
-.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); background: rgba(15,23,42,0.7); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 56px; overflow: hidden; }
-@media(max-width:900px){.stats-bar{grid-template-columns: 1fr 1fr;}}
-.stat-item { padding: 24px; text-align: center; border: 0.5px solid var(--border); }
-.stat-item-n { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: #fff; }
-.stat-item-l { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); background: rgba(15,23,42,0.7); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 56px; }
+@media(max-width:900px) { .stats-bar { grid-template-columns: 1fr 1fr; } }
+.stat-item { padding: 24px; text-align: center; }
+.stat-item-n { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.stat-item-l { font-size: 12px; color: var(--muted); }
 
 /* Features Grid */
-.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 56px; text-align: left; }
-@media(max-width:768px){.features-grid{grid-template-columns: 1fr;}}
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 56px; }
+@media(max-width:900px) { .features-grid { grid-template-columns: 1fr; } }
 .feat-card { padding: 24px; border-radius: 16px; background: rgba(15,23,42,0.6); border: 1px solid var(--border); }
 .feat-card h3 { color: #fff; font-size: 16px; margin-bottom: 8px; font-weight: 700; }
-.feat-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+.feat-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
-/* --- FOOTER (STRICTEMENT IDENTIQUE À LEX.HTML) --- */
-footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(20px); border-top: 1px solid var(--border); padding: 80px 60px 40px; margin-top: 100px; }
-.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; text-align: left; }
-@media(min-width:640px){ .footer-grid { grid-template-columns: 1fr 1fr; } }
-@media(min-width:1024px){ .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; } }
+.section-h { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.4px; margin-bottom: 20px; }
 
-.footer-brand p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 280px; margin-top: 20px; }
-.footer-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; }
+/* --- FOOTER RESPONSIVE --- */
+footer {
+    position: relative;
+    z-index: 1;
+    background: rgba(2, 6, 23, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    padding: 60px 20px 40px;
+    margin-top: 100px;
+}
+
+@media(min-width: 768px) { footer { padding: 80px 40px 40px; } }
+@media(min-width: 1024px) { footer { padding: 80px 60px 40px; } }
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+@media(min-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media(min-width: 1024px) {
+    .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; }
+}
+
+.footer-brand .nav-logo { margin-bottom: 20px; }
+.footer-brand p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 280px; }
+
+.footer-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .footer-links { list-style: none; }
 .footer-links li { margin-bottom: 12px; }
 .footer-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: 0.2s; }
-.footer-links a:hover { color: var(--blue); }
+.footer-links a:hover { color: var(--moon-purple); padding-left: 5px; }
+
 .footer-contact-info { font-size: 14px; color: var(--muted); line-height: 1.6; }
 .footer-contact-info strong { color: #fff; display: block; margin-bottom: 8px; }
-.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 13px; flex-wrap:wrap; gap:15px; }
-@media(max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } }
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+@media(max-width: 640px) {
+    .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
+}
 </style>
 </head>
 <body>
@@ -168,30 +284,46 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
 <!-- NAVIGATION -->
 <nav id="mainNav">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">A</div><span class="nav-logo-text">AI<span>Tools</span></span>
+    <div class="nav-logo-icon">A</div>
+    <span class="nav-logo-text">AI<span>Tools</span></span>
   </a>
 
-  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li>
-      <button>Categories <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <button>Categories <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="mega-drop">
         <div class="mega-drop-title">Browse all 12 categories</div>
         <div class="mega-drop-grid">
-          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon" style="background:rgba(59,130,246,0.12)">✍️</div><div class="mega-item-text"><strong>Writing & Editing</strong><span>Essays, Long-form, Blogs</span></div></a>
+          <a href="ai-writing-tools.html" class="mega-item"><div class="mega-icon" style="background:rgba(59,130,246,0.12)">✍️</div><div class="mega-item-text"><strong>Writing & Editing</strong><span>Copywriting, blogs, scripts</span></div></a>
           <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(168,85,247,0.12)">🎨</div><div class="mega-item-text"><strong>Image Generation</strong><span>Art, design & visuals</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(245,158,11,0.12)">🎬</div><div class="mega-item-text"><strong>Video & Audio</strong><span>Generation, editing, VFX</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(6,182,212,0.12)">💻</div><div class="mega-item-text"><strong>Coding & DevTools</strong><span>Debugging, review, docs</span></div></a>
           <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(239,68,68,0.12)">🤖</div><div class="mega-item-text"><strong>Chatbots & Assistants</strong><span>AI chat, support bots</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(16,185,129,0.12)">📊</div><div class="mega-item-text"><strong>Productivity</strong><span>Notes, tasks, automation</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(251,146,60,0.12)">📣</div><div class="mega-item-text"><strong>Marketing & SEO</strong><span>Campaigns, ads, analytics</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(99,102,241,0.12)">🔬</div><div class="mega-item-text"><strong>Research & Analysis</strong><span>Data, insights, reports</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(20,184,166,0.12)">🎧</div><div class="mega-item-text"><strong>Audio & Voice</strong><span>TTS, cloning, transcription</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(234,179,8,0.12)">💬</div><div class="mega-item-text"><strong>Customer Service</strong><span>Support, live chat, CRM</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(236,72,153,0.12)">🖌️</div><div class="mega-item-text"><strong>Design & Creative</strong><span>UI, branding, illustration</span></div></a>
+          <a href="#" class="mega-item"><div class="mega-icon" style="background:rgba(148,163,184,0.12)">⚙️</div><div class="mega-item-text"><strong>Workflow Automation</strong><span>No-code, pipelines, APIs</span></div></a>
         </div>
       </div>
     </li>
     <li>
-      <button>Top Tools <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <button>Top Tools <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="simple-drop">
         <a href="chatgpt.html"><span class="si">🤖</span> ChatGPT</a>
-        <a href="lex.html"><span class="si">📝</span> Lex AI</a>
-        <a href="moonbeam.html"><span class="si">🌕</span> Moonbeam</a>
+        <a href="midjourney.html"><span class="si">🎨</span> Midjourney</a>
+        <a href="copyai.html"><span class="si">✍️</span> Copy AI</a>
+        <a href="notionai.html"><span class="si">📝</span> Notion AI</a>
+        <a href="runway.html"><span class="si">🎬</span> Runway ML</a>
       </div>
     </li>
     <li><a href="blog.html">Blog</a></li>
@@ -218,17 +350,18 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
       
       <div class="tool-actions">
         <a href="https://www.gomoonbeam.com/" target="_blank" class="btn-primary-moon">🚀 Start Writing with Moonbeam</a>
-        <button id="saveBtn" class="btn-ghost-tool">🔖 <span id="saveText">Save Tool</span></button>
+        <button id="saveBtn" class="btn-ghost">🔖 <span id="saveText">Save Tool</span></button>
       </div>
 
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;">
-        <span style="padding:5px 12px; background:rgba(255,255,255,0.05); border-radius:20px; font-size:12px; color:var(--muted); border:1px solid var(--border)">Long-form Engine</span>
-        <span style="padding:5px 12px; background:rgba(255,255,255,0.05); border-radius:20px; font-size:12px; color:var(--muted); border:1px solid var(--border)">Academic Writing</span>
+      <div class="tool-tags">
+        <span class="tag">Long-form Engine</span>
+        <span class="tag">Academic Writing</span>
+        <span class="tag">Research-backed</span>
       </div>
     </div>
     <div class="tool-hero-right">
       <div class="tool-logo-card">
-        <img src="images/monbeam.jpg" alt="Moonbeam Logo">
+        <img src="images/moonbeam.jpg" alt="Moonbeam Logo">
       </div>
     </div>
   </div>
@@ -242,7 +375,7 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
   </div>
 
   <!-- Features -->
-  <h2 style="font-family:Syne;font-size:22px;margin-bottom:24px;font-weight:800;">Key Features</h2>
+  <h2 class="section-h">Key Features</h2>
   <div class="features-grid">
     <div class="feat-card">
       <h3>Wizard Mode (Luna)</h3>
@@ -266,41 +399,58 @@ footer { position: relative; z-index: 1; background: rgba(2, 6, 23, 0.95); backd
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
+    <!-- Colonne 1: Brand -->
     <div class="footer-brand">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-icon">A</div>
         <span class="nav-logo-text">AI<span>Tools</span></span>
       </a>
-      <p>Discover the world's most powerful AI tools. We curate and review the best solutions for the AI community.</p>
+      <p>Discover the world's most powerful AI tools. We curate and review the best solutions to help you boost productivity and creativity.</p>
     </div>
+
+    <!-- Colonne 2: Directory -->
     <div>
       <h3 class="footer-title">Directory</h3>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="ai-writing-tools.html">Writing Tools</a></li>
+        <li><a href="#">Image Generators</a></li>
+        <li><a href="#">Coding AI</a></li>
+        <li><a href="#">Video Tools</a></li>
       </ul>
     </div>
+
+    <!-- Colonne 3: Company -->
     <div>
       <h3 class="footer-title">Company</h3>
       <ul class="footer-links">
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="#">Submit a Tool</a></li>
       </ul>
     </div>
+
+    <!-- Colonne 4: Support & Legal -->
     <div>
       <h3 class="footer-title">Legal</h3>
       <ul class="footer-links">
         <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
       </ul>
       <div class="footer-contact-info" style="margin-top: 25px;">
         <strong>Reach us</strong>
-        <a href="mailto:alaeddineboubaker@gmail.com" style="color: var(--blue); text-decoration: none; font-size: 13px;">alaeddineboubaker@gmail.com</a>
+        <a href="mailto:alaeddineboubaker@gmail.com" style="color: var(--moon-purple); text-decoration: none; font-size: 13px;">alaeddineboubaker@gmail.com</a>
       </div>
     </div>
   </div>
+
   <div class="footer-bottom">
     <p>© 2026 AI Tools Directory — Built with ❤️ for the AI community</p>
+    <div style="display: flex; gap: 20px;">
+      <a href="#" style="color: var(--muted); text-decoration: none;">Twitter</a>
+      <a href="#" style="color: var(--muted); text-decoration: none;">LinkedIn</a>
+    </div>
   </div>
 </footer>
 
@@ -313,6 +463,24 @@ const mainNav = document.getElementById('mainNav');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   mainNav.classList.toggle('menu-open');
+});
+
+// CLOSE MENU ON LINK CLICK
+document.querySelectorAll('.nav-links a, .nav-links button').forEach(item => {
+  item.addEventListener('click', () => {
+    if (window.innerWidth < 1024) {
+      hamburger.classList.remove('active');
+      mainNav.classList.remove('menu-open');
+    }
+  });
+});
+
+// CLOSE MENU ON OUTSIDE CLICK
+document.addEventListener('click', (e) => {
+  if (!mainNav.contains(e.target) && hamburger.classList.contains('active')) {
+    hamburger.classList.remove('active');
+    mainNav.classList.remove('menu-open');
+  }
 });
 
 // SAVE TOOL FUNCTIONALITY
